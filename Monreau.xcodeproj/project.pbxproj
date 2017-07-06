@@ -1,0 +1,1656 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3331E6941F0CFCBA007BE883 /* Monreau.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3358A8A91F0C06BD00D4BD9C /* Monreau.swift */; };
+		3331E6951F0CFCBA007BE883 /* CoreStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3358A8AC1F0C06BD00D4BD9C /* CoreStorage.swift */; };
+		3331E6961F0CFCBA007BE883 /* SortDescriptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3358A8AF1F0C06BD00D4BD9C /* SortDescriptor.swift */; };
+		3331E6971F0CFCBA007BE883 /* NSPredicate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3358A8B21F0C06BD00D4BD9C /* NSPredicate.swift */; };
+		3331E6981F0CFCBA007BE883 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3358A8B31F0C06BD00D4BD9C /* String.swift */; };
+		3331E6991F0CFCBA007BE883 /* Predicate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3358A8B51F0C06BD00D4BD9C /* Predicate.swift */; };
+		3331E69A1F0CFCBA007BE883 /* NSManagedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3358A8B81F0C06BD00D4BD9C /* NSManagedObject.swift */; };
+		3331E69B1F0CFCBA007BE883 /* Storable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3358A8BA1F0C06BD00D4BD9C /* Storable.swift */; };
+		3331E69C1F0CFCBA007BE883 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3358A8BC1F0C06BD00D4BD9C /* Storage.swift */; };
+		3331E69D1F0CFCBB007BE883 /* Monreau.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3358A8A91F0C06BD00D4BD9C /* Monreau.swift */; };
+		3331E69E1F0CFCBB007BE883 /* CoreStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3358A8AC1F0C06BD00D4BD9C /* CoreStorage.swift */; };
+		3331E69F1F0CFCBB007BE883 /* SortDescriptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3358A8AF1F0C06BD00D4BD9C /* SortDescriptor.swift */; };
+		3331E6A01F0CFCBB007BE883 /* NSPredicate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3358A8B21F0C06BD00D4BD9C /* NSPredicate.swift */; };
+		3331E6A11F0CFCBB007BE883 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3358A8B31F0C06BD00D4BD9C /* String.swift */; };
+		3331E6A21F0CFCBB007BE883 /* Predicate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3358A8B51F0C06BD00D4BD9C /* Predicate.swift */; };
+		3331E6A31F0CFCBB007BE883 /* NSManagedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3358A8B81F0C06BD00D4BD9C /* NSManagedObject.swift */; };
+		3331E6A41F0CFCBB007BE883 /* Storable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3358A8BA1F0C06BD00D4BD9C /* Storable.swift */; };
+		3331E6A51F0CFCBB007BE883 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3358A8BC1F0C06BD00D4BD9C /* Storage.swift */; };
+		3331E6A61F0CFCBB007BE883 /* Monreau.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3358A8A91F0C06BD00D4BD9C /* Monreau.swift */; };
+		3331E6A71F0CFCBB007BE883 /* CoreStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3358A8AC1F0C06BD00D4BD9C /* CoreStorage.swift */; };
+		3331E6A81F0CFCBB007BE883 /* SortDescriptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3358A8AF1F0C06BD00D4BD9C /* SortDescriptor.swift */; };
+		3331E6A91F0CFCBB007BE883 /* NSPredicate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3358A8B21F0C06BD00D4BD9C /* NSPredicate.swift */; };
+		3331E6AA1F0CFCBB007BE883 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3358A8B31F0C06BD00D4BD9C /* String.swift */; };
+		3331E6AB1F0CFCBB007BE883 /* Predicate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3358A8B51F0C06BD00D4BD9C /* Predicate.swift */; };
+		3331E6AC1F0CFCBB007BE883 /* NSManagedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3358A8B81F0C06BD00D4BD9C /* NSManagedObject.swift */; };
+		3331E6AD1F0CFCBB007BE883 /* Storable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3358A8BA1F0C06BD00D4BD9C /* Storable.swift */; };
+		3331E6AE1F0CFCBB007BE883 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3358A8BC1F0C06BD00D4BD9C /* Storage.swift */; };
+		3331E6B81F0D0D80007BE883 /* Monreau.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3358A8961F0C03A800D4BD9C /* Monreau.framework */; };
+		3331E6C71F0D0D8C007BE883 /* Monreau.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3358A8891F0C039D00D4BD9C /* Monreau.framework */; };
+		3331E6D61F0D0DA1007BE883 /* Monreau.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3358A8621F0C037100D4BD9C /* Monreau.framework */; };
+		3331E6DE1F0D0DC2007BE883 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3331E6DD1F0D0DC2007BE883 /* Info.plist */; };
+		3331E6E41F0D0E55007BE883 /* MonreauCoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3331E6DF1F0D0E12007BE883 /* MonreauCoreTests.swift */; };
+		3331E6E51F0D0E55007BE883 /* MonreauCoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3331E6DF1F0D0E12007BE883 /* MonreauCoreTests.swift */; };
+		3331E6E61F0D0E55007BE883 /* MonreauCoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3331E6DF1F0D0E12007BE883 /* MonreauCoreTests.swift */; };
+		3331E6F21F0D13ED007BE883 /* Monreau.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3331E6E71F0D1015007BE883 /* Monreau.xcdatamodeld */; };
+		3331E6F31F0D13ED007BE883 /* Monreau.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3331E6E71F0D1015007BE883 /* Monreau.xcdatamodeld */; };
+		3331E6F41F0D13EE007BE883 /* Monreau.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3331E6E71F0D1015007BE883 /* Monreau.xcdatamodeld */; };
+		3331E6F51F0D13EE007BE883 /* Monreau.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3331E6E71F0D1015007BE883 /* Monreau.xcdatamodeld */; };
+		3331E6F61F0D22C0007BE883 /* UserModelObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3331E6ED1F0D1165007BE883 /* UserModelObject.swift */; };
+		3331E6F71F0D22C0007BE883 /* UserModelObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3331E6ED1F0D1165007BE883 /* UserModelObject.swift */; };
+		3331E6F81F0D22C0007BE883 /* UserModelObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3331E6ED1F0D1165007BE883 /* UserModelObject.swift */; };
+		3331E6F91F0D22C1007BE883 /* UserModelObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3331E6ED1F0D1165007BE883 /* UserModelObject.swift */; };
+		3358A8A51F0C042400D4BD9C /* Monreau.h in Headers */ = {isa = PBXBuildFile; fileRef = 3358A8A21F0C042400D4BD9C /* Monreau.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3358A8A61F0C042B00D4BD9C /* Monreau.h in Headers */ = {isa = PBXBuildFile; fileRef = 3358A8A21F0C042400D4BD9C /* Monreau.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3358A8A71F0C042B00D4BD9C /* Monreau.h in Headers */ = {isa = PBXBuildFile; fileRef = 3358A8A21F0C042400D4BD9C /* Monreau.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3358A8A81F0C042B00D4BD9C /* Monreau.h in Headers */ = {isa = PBXBuildFile; fileRef = 3358A8A21F0C042400D4BD9C /* Monreau.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3358A8BD1F0C06BD00D4BD9C /* Monreau.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3358A8A91F0C06BD00D4BD9C /* Monreau.swift */; };
+		3358A8BE1F0C06BD00D4BD9C /* CoreStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3358A8AC1F0C06BD00D4BD9C /* CoreStorage.swift */; };
+		3358A8BF1F0C06BD00D4BD9C /* SortDescriptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3358A8AF1F0C06BD00D4BD9C /* SortDescriptor.swift */; };
+		3358A8C01F0C06BD00D4BD9C /* NSPredicate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3358A8B21F0C06BD00D4BD9C /* NSPredicate.swift */; };
+		3358A8C11F0C06BD00D4BD9C /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3358A8B31F0C06BD00D4BD9C /* String.swift */; };
+		3358A8C21F0C06BD00D4BD9C /* Predicate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3358A8B51F0C06BD00D4BD9C /* Predicate.swift */; };
+		3358A8C31F0C06BD00D4BD9C /* NSManagedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3358A8B81F0C06BD00D4BD9C /* NSManagedObject.swift */; };
+		3358A8C41F0C06BD00D4BD9C /* Storable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3358A8BA1F0C06BD00D4BD9C /* Storable.swift */; };
+		3358A8C51F0C06BD00D4BD9C /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3358A8BC1F0C06BD00D4BD9C /* Storage.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3331E6B91F0D0D80007BE883 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3358A8491F0C035800D4BD9C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3358A8951F0C03A800D4BD9C;
+			remoteInfo = "Monreau macOS";
+		};
+		3331E6C81F0D0D8C007BE883 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3358A8491F0C035800D4BD9C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3358A8881F0C039D00D4BD9C;
+			remoteInfo = "Monreau tvOS";
+		};
+		3331E6D71F0D0DA1007BE883 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3358A8491F0C035800D4BD9C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3358A8611F0C037100D4BD9C;
+			remoteInfo = "Monreau iOS";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		3331E6B31F0D0D80007BE883 /* Monreau macOS-Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Monreau macOS-Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3331E6C21F0D0D8C007BE883 /* Monreau tvOS-Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Monreau tvOS-Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3331E6D11F0D0DA1007BE883 /* Monreau iOS-Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Monreau iOS-Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3331E6DD1F0D0DC2007BE883 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3331E6DF1F0D0E12007BE883 /* MonreauCoreTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonreauCoreTests.swift; sourceTree = "<group>"; };
+		3331E6E81F0D1015007BE883 /* Monreau.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Monreau.xcdatamodel; sourceTree = "<group>"; };
+		3331E6ED1F0D1165007BE883 /* UserModelObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserModelObject.swift; sourceTree = "<group>"; };
+		3358A8621F0C037100D4BD9C /* Monreau.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Monreau.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3358A86F1F0C038400D4BD9C /* Monreau.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Monreau.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3358A8891F0C039D00D4BD9C /* Monreau.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Monreau.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3358A8961F0C03A800D4BD9C /* Monreau.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Monreau.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3358A8A11F0C042400D4BD9C /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3358A8A21F0C042400D4BD9C /* Monreau.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Monreau.h; sourceTree = "<group>"; };
+		3358A8A91F0C06BD00D4BD9C /* Monreau.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Monreau.swift; sourceTree = "<group>"; };
+		3358A8AC1F0C06BD00D4BD9C /* CoreStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreStorage.swift; sourceTree = "<group>"; };
+		3358A8AF1F0C06BD00D4BD9C /* SortDescriptor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SortDescriptor.swift; sourceTree = "<group>"; };
+		3358A8B21F0C06BD00D4BD9C /* NSPredicate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSPredicate.swift; sourceTree = "<group>"; };
+		3358A8B31F0C06BD00D4BD9C /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		3358A8B51F0C06BD00D4BD9C /* Predicate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Predicate.swift; sourceTree = "<group>"; };
+		3358A8B81F0C06BD00D4BD9C /* NSManagedObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSManagedObject.swift; sourceTree = "<group>"; };
+		3358A8BA1F0C06BD00D4BD9C /* Storable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storable.swift; sourceTree = "<group>"; };
+		3358A8BC1F0C06BD00D4BD9C /* Storage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3331E6B01F0D0D80007BE883 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3331E6B81F0D0D80007BE883 /* Monreau.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3331E6BF1F0D0D8C007BE883 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3331E6C71F0D0D8C007BE883 /* Monreau.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3331E6CE1F0D0DA1007BE883 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3331E6D61F0D0DA1007BE883 /* Monreau.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3358A85E1F0C037100D4BD9C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3358A86B1F0C038400D4BD9C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3358A8851F0C039D00D4BD9C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3358A8921F0C03A800D4BD9C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3331E6DC1F0D0DC2007BE883 /* MonreauTests */ = {
+			isa = PBXGroup;
+			children = (
+				3331E6DF1F0D0E12007BE883 /* MonreauCoreTests.swift */,
+				3331E6DD1F0D0DC2007BE883 /* Info.plist */,
+			);
+			path = MonreauTests;
+			sourceTree = "<group>";
+		};
+		3358A8481F0C035800D4BD9C = {
+			isa = PBXGroup;
+			children = (
+				3358A89E1F0C042400D4BD9C /* Sources */,
+				3358A8A31F0C042400D4BD9C /* Tests */,
+				3358A8551F0C036100D4BD9C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3358A8551F0C036100D4BD9C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3358A8621F0C037100D4BD9C /* Monreau.framework */,
+				3358A86F1F0C038400D4BD9C /* Monreau.framework */,
+				3358A8891F0C039D00D4BD9C /* Monreau.framework */,
+				3358A8961F0C03A800D4BD9C /* Monreau.framework */,
+				3331E6B31F0D0D80007BE883 /* Monreau macOS-Tests.xctest */,
+				3331E6C21F0D0D8C007BE883 /* Monreau tvOS-Tests.xctest */,
+				3331E6D11F0D0DA1007BE883 /* Monreau iOS-Tests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3358A89E1F0C042400D4BD9C /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				3358A89F1F0C042400D4BD9C /* Monreau */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		3358A89F1F0C042400D4BD9C /* Monreau */ = {
+			isa = PBXGroup;
+			children = (
+				3358A8A91F0C06BD00D4BD9C /* Monreau.swift */,
+				3358A8AA1F0C06BD00D4BD9C /* Storage */,
+				3358A8A01F0C042400D4BD9C /* Supporting */,
+			);
+			path = Monreau;
+			sourceTree = "<group>";
+		};
+		3358A8A01F0C042400D4BD9C /* Supporting */ = {
+			isa = PBXGroup;
+			children = (
+				3358A8A11F0C042400D4BD9C /* Info.plist */,
+				3358A8A21F0C042400D4BD9C /* Monreau.h */,
+			);
+			path = Supporting;
+			sourceTree = "<group>";
+		};
+		3358A8A31F0C042400D4BD9C /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				3331E6DC1F0D0DC2007BE883 /* MonreauTests */,
+				3331E6E71F0D1015007BE883 /* Monreau.xcdatamodeld */,
+				3331E6ED1F0D1165007BE883 /* UserModelObject.swift */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		3358A8AA1F0C06BD00D4BD9C /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				3358A8AB1F0C06BD00D4BD9C /* ConcreteClasses */,
+				3358A8AD1F0C06BD00D4BD9C /* Models */,
+				3358A8BB1F0C06BD00D4BD9C /* Protocols */,
+			);
+			path = Storage;
+			sourceTree = "<group>";
+		};
+		3358A8AB1F0C06BD00D4BD9C /* ConcreteClasses */ = {
+			isa = PBXGroup;
+			children = (
+				3358A8AC1F0C06BD00D4BD9C /* CoreStorage.swift */,
+			);
+			path = ConcreteClasses;
+			sourceTree = "<group>";
+		};
+		3358A8AD1F0C06BD00D4BD9C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				3358A8AE1F0C06BD00D4BD9C /* Descriptor */,
+				3358A8B01F0C06BD00D4BD9C /* Predicate */,
+				3358A8B61F0C06BD00D4BD9C /* Storable */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		3358A8AE1F0C06BD00D4BD9C /* Descriptor */ = {
+			isa = PBXGroup;
+			children = (
+				3358A8AF1F0C06BD00D4BD9C /* SortDescriptor.swift */,
+			);
+			path = Descriptor;
+			sourceTree = "<group>";
+		};
+		3358A8B01F0C06BD00D4BD9C /* Predicate */ = {
+			isa = PBXGroup;
+			children = (
+				3358A8B11F0C06BD00D4BD9C /* Concrete */,
+				3358A8B41F0C06BD00D4BD9C /* Protocols */,
+			);
+			path = Predicate;
+			sourceTree = "<group>";
+		};
+		3358A8B11F0C06BD00D4BD9C /* Concrete */ = {
+			isa = PBXGroup;
+			children = (
+				3358A8B21F0C06BD00D4BD9C /* NSPredicate.swift */,
+				3358A8B31F0C06BD00D4BD9C /* String.swift */,
+			);
+			path = Concrete;
+			sourceTree = "<group>";
+		};
+		3358A8B41F0C06BD00D4BD9C /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				3358A8B51F0C06BD00D4BD9C /* Predicate.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		3358A8B61F0C06BD00D4BD9C /* Storable */ = {
+			isa = PBXGroup;
+			children = (
+				3358A8B71F0C06BD00D4BD9C /* Concrete */,
+				3358A8B91F0C06BD00D4BD9C /* Protocols */,
+			);
+			path = Storable;
+			sourceTree = "<group>";
+		};
+		3358A8B71F0C06BD00D4BD9C /* Concrete */ = {
+			isa = PBXGroup;
+			children = (
+				3358A8B81F0C06BD00D4BD9C /* NSManagedObject.swift */,
+			);
+			path = Concrete;
+			sourceTree = "<group>";
+		};
+		3358A8B91F0C06BD00D4BD9C /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				3358A8BA1F0C06BD00D4BD9C /* Storable.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		3358A8BB1F0C06BD00D4BD9C /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				3358A8BC1F0C06BD00D4BD9C /* Storage.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		3358A85F1F0C037100D4BD9C /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3358A8A51F0C042400D4BD9C /* Monreau.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3358A86C1F0C038400D4BD9C /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3358A8A81F0C042B00D4BD9C /* Monreau.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3358A8861F0C039D00D4BD9C /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3358A8A71F0C042B00D4BD9C /* Monreau.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3358A8931F0C03A800D4BD9C /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3358A8A61F0C042B00D4BD9C /* Monreau.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		3331E6B21F0D0D80007BE883 /* Monreau macOS-Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3331E6BB1F0D0D80007BE883 /* Build configuration list for PBXNativeTarget "Monreau macOS-Tests" */;
+			buildPhases = (
+				3331E6AF1F0D0D80007BE883 /* Sources */,
+				3331E6B01F0D0D80007BE883 /* Frameworks */,
+				3331E6B11F0D0D80007BE883 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3331E6BA1F0D0D80007BE883 /* PBXTargetDependency */,
+			);
+			name = "Monreau macOS-Tests";
+			productName = "Monreau macOS-Tests";
+			productReference = 3331E6B31F0D0D80007BE883 /* Monreau macOS-Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		3331E6C11F0D0D8C007BE883 /* Monreau tvOS-Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3331E6CA1F0D0D8C007BE883 /* Build configuration list for PBXNativeTarget "Monreau tvOS-Tests" */;
+			buildPhases = (
+				3331E6BE1F0D0D8C007BE883 /* Sources */,
+				3331E6BF1F0D0D8C007BE883 /* Frameworks */,
+				3331E6C01F0D0D8C007BE883 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3331E6C91F0D0D8C007BE883 /* PBXTargetDependency */,
+			);
+			name = "Monreau tvOS-Tests";
+			productName = "Monreau tvOS-Tests";
+			productReference = 3331E6C21F0D0D8C007BE883 /* Monreau tvOS-Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		3331E6D01F0D0DA1007BE883 /* Monreau iOS-Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3331E6D91F0D0DA1007BE883 /* Build configuration list for PBXNativeTarget "Monreau iOS-Tests" */;
+			buildPhases = (
+				3331E6CD1F0D0DA1007BE883 /* Sources */,
+				3331E6CE1F0D0DA1007BE883 /* Frameworks */,
+				3331E6CF1F0D0DA1007BE883 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3331E6D81F0D0DA1007BE883 /* PBXTargetDependency */,
+			);
+			name = "Monreau iOS-Tests";
+			productName = "Monreau iOS-Tests";
+			productReference = 3331E6D11F0D0DA1007BE883 /* Monreau iOS-Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		3358A8611F0C037100D4BD9C /* Monreau iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3358A8671F0C037100D4BD9C /* Build configuration list for PBXNativeTarget "Monreau iOS" */;
+			buildPhases = (
+				3358A85D1F0C037100D4BD9C /* Sources */,
+				3358A85E1F0C037100D4BD9C /* Frameworks */,
+				3358A85F1F0C037100D4BD9C /* Headers */,
+				3358A8601F0C037100D4BD9C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Monreau iOS";
+			productName = "Monreau iOS";
+			productReference = 3358A8621F0C037100D4BD9C /* Monreau.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		3358A86E1F0C038400D4BD9C /* Monreau watchOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3358A8741F0C038400D4BD9C /* Build configuration list for PBXNativeTarget "Monreau watchOS" */;
+			buildPhases = (
+				3358A86A1F0C038400D4BD9C /* Sources */,
+				3358A86B1F0C038400D4BD9C /* Frameworks */,
+				3358A86C1F0C038400D4BD9C /* Headers */,
+				3358A86D1F0C038400D4BD9C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Monreau watchOS";
+			productName = "Monreau watchOS";
+			productReference = 3358A86F1F0C038400D4BD9C /* Monreau.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		3358A8881F0C039D00D4BD9C /* Monreau tvOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3358A88E1F0C039D00D4BD9C /* Build configuration list for PBXNativeTarget "Monreau tvOS" */;
+			buildPhases = (
+				3358A8841F0C039D00D4BD9C /* Sources */,
+				3358A8851F0C039D00D4BD9C /* Frameworks */,
+				3358A8861F0C039D00D4BD9C /* Headers */,
+				3358A8871F0C039D00D4BD9C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Monreau tvOS";
+			productName = "Monreau tvOS";
+			productReference = 3358A8891F0C039D00D4BD9C /* Monreau.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		3358A8951F0C03A800D4BD9C /* Monreau macOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3358A89B1F0C03A800D4BD9C /* Build configuration list for PBXNativeTarget "Monreau macOS" */;
+			buildPhases = (
+				3358A8911F0C03A800D4BD9C /* Sources */,
+				3358A8921F0C03A800D4BD9C /* Frameworks */,
+				3358A8931F0C03A800D4BD9C /* Headers */,
+				3358A8941F0C03A800D4BD9C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Monreau macOS";
+			productName = "Monreau macOS";
+			productReference = 3358A8961F0C03A800D4BD9C /* Monreau.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3358A8491F0C035800D4BD9C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				TargetAttributes = {
+					3331E6B21F0D0D80007BE883 = {
+						CreatedOnToolsVersion = 8.3.3;
+						ProvisioningStyle = Automatic;
+					};
+					3331E6C11F0D0D8C007BE883 = {
+						CreatedOnToolsVersion = 8.3.3;
+						ProvisioningStyle = Manual;
+					};
+					3331E6D01F0D0DA1007BE883 = {
+						CreatedOnToolsVersion = 8.3.3;
+						ProvisioningStyle = Manual;
+					};
+					3358A8611F0C037100D4BD9C = {
+						CreatedOnToolsVersion = 8.3.3;
+						LastSwiftMigration = 0830;
+						ProvisioningStyle = Automatic;
+					};
+					3358A86E1F0C038400D4BD9C = {
+						CreatedOnToolsVersion = 8.3.3;
+						ProvisioningStyle = Automatic;
+					};
+					3358A8881F0C039D00D4BD9C = {
+						CreatedOnToolsVersion = 8.3.3;
+						ProvisioningStyle = Automatic;
+					};
+					3358A8951F0C03A800D4BD9C = {
+						CreatedOnToolsVersion = 8.3.3;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 3358A84C1F0C035800D4BD9C /* Build configuration list for PBXProject "Monreau" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 3358A8481F0C035800D4BD9C;
+			productRefGroup = 3358A8551F0C036100D4BD9C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3358A8611F0C037100D4BD9C /* Monreau iOS */,
+				3358A86E1F0C038400D4BD9C /* Monreau watchOS */,
+				3358A8881F0C039D00D4BD9C /* Monreau tvOS */,
+				3358A8951F0C03A800D4BD9C /* Monreau macOS */,
+				3331E6B21F0D0D80007BE883 /* Monreau macOS-Tests */,
+				3331E6C11F0D0D8C007BE883 /* Monreau tvOS-Tests */,
+				3331E6D01F0D0DA1007BE883 /* Monreau iOS-Tests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3331E6B11F0D0D80007BE883 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3331E6C01F0D0D8C007BE883 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3331E6CF1F0D0DA1007BE883 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3358A8601F0C037100D4BD9C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3331E6DE1F0D0DC2007BE883 /* Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3358A86D1F0C038400D4BD9C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3358A8871F0C039D00D4BD9C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3358A8941F0C03A800D4BD9C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3331E6AF1F0D0D80007BE883 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3331E6E61F0D0E55007BE883 /* MonreauCoreTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3331E6BE1F0D0D8C007BE883 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3331E6E51F0D0E55007BE883 /* MonreauCoreTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3331E6CD1F0D0DA1007BE883 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3331E6E41F0D0E55007BE883 /* MonreauCoreTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3358A85D1F0C037100D4BD9C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3358A8BE1F0C06BD00D4BD9C /* CoreStorage.swift in Sources */,
+				3358A8C21F0C06BD00D4BD9C /* Predicate.swift in Sources */,
+				3358A8BD1F0C06BD00D4BD9C /* Monreau.swift in Sources */,
+				3331E6F91F0D22C1007BE883 /* UserModelObject.swift in Sources */,
+				3358A8C31F0C06BD00D4BD9C /* NSManagedObject.swift in Sources */,
+				3358A8C11F0C06BD00D4BD9C /* String.swift in Sources */,
+				3358A8C51F0C06BD00D4BD9C /* Storage.swift in Sources */,
+				3358A8C41F0C06BD00D4BD9C /* Storable.swift in Sources */,
+				3358A8C01F0C06BD00D4BD9C /* NSPredicate.swift in Sources */,
+				3358A8BF1F0C06BD00D4BD9C /* SortDescriptor.swift in Sources */,
+				3331E6F51F0D13EE007BE883 /* Monreau.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3358A86A1F0C038400D4BD9C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3331E6A71F0CFCBB007BE883 /* CoreStorage.swift in Sources */,
+				3331E6AB1F0CFCBB007BE883 /* Predicate.swift in Sources */,
+				3331E6A61F0CFCBB007BE883 /* Monreau.swift in Sources */,
+				3331E6F81F0D22C0007BE883 /* UserModelObject.swift in Sources */,
+				3331E6AC1F0CFCBB007BE883 /* NSManagedObject.swift in Sources */,
+				3331E6AA1F0CFCBB007BE883 /* String.swift in Sources */,
+				3331E6AE1F0CFCBB007BE883 /* Storage.swift in Sources */,
+				3331E6AD1F0CFCBB007BE883 /* Storable.swift in Sources */,
+				3331E6A91F0CFCBB007BE883 /* NSPredicate.swift in Sources */,
+				3331E6A81F0CFCBB007BE883 /* SortDescriptor.swift in Sources */,
+				3331E6F41F0D13EE007BE883 /* Monreau.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3358A8841F0C039D00D4BD9C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3331E69E1F0CFCBB007BE883 /* CoreStorage.swift in Sources */,
+				3331E6A21F0CFCBB007BE883 /* Predicate.swift in Sources */,
+				3331E69D1F0CFCBB007BE883 /* Monreau.swift in Sources */,
+				3331E6F71F0D22C0007BE883 /* UserModelObject.swift in Sources */,
+				3331E6A31F0CFCBB007BE883 /* NSManagedObject.swift in Sources */,
+				3331E6A11F0CFCBB007BE883 /* String.swift in Sources */,
+				3331E6A51F0CFCBB007BE883 /* Storage.swift in Sources */,
+				3331E6A41F0CFCBB007BE883 /* Storable.swift in Sources */,
+				3331E6A01F0CFCBB007BE883 /* NSPredicate.swift in Sources */,
+				3331E69F1F0CFCBB007BE883 /* SortDescriptor.swift in Sources */,
+				3331E6F31F0D13ED007BE883 /* Monreau.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3358A8911F0C03A800D4BD9C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3331E6951F0CFCBA007BE883 /* CoreStorage.swift in Sources */,
+				3331E6991F0CFCBA007BE883 /* Predicate.swift in Sources */,
+				3331E6941F0CFCBA007BE883 /* Monreau.swift in Sources */,
+				3331E6F61F0D22C0007BE883 /* UserModelObject.swift in Sources */,
+				3331E69A1F0CFCBA007BE883 /* NSManagedObject.swift in Sources */,
+				3331E6981F0CFCBA007BE883 /* String.swift in Sources */,
+				3331E69C1F0CFCBA007BE883 /* Storage.swift in Sources */,
+				3331E69B1F0CFCBA007BE883 /* Storable.swift in Sources */,
+				3331E6971F0CFCBA007BE883 /* NSPredicate.swift in Sources */,
+				3331E6961F0CFCBA007BE883 /* SortDescriptor.swift in Sources */,
+				3331E6F21F0D13ED007BE883 /* Monreau.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3331E6BA1F0D0D80007BE883 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3358A8951F0C03A800D4BD9C /* Monreau macOS */;
+			targetProxy = 3331E6B91F0D0D80007BE883 /* PBXContainerItemProxy */;
+		};
+		3331E6C91F0D0D8C007BE883 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3358A8881F0C039D00D4BD9C /* Monreau tvOS */;
+			targetProxy = 3331E6C81F0D0D8C007BE883 /* PBXContainerItemProxy */;
+		};
+		3331E6D81F0D0DA1007BE883 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3358A8611F0C037100D4BD9C /* Monreau iOS */;
+			targetProxy = 3331E6D71F0D0DA1007BE883 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		3331E6BC1F0D0D80007BE883 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = Tests/MonreauTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.incetro.Monreau-macOS-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		3331E6BD1F0D0D80007BE883 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = Tests/MonreauTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.incetro.Monreau-macOS-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		3331E6CB1F0D0D8C007BE883 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = Tests/MonreauTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.incetro.Monreau-tvOS-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SDKROOT = appletvos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TVOS_DEPLOYMENT_TARGET = 10.2;
+			};
+			name = Debug;
+		};
+		3331E6CC1F0D0D8C007BE883 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = "";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = Tests/MonreauTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.incetro.Monreau-tvOS-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SDKROOT = appletvos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+				TVOS_DEPLOYMENT_TARGET = 10.2;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3331E6DA1F0D0DA1007BE883 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = Tests/MonreauTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.incetro.Monreau-iOS-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		3331E6DB1F0D0DA1007BE883 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = "";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = Tests/MonreauTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.incetro.Monreau-iOS-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3358A84D1F0C035800D4BD9C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				SWIFT_VERSION = "";
+			};
+			name = Debug;
+		};
+		3358A84E1F0C035800D4BD9C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				SWIFT_VERSION = "";
+			};
+			name = Release;
+		};
+		3358A8681F0C037100D4BD9C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = Sources/Monreau/Supporting/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.incetro.Monreau;
+				PRODUCT_NAME = Monreau;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		3358A8691F0C037100D4BD9C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = Sources/Monreau/Supporting/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = com.incetro.Monreau;
+				PRODUCT_NAME = Monreau;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		3358A8751F0C038400D4BD9C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = Sources/Monreau/Supporting/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.incetro.Monreau;
+				PRODUCT_NAME = Monreau;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Debug;
+		};
+		3358A8761F0C038400D4BD9C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = Sources/Monreau/Supporting/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = com.incetro.Monreau;
+				PRODUCT_NAME = Monreau;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Release;
+		};
+		3358A88F1F0C039D00D4BD9C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = Sources/Monreau/Supporting/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.incetro.Monreau;
+				PRODUCT_NAME = Monreau;
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		3358A8901F0C039D00D4BD9C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = Sources/Monreau/Supporting/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = com.incetro.Monreau;
+				PRODUCT_NAME = Monreau;
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		3358A89C1F0C03A800D4BD9C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_VERSION = A;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = Sources/Monreau/Supporting/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.incetro.Monreau;
+				PRODUCT_NAME = Monreau;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		3358A89D1F0C03A800D4BD9C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_VERSION = A;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = Sources/Monreau/Supporting/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = com.incetro.Monreau;
+				PRODUCT_NAME = Monreau;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3331E6BB1F0D0D80007BE883 /* Build configuration list for PBXNativeTarget "Monreau macOS-Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3331E6BC1F0D0D80007BE883 /* Debug */,
+				3331E6BD1F0D0D80007BE883 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3331E6CA1F0D0D8C007BE883 /* Build configuration list for PBXNativeTarget "Monreau tvOS-Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3331E6CB1F0D0D8C007BE883 /* Debug */,
+				3331E6CC1F0D0D8C007BE883 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3331E6D91F0D0DA1007BE883 /* Build configuration list for PBXNativeTarget "Monreau iOS-Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3331E6DA1F0D0DA1007BE883 /* Debug */,
+				3331E6DB1F0D0DA1007BE883 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3358A84C1F0C035800D4BD9C /* Build configuration list for PBXProject "Monreau" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3358A84D1F0C035800D4BD9C /* Debug */,
+				3358A84E1F0C035800D4BD9C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3358A8671F0C037100D4BD9C /* Build configuration list for PBXNativeTarget "Monreau iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3358A8681F0C037100D4BD9C /* Debug */,
+				3358A8691F0C037100D4BD9C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3358A8741F0C038400D4BD9C /* Build configuration list for PBXNativeTarget "Monreau watchOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3358A8751F0C038400D4BD9C /* Debug */,
+				3358A8761F0C038400D4BD9C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3358A88E1F0C039D00D4BD9C /* Build configuration list for PBXNativeTarget "Monreau tvOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3358A88F1F0C039D00D4BD9C /* Debug */,
+				3358A8901F0C039D00D4BD9C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3358A89B1F0C03A800D4BD9C /* Build configuration list for PBXNativeTarget "Monreau macOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3358A89C1F0C03A800D4BD9C /* Debug */,
+				3358A89D1F0C03A800D4BD9C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		3331E6E71F0D1015007BE883 /* Monreau.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				3331E6E81F0D1015007BE883 /* Monreau.xcdatamodel */,
+			);
+			currentVersion = 3331E6E81F0D1015007BE883 /* Monreau.xcdatamodel */;
+			path = Monreau.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 3358A8491F0C035800D4BD9C /* Project object */;
+}
