@@ -1,5 +1,9 @@
 Monreau
 ==========
+[![Build Status](https://travis-ci.org/incetro/Monreau.svg?branch=master)](https://travis-ci.org/incetro/Monreau)
+[![CocoaPods](https://img.shields.io/cocoapods/v/Monreau.svg)](https://img.shields.io/cocoapods/v/Monreau.svg)
+[![GitHub license](https://img.shields.io/badge/license-MIT-lightgrey.svg)](https://raw.githubusercontent.com/incetro/Monreau/master/LICENSE.md)
+[![Platforms](https://img.shields.io/cocoapods/p/Monreau.svg)](https://cocoapods.org/pods/Monreau)
 Monreau is a framework written in Swift that makes it easy for you to make CRUD actions with your own cache objects
 
 - [Features](#features)
@@ -176,7 +180,7 @@ try monreau.removeAll()
 $ gem install cocoapods
 ```
 
-To integrate Reflection into your Xcode project using CocoaPods, specify it in your `Podfile`:
+To integrate Monreau into your Xcode project using CocoaPods, specify it in your `Podfile`:
 
 ```ruby
 use_frameworks!
@@ -194,7 +198,7 @@ $ pod install
 
 ### Manually
 
-If you prefer not to use any dependency managers, you can integrate Reflection into your project manually.
+If you prefer not to use any dependency managers, you can integrate Monreau into your project manually.
 
 #### Embedded Framework
 
@@ -204,7 +208,7 @@ If you prefer not to use any dependency managers, you can integrate Reflection i
   $ git init
   ```
 
-- Add Reflection as a git [submodule](http://git-scm.com/docs/git-submodule) by running the following command:
+- Add Monreau as a git [submodule](http://git-scm.com/docs/git-submodule) by running the following command:
 
   ```bash
   $ git submodule add https://github.com/incetro/Monreau.git
