@@ -1,30 +1,30 @@
 osx_image: xcode8.3
-xcode_workspace: Reflex.xcworkspace
+xcode_workspace: Monreau.xcworkspace
 matrix:
   include:
 
-    - xcode_scheme: Reflex macOS
+    - xcode_scheme: Monreau macOS
       language: swift
       env:
         - XCODE_SDK=macosx10.12
         - XCODE_ACTION="test"
         - XCODE_DESTINATION="arch=x86_64"
 
-    - xcode_scheme: Reflex iOS
+    - xcode_scheme: Monreau iOS
       language: swift
       env:
         - XCODE_SDK=iphonesimulator10.3
         - XCODE_ACTION="test"
         - XCODE_DESTINATION="platform=iOS Simulator,OS=9.3,name=iPhone SE"
 
-    - xcode_scheme: Reflex tvOS
+    - xcode_scheme: Monreau tvOS
       language: swift
       env:
         - XCODE_SDK=appletvsimulator10.2
         - XCODE_ACTION="test"
         - XCODE_DESTINATION="platform=tvOS Simulator,OS=10.2,name=Apple TV 1080p"
 
-    - xcode_scheme: Reflex watchOS
+    - xcode_scheme: Monreau watchOS
       language: swift
       env:
         - XCODE_SDK=watchsimulator3.2
