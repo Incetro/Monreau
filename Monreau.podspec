@@ -5,7 +5,7 @@ Pod::Spec.new do |spec|
 
     spec.homepage       = "https://github.com/incetro/Monreau.git"
     spec.license        = "MIT"
-    spec.authors        = { "icnetro" => "incetro@ya.ru" }
+    spec.authors        = { "incetro" => "incetro@ya.ru" }
     spec.requires_arc   = true
 
     spec.ios.deployment_target     = "9.0"
