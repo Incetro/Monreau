@@ -89,6 +89,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3310CCEF1F0F72D900081792 /* Package.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		3331E6B31F0D0D80007BE883 /* Monreau macOS-Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Monreau macOS-Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3331E6C21F0D0D8C007BE883 /* Monreau tvOS-Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Monreau tvOS-Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3331E6D11F0D0DA1007BE883 /* Monreau iOS-Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Monreau iOS-Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -181,6 +182,7 @@
 		3358A8481F0C035800D4BD9C = {
 			isa = PBXGroup;
 			children = (
+				3310CCEF1F0F72D900081792 /* Package.swift */,
 				3358A89E1F0C042400D4BD9C /* Sources */,
 				3358A8A31F0C042400D4BD9C /* Tests */,
 				3358A8551F0C036100D4BD9C /* Products */,
