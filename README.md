@@ -2,6 +2,7 @@ Monreau
 ==========
 [![Build Status](https://travis-ci.org/incetro/Monreau.svg?branch=master)](https://travis-ci.org/incetro/Monreau)
 [![CocoaPods](https://img.shields.io/cocoapods/v/Monreau.svg)](https://img.shields.io/cocoapods/v/Monreau.svg)
+[![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![GitHub license](https://img.shields.io/badge/license-MIT-lightgrey.svg)](https://raw.githubusercontent.com/incetro/Monreau/master/LICENSE.md)
 [![Platforms](https://img.shields.io/cocoapods/p/Monreau.svg)](https://cocoapods.org/pods/Monreau)
 
