@@ -10,7 +10,7 @@ import CoreData
 
 /// Identifier type (which means primary key)
 
-public typealias IdentifierType = Int64
+public typealias PrimaryKeyType = Int64
 
 // MARK: - Storable
 
@@ -19,8 +19,12 @@ public protocol Storable: class {
     /// Storable entity name
     
     static var entityName: String { get }
+}
+
+extension Storable {
     
-    /// Primary key
-    
-    var identifier: (key: String, value: IdentifierType) { get }
+    public static var primaryKey: String {
+     
+        return "id"
+    }
 }

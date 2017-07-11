@@ -214,7 +214,7 @@ class MonreauCoreTests: XCTestCase {
         
         do {
             
-            let object = try self.monreau.find(by: (key: "id", value: 1))
+            let object = try self.monreau.find(by: 1)
             
             XCTAssertNotNil(object)
             
@@ -360,7 +360,7 @@ class MonreauCoreTests: XCTestCase {
         
         do {
             
-            try self.monreau.remove(by: (key: "id", value: 1))
+            try self.monreau.remove(by: 1)
             
             XCTAssertEqual(try self.monreau.findAll().count, 0)
             

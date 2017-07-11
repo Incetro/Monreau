@@ -65,9 +65,9 @@ public class Monreau<CacheType: Storage> {
     ///   - sortDescriptors: Descriptors for sorting result
     /// - Returns: Found object
     
-    public func find(by identifier: (key: String, value: IdentifierType), includeSubentities: Bool = true, sortDescriptors: [SortDescriptor] = []) throws -> CacheType.S? {
+    public func find(by primaryKey: PrimaryKeyType, includeSubentities: Bool = true, sortDescriptors: [SortDescriptor] = []) throws -> CacheType.S? {
         
-        return try self.storage.find(by: identifier, includeSubentities: includeSubentities, sortDescriptors: sortDescriptors)
+        return try self.storage.find(by: primaryKey, includeSubentities: includeSubentities, sortDescriptors: sortDescriptors)
     }
     
     /// Update object by primary key
@@ -77,9 +77,9 @@ public class Monreau<CacheType: Storage> {
     ///   - configuration: Block which updates found object
     /// - Returns: Updated objects
     
-    @discardableResult public func update(by identifier: (key: String, value: IdentifierType), configuration: (CacheType.S?) -> ()) throws -> CacheType.S? {
+    @discardableResult public func update(by primaryKey: PrimaryKeyType, configuration: (CacheType.S?) -> ()) throws -> CacheType.S? {
         
-        return try self.storage.update(by: identifier, configuration: configuration)
+        return try self.storage.update(by: primaryKey, configuration: configuration)
     }
     
     /// Find objects by filter and update with the given configuration
@@ -134,9 +134,9 @@ public class Monreau<CacheType: Storage> {
     ///
     /// - Parameter identifier: primary key
     
-    public func remove(by identifier: (key: String, value: IdentifierType)) throws {
+    public func remove(by primaryKey: PrimaryKeyType) throws {
         
-        try self.storage.remove(by: identifier)
+        try self.storage.remove(by: primaryKey)
     }
     
     /// Save changes in storage
@@ -231,11 +231,11 @@ public extension Monreau {
     ///   - sortDescriptors: Descriptors for sorting result
     /// - Returns: Found object
     
-    public func find(by identifier: (key: String, value: IdentifierType), includeSubentities: Bool = true, sortDescriptors: [SortDescriptor] = [], success: (CacheType.S?) -> (), failure: (Error) -> ()) {
+    public func find(by primaryKey: PrimaryKeyType, includeSubentities: Bool = true, sortDescriptors: [SortDescriptor] = [], success: (CacheType.S?) -> (), failure: (Error) -> ()) {
         
         do {
             
-            success(try self.storage.find(by: identifier, includeSubentities: includeSubentities, sortDescriptors: sortDescriptors))
+            success(try self.storage.find(by: primaryKey, includeSubentities: includeSubentities, sortDescriptors: sortDescriptors))
             
         } catch {
             
@@ -324,11 +324,11 @@ public extension Monreau {
     ///   - configuration: Block which updates found object
     /// - Returns: Updated objects
     
-    public func update(by identifier: (key: String, value: IdentifierType), configuration: (CacheType.S?) -> (), success: (CacheType.S?) -> (), failure: (Error) -> ()) {
+    public func update(by primaryKey: PrimaryKeyType, configuration: (CacheType.S?) -> (), success: (CacheType.S?) -> (), failure: (Error) -> ()) {
         
         do {
             
-            success(try self.storage.update(by: identifier, configuration: configuration))
+            success(try self.storage.update(by: primaryKey, configuration: configuration))
             
         } catch {
             
@@ -392,11 +392,11 @@ public extension Monreau {
     ///
     /// - Parameter identifier: primary key
     
-    public func remove(by identifier: (key: String, value: IdentifierType), success: () -> (), failure: (Error) -> ()) {
+    public func remove(by primaryKey: PrimaryKeyType, success: () -> (), failure: (Error) -> ()) {
         
         do {
             
-            try self.storage.remove(by: identifier)
+            try self.storage.remove(by: primaryKey)
             
             success()
             

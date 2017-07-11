@@ -12,11 +12,6 @@ import CoreData
 
 public class UserModelObject: NSManagedObject, Storable {
     
-    public var identifier: (key: String, value: IdentifierType) {
-        
-        return ("id", id)
-    }
-    
     @NSManaged public var name: String
     @NSManaged public var age: Int16
     @NSManaged public var id: Int64

@@ -86,9 +86,9 @@ extension CoreStorage: Storage {
         return try self.find(by: request)
     }
     
-    public func find(by identifier: (key: String, value: IdentifierType), includeSubentities: Bool, sortDescriptors: [SortDescriptor]) throws -> M? {
+    public func find(by primaryKey: PrimaryKeyType, includeSubentities: Bool, sortDescriptors: [SortDescriptor]) throws -> M? {
         
-        let predicate = NSPredicate(format: "\(identifier.key) = %@", NSNumber(value: identifier.value))
+        let predicate = NSPredicate(format: "\(M.primaryKey) = %@", NSNumber(value: primaryKey))
         
         let entities = try self.find(by: predicate, includeSubentities: includeSubentities, sortDescriptors: sortDescriptors)
         
@@ -111,9 +111,9 @@ extension CoreStorage: Storage {
         return entities
     }
     
-    public func update(by identifier: (key: String, value: IdentifierType), configuration: (M?) -> ()) throws -> M? {
+    public func update(by primaryKey: PrimaryKeyType, configuration: (M?) -> ()) throws -> M? {
         
-        let entity = try self.find(by: identifier)
+        let entity = try self.find(by: primaryKey)
         
         configuration(entity)
         
@@ -150,9 +150,9 @@ extension CoreStorage: Storage {
         }
     }
     
-    public func remove(by identifier: (key: String, value: IdentifierType)) throws {
+    public func remove(by primaryKey: PrimaryKeyType) throws {
         
-        if let object = try self.find(by: identifier) {
+        if let object = try self.find(by: primaryKey) {
             
             try self.remove(object)
         }

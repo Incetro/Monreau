@@ -47,7 +47,7 @@ public protocol Storage: class {
     ///   - sortDescriptors: Descriptors for sorting result
     /// - Returns: Found object
     
-    func find(by identifier: (key: String, value: IdentifierType),  includeSubentities: Bool, sortDescriptors: [SortDescriptor]) throws -> S?
+    func find(by primaryKey: PrimaryKeyType,  includeSubentities: Bool, sortDescriptors: [SortDescriptor]) throws -> S?
     
     /// Find objects by filter and update with the given configuration
     ///
@@ -65,7 +65,7 @@ public protocol Storage: class {
     ///   - configuration: Block which updates found objects
     /// - Returns: Updated objects
     
-    func update(by identifier: (key: String, value: IdentifierType), configuration: (S?) -> ()) throws -> S?
+    func update(by primaryKey: PrimaryKeyType, configuration: (S?) -> ()) throws -> S?
     
     /// Update all objects in storage with the given configuration
     ///
@@ -85,7 +85,7 @@ public protocol Storage: class {
     ///
     /// - Parameter identifier: identifier
     
-    func remove(by identifier: (key: String, value: IdentifierType)) throws
+    func remove(by primaryKey: PrimaryKeyType) throws
     
     /// Clear storage
     
@@ -110,9 +110,9 @@ extension Storage {
     ///   - identifier: Primary key
     /// - Returns: Found object
     
-    func find(by identifier: (key: String, value: IdentifierType)) throws -> S? {
+    func find(by primaryKey: PrimaryKeyType) throws -> S? {
         
-        return try self.find(by: identifier, includeSubentities: true, sortDescriptors: [])
+        return try self.find(by: primaryKey, includeSubentities: true, sortDescriptors: [])
     }
     
     /// Find objects in storage by filter
