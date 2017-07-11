@@ -79,7 +79,7 @@ try monreau.create { user in
 ### Read
 ```swift
 /// You can use it with closures
-monreau.find(by: 1, success: { user in    
+monreau.find(by: id, success: { user in    
             
     /// Your actions with user
                 
@@ -89,14 +89,14 @@ monreau.find(by: 1, success: { user in
 })
 
 /// Or using `try`
-try monreau.find(by: 1)
+try monreau.find(by: id)
 ```
 ### Update
 ```swift
 /// You can use it with closures
 
 /// Primary key updating
-monreau.update(by: 1, configuration: { user in
+monreau.update(by: id, configuration: { user in
 
     /// Change found entity here       
                 
@@ -124,7 +124,7 @@ monreau.update(by: "age > 5", configuration: { users in
 })
 
 /// Or using `try`
-try monreau.update(by: 1, configuration: { user in
+try monreau.update(by: id, configuration: { user in
     
     /// Change found entity here
 })
@@ -132,7 +132,7 @@ try monreau.update(by: 1, configuration: { user in
 ### Delete
 ```swift
 /// You can use it with closures
-monreau.remove(by: 1, success: { 
+monreau.remove(by: id, success: { 
 
     /// Everything is OK
                             
@@ -151,7 +151,7 @@ monreau.removeAll(success: {
 })
 
 /// Or using 'try'
-try monreau.remove(by: 1)
+try monreau.remove(by: id)
 try monreau.removeAll()
 
 ```
