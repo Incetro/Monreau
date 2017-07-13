@@ -51,7 +51,8 @@ class UserModelObject: NSManagedObject, Storable {
 ```swift
 // Create Monreau instance
 
-let storage = CoreStorage(with: context, model: UserModelObject.self)
+let config  = CoreStorageConfig(containerName: "Name of container also is filename for `*.xcdatamodeld` file.")
+let storage = CoreStorage(with: config, model: UserModelObject.self)
 let monreau = Monreau(with: storage)
 ```
 ### Create
