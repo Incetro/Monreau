@@ -18,7 +18,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
-        let storage = CoreStorage(with: self.persistentContainer.viewContext, model: UserModelObject.self)
+        guard let storage = try? CoreStorage(with: CoreStorageConfig(containerName: "MonreauExample_iOS"), model: UserModelObject.self) else {
+            
+            return false
+        }
+        
         let monreau = Monreau(with: storage)
         
         monreau.create(configuration: { (user) in
@@ -27,7 +31,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             user.age  = 20
             user.id   = 1
             
-            monreau.find(by: (key: "id", value: 1), success: { (user) in
+            monreau.find(by: 1, success: { (user) in
                 
                 if let user = user {
                     
@@ -45,7 +49,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                         print("Id: \(user.id)")
                         print()
                         
-                        monreau.remove(by: (key: "id", value: 1), success: { 
+                        monreau.remove(by: 1, success: {
                             
                             monreau.findAll(success: { (users) in
                                 
@@ -88,7 +92,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 user.id   = 1
             }
             
-            if let user = try monreau.find(by: (key: "id", value: 1)) {
+            if let user = try monreau.find(by: 1) {
                 
                 print("Name: \(user.name)")
                 print("Age: \(user.age)")
@@ -104,7 +108,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 print("Id: \(user.id)")
                 print()
                 
-                try monreau.remove(by: (key: "id", value: 1))
+                try monreau.remove(by: 1)
                 
                 print(try monreau.findAll())
             }

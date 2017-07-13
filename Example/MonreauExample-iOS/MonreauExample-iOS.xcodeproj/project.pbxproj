@@ -13,8 +13,8 @@
 		3331E70F1F0D3D9F007BE883 /* MonreauExample_iOS.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3331E70D1F0D3D9F007BE883 /* MonreauExample_iOS.xcdatamodeld */; };
 		3331E7111F0D3D9F007BE883 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3331E7101F0D3D9F007BE883 /* Assets.xcassets */; };
 		3331E7141F0D3D9F007BE883 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3331E7121F0D3D9F007BE883 /* LaunchScreen.storyboard */; };
-		3331E7351F0D3E54007BE883 /* Monreau.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3331E7341F0D3E54007BE883 /* Monreau.framework */; };
 		3331E7371F0D3F29007BE883 /* UserModelObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3331E7361F0D3F29007BE883 /* UserModelObject.swift */; };
+		3370D53E1F17DBAD006C0E67 /* Monreau.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3360413C1F17DA610038BE3C /* Monreau.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +28,7 @@
 		3331E7151F0D3D9F007BE883 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3331E7341F0D3E54007BE883 /* Monreau.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Monreau.framework; path = "../../build/Debug-iphoneos/Monreau.framework"; sourceTree = "<group>"; };
 		3331E7361F0D3F29007BE883 /* UserModelObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserModelObject.swift; sourceTree = "<group>"; };
+		3360413C1F17DA610038BE3C /* Monreau.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Monreau.framework; path = "../../../../../../Library/Developer/Xcode/DerivedData/Monreau-dxyzsqnlygktynacnkbkpxpzbnwq/Build/Products/Debug-iphonesimulator/Monreau.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,7 +36,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3331E7351F0D3E54007BE883 /* Monreau.framework in Frameworks */,
+				3370D53E1F17DBAD006C0E67 /* Monreau.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,6 +78,7 @@
 		3331E7331F0D3E54007BE883 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3360413C1F17DA610038BE3C /* Monreau.framework */,
 				3331E7341F0D3E54007BE883 /* Monreau.framework */,
 			);
 			name = Frameworks;

@@ -62,6 +62,14 @@
 		3358A8C31F0C06BD00D4BD9C /* NSManagedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3358A8B81F0C06BD00D4BD9C /* NSManagedObject.swift */; };
 		3358A8C41F0C06BD00D4BD9C /* Storable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3358A8BA1F0C06BD00D4BD9C /* Storable.swift */; };
 		3358A8C51F0C06BD00D4BD9C /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3358A8BC1F0C06BD00D4BD9C /* Storage.swift */; };
+		336041331F17C7470038BE3C /* CoreStorageConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 336041321F17C7470038BE3C /* CoreStorageConfig.swift */; };
+		336041351F17C7FA0038BE3C /* CoreStoreType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 336041341F17C7FA0038BE3C /* CoreStoreType.swift */; };
+		336041361F17C82D0038BE3C /* CoreStorageConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 336041321F17C7470038BE3C /* CoreStorageConfig.swift */; };
+		336041371F17C82D0038BE3C /* CoreStoreType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 336041341F17C7FA0038BE3C /* CoreStoreType.swift */; };
+		336041381F17C82D0038BE3C /* CoreStorageConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 336041321F17C7470038BE3C /* CoreStorageConfig.swift */; };
+		336041391F17C82D0038BE3C /* CoreStoreType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 336041341F17C7FA0038BE3C /* CoreStoreType.swift */; };
+		3360413A1F17C82E0038BE3C /* CoreStorageConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 336041321F17C7470038BE3C /* CoreStorageConfig.swift */; };
+		3360413B1F17C82E0038BE3C /* CoreStoreType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 336041341F17C7FA0038BE3C /* CoreStoreType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -112,6 +120,8 @@
 		3358A8B81F0C06BD00D4BD9C /* NSManagedObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSManagedObject.swift; sourceTree = "<group>"; };
 		3358A8BA1F0C06BD00D4BD9C /* Storable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storable.swift; sourceTree = "<group>"; };
 		3358A8BC1F0C06BD00D4BD9C /* Storage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
+		336041321F17C7470038BE3C /* CoreStorageConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreStorageConfig.swift; sourceTree = "<group>"; };
+		336041341F17C7FA0038BE3C /* CoreStoreType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreStoreType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -261,6 +271,7 @@
 		3358A8AD1F0C06BD00D4BD9C /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				336041311F17C7390038BE3C /* Config */,
 				3358A8AE1F0C06BD00D4BD9C /* Descriptor */,
 				3358A8B01F0C06BD00D4BD9C /* Predicate */,
 				3358A8B61F0C06BD00D4BD9C /* Storable */,
@@ -333,6 +344,15 @@
 				3358A8BC1F0C06BD00D4BD9C /* Storage.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		336041311F17C7390038BE3C /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				336041321F17C7470038BE3C /* CoreStorageConfig.swift */,
+				336041341F17C7FA0038BE3C /* CoreStoreType.swift */,
+			);
+			path = Config;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -650,10 +670,12 @@
 				3331E6F91F0D22C1007BE883 /* UserModelObject.swift in Sources */,
 				3358A8C31F0C06BD00D4BD9C /* NSManagedObject.swift in Sources */,
 				3358A8C11F0C06BD00D4BD9C /* String.swift in Sources */,
+				336041331F17C7470038BE3C /* CoreStorageConfig.swift in Sources */,
 				3358A8C51F0C06BD00D4BD9C /* Storage.swift in Sources */,
 				3358A8C41F0C06BD00D4BD9C /* Storable.swift in Sources */,
 				3358A8C01F0C06BD00D4BD9C /* NSPredicate.swift in Sources */,
 				3358A8BF1F0C06BD00D4BD9C /* SortDescriptor.swift in Sources */,
+				336041351F17C7FA0038BE3C /* CoreStoreType.swift in Sources */,
 				3331E6F51F0D13EE007BE883 /* Monreau.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -668,10 +690,12 @@
 				3331E6F81F0D22C0007BE883 /* UserModelObject.swift in Sources */,
 				3331E6AC1F0CFCBB007BE883 /* NSManagedObject.swift in Sources */,
 				3331E6AA1F0CFCBB007BE883 /* String.swift in Sources */,
+				3360413A1F17C82E0038BE3C /* CoreStorageConfig.swift in Sources */,
 				3331E6AE1F0CFCBB007BE883 /* Storage.swift in Sources */,
 				3331E6AD1F0CFCBB007BE883 /* Storable.swift in Sources */,
 				3331E6A91F0CFCBB007BE883 /* NSPredicate.swift in Sources */,
 				3331E6A81F0CFCBB007BE883 /* SortDescriptor.swift in Sources */,
+				3360413B1F17C82E0038BE3C /* CoreStoreType.swift in Sources */,
 				3331E6F41F0D13EE007BE883 /* Monreau.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -686,10 +710,12 @@
 				3331E6F71F0D22C0007BE883 /* UserModelObject.swift in Sources */,
 				3331E6A31F0CFCBB007BE883 /* NSManagedObject.swift in Sources */,
 				3331E6A11F0CFCBB007BE883 /* String.swift in Sources */,
+				336041381F17C82D0038BE3C /* CoreStorageConfig.swift in Sources */,
 				3331E6A51F0CFCBB007BE883 /* Storage.swift in Sources */,
 				3331E6A41F0CFCBB007BE883 /* Storable.swift in Sources */,
 				3331E6A01F0CFCBB007BE883 /* NSPredicate.swift in Sources */,
 				3331E69F1F0CFCBB007BE883 /* SortDescriptor.swift in Sources */,
+				336041391F17C82D0038BE3C /* CoreStoreType.swift in Sources */,
 				3331E6F31F0D13ED007BE883 /* Monreau.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -704,10 +730,12 @@
 				3331E6F61F0D22C0007BE883 /* UserModelObject.swift in Sources */,
 				3331E69A1F0CFCBA007BE883 /* NSManagedObject.swift in Sources */,
 				3331E6981F0CFCBA007BE883 /* String.swift in Sources */,
+				336041361F17C82D0038BE3C /* CoreStorageConfig.swift in Sources */,
 				3331E69C1F0CFCBA007BE883 /* Storage.swift in Sources */,
 				3331E69B1F0CFCBA007BE883 /* Storable.swift in Sources */,
 				3331E6971F0CFCBA007BE883 /* NSPredicate.swift in Sources */,
 				3331E6961F0CFCBA007BE883 /* SortDescriptor.swift in Sources */,
+				336041371F17C82D0038BE3C /* CoreStoreType.swift in Sources */,
 				3331E6F21F0D13ED007BE883 /* Monreau.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

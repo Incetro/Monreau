@@ -14,16 +14,6 @@ import CoreData
 
 class MonreauCoreTests: XCTestCase {
     
-    lazy var monreau: Monreau<CoreStorage<UserModelObject>> = {
-        
-        guard let managedObjectContext = self.setUpInMemoryManagedObjectContext() else {
-            
-            fatalError("Cannot create managed object context")
-        }
-        
-        return Monreau(with: CoreStorage<UserModelObject>(with: managedObjectContext))
-    }()
-    
     func setUpInMemoryManagedObjectContext() -> NSManagedObjectContext? {
         
         guard let jasmineBundle = Bundle(identifier: "com.incetro.Monreau") else {
@@ -59,6 +49,20 @@ class MonreauCoreTests: XCTestCase {
         
         return managedObjectContext
     }
+    
+    lazy var monreau: Monreau<CoreStorage<UserModelObject>> = {
+        
+        do {
+            
+            let storage = try CoreStorage<UserModelObject>(with: CoreStorageConfig(containerName: "Monreau", storeType: .memory))
+            
+            return Monreau(with: storage)
+            
+        } catch {
+            
+            fatalError(error.localizedDescription)
+        }
+    }()
     
     func testThatMonreauCanCreateObject() {
         

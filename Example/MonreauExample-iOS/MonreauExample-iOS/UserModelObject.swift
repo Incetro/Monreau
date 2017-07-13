@@ -13,11 +13,6 @@ import Monreau
 
 class UserModelObject: NSManagedObject, Storable {
     
-    var identifier: (key: String, value: IdentifierType) {
-        
-        return ("id", id)
-    }
-    
     @NSManaged var name: String
     @NSManaged var age: Int16
     @NSManaged var id: Int64
