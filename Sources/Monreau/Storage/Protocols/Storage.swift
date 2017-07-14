@@ -12,21 +12,21 @@ import Foundation
 
 public protocol Storage: class {
     
-    associatedtype S: Storable
-    associatedtype K: Hashable
+    associatedtype Model: Storable
+    associatedtype Key: Hashable
     
     /// Create object in storage
     ///
     /// - Parameter configuration: Block for object's configuration
     /// - Returns: Created object
     
-    func create(_ configuration: (S) -> ()) throws -> S
+    func create(_ configuration: (Model) -> ()) throws -> Model
     
     /// Find all objects in storage
     ///
     /// - Returns: All found objects
     
-    func findAll() throws -> [S]
+    func findAll() throws -> [Model]
     
     /// Find objects in storage by filter
     ///
@@ -36,7 +36,7 @@ public protocol Storage: class {
     ///   - sortDescriptors: Descriptors for sorting result
     /// - Returns: Found objects
     
-    func find(by predicate: Predicate, includeSubentities: Bool, sortDescriptors: [SortDescriptor]) throws -> [S]
+    func find(by predicate: Predicate, includeSubentities: Bool, sortDescriptors: [SortDescriptor]) throws -> [Model]
     
     /// Find object in storage by primary key
     ///
@@ -46,7 +46,7 @@ public protocol Storage: class {
     ///   - sortDescriptors: Descriptors for sorting result
     /// - Returns: Found object
     
-    func find(by primaryKey: K,  includeSubentities: Bool, sortDescriptors: [SortDescriptor]) throws -> S?
+    func find(by primaryKey: Key,  includeSubentities: Bool, sortDescriptors: [SortDescriptor]) throws -> Model?
     
     /// Find objects by filter and update with the given configuration
     ///
@@ -55,7 +55,7 @@ public protocol Storage: class {
     ///   - configuration: Block which updates found objects
     /// - Returns: Updated objects
     
-    func update(by predicate: Predicate, _ configuration: ([S]) -> ()) throws -> [S]
+    func update(by predicate: Predicate, _ configuration: ([Model]) -> ()) throws -> [Model]
     
     /// Find objects by filter and update with the given configuration
     ///
@@ -64,7 +64,7 @@ public protocol Storage: class {
     ///   - configuration: Block which updates found objects
     /// - Returns: Updated objects
     
-    func update(by primaryKey: K, configuration: (S?) -> ()) throws -> S?
+    func update(by primaryKey: Key, configuration: (Model?) -> ()) throws -> Model?
     
     /// Update all objects in storage with the given configuration
     ///
@@ -72,19 +72,19 @@ public protocol Storage: class {
     ///   - configuration: Block which updates objects
     /// - Returns: Updated objects
     
-    func updateAll(_ configuration: ([S]) -> ()) throws -> [S]
+    func updateAll(_ configuration: ([Model]) -> ()) throws -> [Model]
     
     /// Remove the given object
     ///
     /// - Parameter object: Given object
     
-    func remove(_ object: S) throws
+    func remove(_ object: Model) throws
     
     /// Remove object by identifier
     ///
     /// - Parameter identifier: identifier
     
-    func remove(by primaryKey: K) throws
+    func remove(by primaryKey: Key) throws
     
     /// Clear storage
     
@@ -109,7 +109,7 @@ extension Storage {
     ///   - identifier: Primary key
     /// - Returns: Found object
     
-    func find(by primaryKey: K) throws -> S? {
+    public func find(by primaryKey: Key) throws -> Model? {
         
         return try self.find(by: primaryKey, includeSubentities: true, sortDescriptors: [])
     }
@@ -120,7 +120,7 @@ extension Storage {
     ///   - predicate: Filter
     /// - Returns: Found objects
     
-    func find(by predicate: Predicate) throws -> [S] {
+    public func find(by predicate: Predicate) throws -> [Model] {
         
         return try self.find(by: predicate, includeSubentities: true, sortDescriptors: [])
     }

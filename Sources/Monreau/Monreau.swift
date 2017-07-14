@@ -12,8 +12,8 @@ import Foundation
 
 public class Monreau<CacheType: Storage> {
     
-    public typealias PKType = CacheType.K
-    public typealias Entity = CacheType.S
+    public typealias PKType = CacheType.Key
+    public typealias Model  = CacheType.Model
     
     /// Storage which provides objects
     
@@ -33,7 +33,7 @@ public class Monreau<CacheType: Storage> {
     /// - Parameter configuration: Block for object's configuration
     /// - Returns: Created object
     
-    @discardableResult public func create(_ configuration: (Entity) -> ()) throws -> Entity {
+    @discardableResult public func create(_ configuration: (Model) -> ()) throws -> Model {
         
         return try self.storage.create(configuration)
     }
@@ -42,7 +42,7 @@ public class Monreau<CacheType: Storage> {
     ///
     /// - Returns: All found objects
     
-    public func findAll() throws -> [Entity] {
+    public func findAll() throws -> [Model] {
         
         return try self.storage.findAll()
     }
@@ -55,7 +55,7 @@ public class Monreau<CacheType: Storage> {
     ///   - sortDescriptors: Descriptors for sorting result
     /// - Returns: Found objects
     
-    public func find(by predicate: Predicate, includeSubentities: Bool = true, sortDescriptors: [SortDescriptor] = []) throws -> [Entity] {
+    public func find(by predicate: Predicate, includeSubentities: Bool = true, sortDescriptors: [SortDescriptor] = []) throws -> [Model] {
         
         return try self.storage.find(by: predicate, includeSubentities: includeSubentities, sortDescriptors: sortDescriptors)
     }
@@ -68,7 +68,7 @@ public class Monreau<CacheType: Storage> {
     ///   - sortDescriptors: Descriptors for sorting result
     /// - Returns: Found object
     
-    public func find(by primaryKey: PKType, includeSubentities: Bool = true, sortDescriptors: [SortDescriptor] = []) throws -> Entity? {
+    public func find(by primaryKey: PKType, includeSubentities: Bool = true, sortDescriptors: [SortDescriptor] = []) throws -> Model? {
         
         return try self.storage.find(by: primaryKey, includeSubentities: includeSubentities, sortDescriptors: sortDescriptors)
     }
@@ -80,7 +80,7 @@ public class Monreau<CacheType: Storage> {
     ///   - configuration: Block which updates found object
     /// - Returns: Updated objects
     
-    @discardableResult public func update(by primaryKey: PKType, configuration: (Entity?) -> ()) throws -> Entity? {
+    @discardableResult public func update(by primaryKey: PKType, configuration: (Model?) -> ()) throws -> Model? {
         
         return try self.storage.update(by: primaryKey, configuration: configuration)
     }
@@ -92,7 +92,7 @@ public class Monreau<CacheType: Storage> {
     ///   - configuration: Block which updates found objects
     /// - Returns: Updated objects
     
-    @discardableResult public func update(by predicate: Predicate, _ configuration: ([Entity]) -> ()) throws -> [Entity] {
+    @discardableResult public func update(by predicate: Predicate, _ configuration: ([Model]) -> ()) throws -> [Model] {
         
         return try self.storage.update(by: predicate, configuration)
     }
@@ -103,7 +103,7 @@ public class Monreau<CacheType: Storage> {
     ///   - configuration: Block which updates objects
     /// - Returns: Updated objects
     
-    @discardableResult public func updateAll(_ configuration: ([Entity]) -> ()) throws -> [Entity] {
+    @discardableResult public func updateAll(_ configuration: ([Model]) -> ()) throws -> [Model] {
         
         return try self.storage.updateAll(configuration)
     }
@@ -112,7 +112,7 @@ public class Monreau<CacheType: Storage> {
     ///
     /// - Parameter object: Given object
     
-    public func remove(_ object: Entity) throws {
+    public func remove(_ object: Model) throws {
         
         try self.storage.remove(object)
     }
@@ -159,7 +159,7 @@ public extension Monreau {
     ///   - failure: Block for errors handling
     /// - Returns: Created object
     
-    public func create(configuration: (Entity) -> (), failure: (Error) -> ()) {
+    public func create(configuration: (Model) -> (), failure: (Error) -> ()) {
         
         do {
             
@@ -178,7 +178,7 @@ public extension Monreau {
     ///   - failure: Block for errors handling
     /// - Returns: Created object
     
-    public func create(configuration: (Entity) -> (), success: (Entity) -> (), failure: (Error) -> ()) {
+    public func create(configuration: (Model) -> (), success: (Model) -> (), failure: (Error) -> ()) {
         
         do {
             
@@ -194,7 +194,7 @@ public extension Monreau {
     ///
     /// - Returns: All found objects
     
-    public func findAll(success: ([Entity]) -> (), failure: (Error) -> ()) {
+    public func findAll(success: ([Model]) -> (), failure: (Error) -> ()) {
         
         do {
             
@@ -214,7 +214,7 @@ public extension Monreau {
     ///   - sortDescriptors: Descriptors for sorting result
     /// - Returns: Found objects
     
-    public func find(by predicate: Predicate, includeSubentities: Bool = true, sortDescriptors: [SortDescriptor] = [], success: ([Entity]) -> (), failure: (Error) -> ()) {
+    public func find(by predicate: Predicate, includeSubentities: Bool = true, sortDescriptors: [SortDescriptor] = [], success: ([Model]) -> (), failure: (Error) -> ()) {
         
         do {
             
@@ -234,7 +234,7 @@ public extension Monreau {
     ///   - sortDescriptors: Descriptors for sorting result
     /// - Returns: Found object
     
-    public func find(by primaryKey: PKType, includeSubentities: Bool = true, sortDescriptors: [SortDescriptor] = [], success: (Entity?) -> (), failure: (Error) -> ()) {
+    public func find(by primaryKey: PKType, includeSubentities: Bool = true, sortDescriptors: [SortDescriptor] = [], success: (Model?) -> (), failure: (Error) -> ()) {
         
         do {
             
@@ -252,7 +252,7 @@ public extension Monreau {
     ///   - configuration: Block which updates objects
     /// - Returns: Updated objects
     
-    public func updateAll(_ configuration: ([Entity]) -> (), failure: (Error) -> ()) {
+    public func updateAll(_ configuration: ([Model]) -> (), failure: (Error) -> ()) {
         
         do {
             
@@ -270,7 +270,7 @@ public extension Monreau {
     ///   - configuration: Block which updates objects
     /// - Returns: Updated objects
     
-    public func updateAll(_ configuration: ([Entity]) -> (), success: ([Entity]) -> (), failure: (Error) -> ()) {
+    public func updateAll(_ configuration: ([Model]) -> (), success: ([Model]) -> (), failure: (Error) -> ()) {
         
         do {
             
@@ -289,7 +289,7 @@ public extension Monreau {
     ///   - configuration: Block which updates found objects
     /// - Returns: Updated objects
     
-    public func update(by predicate: Predicate, _ configuration: ([Entity]) -> (), success: ([Entity]) -> (), failure: (Error) -> ()) {
+    public func update(by predicate: Predicate, _ configuration: ([Model]) -> (), success: ([Model]) -> (), failure: (Error) -> ()) {
         
         do {
             
@@ -308,7 +308,7 @@ public extension Monreau {
     ///   - configuration: Block which updates found objects
     /// - Returns: Updated objects
     
-    public func update(by predicate: Predicate, _ configuration: ([Entity]) -> (), failure: (Error) -> ()) {
+    public func update(by predicate: Predicate, _ configuration: ([Model]) -> (), failure: (Error) -> ()) {
         
         do {
             
@@ -327,7 +327,7 @@ public extension Monreau {
     ///   - configuration: Block which updates found object
     /// - Returns: Updated objects
     
-    public func update(by primaryKey: PKType, configuration: (Entity?) -> (), success: (Entity?) -> (), failure: (Error) -> ()) {
+    public func update(by primaryKey: PKType, configuration: (Model?) -> (), success: (Model?) -> (), failure: (Error) -> ()) {
         
         do {
             
@@ -343,7 +343,7 @@ public extension Monreau {
     ///
     /// - Parameter object: Given object
     
-    public func remove(_ object: Entity, success: () -> (), failure: (Error) -> ()) {
+    public func remove(_ object: Model, success: () -> (), failure: (Error) -> ()) {
         
         do {
             
