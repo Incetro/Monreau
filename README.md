@@ -42,6 +42,9 @@ Monreau is a framework written in Swift that makes it easy for you to make CRUD 
 
 class UserModelObject: NSManagedObject, Storable {
     
+    /// Primary key type
+    typealias PrimaryType = Int64
+    
     @NSManaged var name: String
     @NSManaged var age:  Int16
     @NSManaged var id:   Int64
@@ -80,7 +83,7 @@ try monreau.create { user in
 ### Read
 ```swift
 /// You can use it with closures
-monreau.find(by: id, success: { user in    
+monreau.find(byPrimaryKey: id, success: { user in    
             
     /// Your actions with user
                 
@@ -90,14 +93,14 @@ monreau.find(by: id, success: { user in
 })
 
 /// Or using `try`
-try monreau.find(by: id)
+try monreau.find(byPrimaryKey: id)
 ```
 ### Update
 ```swift
 /// You can use it with closures
 
 /// Primary key updating
-monreau.update(by: id, configuration: { user in
+monreau.update(byPrimaryKey: id, configuration: { user in
 
     /// Change found entity here       
                 
@@ -111,7 +114,7 @@ monreau.update(by: id, configuration: { user in
 })
 
 /// Predicate updating
-monreau.update(by: "age > 5", configuration: { users in
+monreau.update(byPredicate: "age > 5", configuration: { users in
 
     /// Change found entities here       
                 
@@ -125,7 +128,7 @@ monreau.update(by: "age > 5", configuration: { users in
 })
 
 /// Or using `try`
-try monreau.update(by: id, configuration: { user in
+try monreau.update(byPrimaryKey: id, configuration: { user in
     
     /// Change found entity here
 })
@@ -133,7 +136,7 @@ try monreau.update(by: id, configuration: { user in
 ### Delete
 ```swift
 /// You can use it with closures
-monreau.remove(by: id, success: { 
+monreau.remove(byPrimaryKey: id, success: { 
 
     /// Everything is OK
                             
@@ -152,7 +155,7 @@ monreau.removeAll(success: {
 })
 
 /// Or using 'try'
-try monreau.remove(by: id)
+try monreau.remove(byPrimaryKey: id)
 try monreau.removeAll()
 
 ```
