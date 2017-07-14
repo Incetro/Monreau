@@ -47,7 +47,7 @@ public protocol Storage: class {
     ///   - sortDescriptors: Descriptors for sorting result
     /// - Returns: Found object
     
-    func find(by primaryKey: Key,  includeSubentities: Bool, sortDescriptors: [SortDescriptor]) throws -> Model?
+    func find(by primaryKey: Key, includeSubentities: Bool, sortDescriptors: [SortDescriptor]) throws -> Model?
     
     /// Find objects by filter and update with the given configuration
     ///
