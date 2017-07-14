@@ -13,7 +13,8 @@ import Foundation
 public protocol Storage: class {
     
     associatedtype Model: Storable
-    associatedtype Key: Hashable
+    
+    typealias Key = Model.PrimaryType
     
     /// Create object in storage
     ///
