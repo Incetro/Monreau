@@ -83,7 +83,7 @@ extension CoreStorage: Storage {
         return try context.fetch(request)
     }
     
-    public func find(by predicate: Predicate, includeSubentities: Bool, sortDescriptors: [SortDescriptor]) throws -> [S] {
+    public func find(byPredicate predicate: Predicate, includeSubentities: Bool, sortDescriptors: [SortDescriptor]) throws -> [S] {
         
         let request = S.request()
         
@@ -104,11 +104,11 @@ extension CoreStorage: Storage {
         return try self.find(by: request)
     }
     
-    public func find(by primaryKey: S.PrimaryType, includeSubentities: Bool, sortDescriptors: [SortDescriptor]) throws -> Model? {
+    public func find(byPrimaryKey primaryKey: S.PrimaryType, includeSubentities: Bool, sortDescriptors: [SortDescriptor]) throws -> Model? {
         
         let predicate = NSPredicate(format: "\(Model.primaryKey) == %@", argumentArray: [primaryKey])
         
-        let entities = try self.find(by: predicate, includeSubentities: includeSubentities, sortDescriptors: sortDescriptors)
+        let entities = try self.find(byPredicate: predicate, includeSubentities: includeSubentities, sortDescriptors: sortDescriptors)
         
         return entities.first
     }
@@ -118,9 +118,9 @@ extension CoreStorage: Storage {
         return try self.find(by: S.request())
     }
     
-    public func update(by predicate: Predicate, _ configuration: ([S]) -> ()) throws -> [S] {
+    public func update(byPredicate predicate: Predicate, _ configuration: ([S]) -> ()) throws -> [S] {
         
-        let entities = try self.find(by: predicate)
+        let entities = try self.find(byPredicate: predicate)
         
         configuration(entities)
         
@@ -129,9 +129,9 @@ extension CoreStorage: Storage {
         return entities
     }
     
-    public func update(by primaryKey: S.PrimaryType, configuration: (Model?) -> ()) throws -> Model? {
+    public func update(byPrimaryKey primaryKey: S.PrimaryType, configuration: (Model?) -> ()) throws -> Model? {
         
-        let entity = try self.find(by: primaryKey)
+        let entity = try self.find(byPrimaryKey: primaryKey)
         
         configuration(entity)
         
@@ -158,9 +158,9 @@ extension CoreStorage: Storage {
         try self.saveContext()
     }
     
-    public func remove(by predicate: Predicate) throws {
+    public func remove(byPredicate predicate: Predicate) throws {
         
-        let entities = try self.find(by: predicate)
+        let entities = try self.find(byPredicate: predicate)
         
         for object in entities {
             
@@ -168,9 +168,9 @@ extension CoreStorage: Storage {
         }
     }
     
-    public func remove(by primaryKey: S.PrimaryType) throws {
+    public func remove(byPrimaryKey primaryKey: S.PrimaryType) throws {
         
-        if let object = try self.find(by: primaryKey) {
+        if let object = try self.find(byPrimaryKey: primaryKey) {
             
             try self.remove(object)
         }

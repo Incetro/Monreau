@@ -37,7 +37,7 @@ public protocol Storage: class {
     ///   - sortDescriptors: Descriptors for sorting result
     /// - Returns: Found objects
     
-    func find(by predicate: Predicate, includeSubentities: Bool, sortDescriptors: [SortDescriptor]) throws -> [Model]
+    func find(byPredicate predicate: Predicate, includeSubentities: Bool, sortDescriptors: [SortDescriptor]) throws -> [Model]
     
     /// Find object in storage by primary key
     ///
@@ -47,7 +47,7 @@ public protocol Storage: class {
     ///   - sortDescriptors: Descriptors for sorting result
     /// - Returns: Found object
     
-    func find(by primaryKey: Key, includeSubentities: Bool, sortDescriptors: [SortDescriptor]) throws -> Model?
+    func find(byPrimaryKey primaryKey: Key, includeSubentities: Bool, sortDescriptors: [SortDescriptor]) throws -> Model?
     
     /// Find objects by filter and update with the given configuration
     ///
@@ -56,7 +56,7 @@ public protocol Storage: class {
     ///   - configuration: Block which updates found objects
     /// - Returns: Updated objects
     
-    func update(by predicate: Predicate, _ configuration: ([Model]) -> ()) throws -> [Model]
+    func update(byPredicate predicate: Predicate, _ configuration: ([Model]) -> ()) throws -> [Model]
     
     /// Find objects by filter and update with the given configuration
     ///
@@ -65,7 +65,7 @@ public protocol Storage: class {
     ///   - configuration: Block which updates found objects
     /// - Returns: Updated objects
     
-    func update(by primaryKey: Key, configuration: (Model?) -> ()) throws -> Model?
+    func update(byPrimaryKey primaryKey: Key, configuration: (Model?) -> ()) throws -> Model?
     
     /// Update all objects in storage with the given configuration
     ///
@@ -85,7 +85,7 @@ public protocol Storage: class {
     ///
     /// - Parameter identifier: identifier
     
-    func remove(by primaryKey: Key) throws
+    func remove(byPrimaryKey primaryKey: Key) throws
     
     /// Clear storage
     
@@ -95,7 +95,7 @@ public protocol Storage: class {
     ///
     /// - Parameter predicate: Filter for finding object
     
-    func remove(by predicate: Predicate) throws
+    func remove(byPredicate predicate: Predicate) throws
     
     /// Save changes in storage
     
@@ -110,9 +110,9 @@ extension Storage {
     ///   - identifier: Primary key
     /// - Returns: Found object
     
-    public func find(by primaryKey: Key) throws -> Model? {
+    public func find(byPrimaryKey primaryKey: Key) throws -> Model? {
         
-        return try self.find(by: primaryKey, includeSubentities: true, sortDescriptors: [])
+        return try self.find(byPrimaryKey: primaryKey, includeSubentities: true, sortDescriptors: [])
     }
     
     /// Find objects in storage by filter
@@ -121,8 +121,8 @@ extension Storage {
     ///   - predicate: Filter
     /// - Returns: Found objects
     
-    public func find(by predicate: Predicate) throws -> [Model] {
+    public func find(byPredicate predicate: Predicate) throws -> [Model] {
         
-        return try self.find(by: predicate, includeSubentities: true, sortDescriptors: [])
+        return try self.find(byPredicate: predicate, includeSubentities: true, sortDescriptors: [])
     }
 }

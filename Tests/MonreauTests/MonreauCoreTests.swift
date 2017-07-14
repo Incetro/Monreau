@@ -141,7 +141,7 @@ class MonreauCoreTests: XCTestCase {
         
         do {
             
-            var objects = try monreau.find(by: "id > 5")
+            var objects = try monreau.find(byPredicate: "id > 5")
             
             objects.sort(by: { (f, s) -> Bool in
                 
@@ -187,7 +187,7 @@ class MonreauCoreTests: XCTestCase {
         
         do {
             
-            var objects = try monreau.find(by: "id > 5", includeSubentities: true, sortDescriptors: [SortDescriptor(withKey: "age", ascending: false)])
+            var objects = try monreau.find(byPredicate: "id > 5", includeSubentities: true, sortDescriptors: [SortDescriptor(withKey: "age", ascending: false)])
             
             XCTAssertEqual(objects.count, 5)
             
@@ -218,7 +218,7 @@ class MonreauCoreTests: XCTestCase {
         
         do {
             
-            let object = try self.monreau.find(by: 1)
+            let object = try self.monreau.find(byPrimaryKey: 1)
             
             XCTAssertNotNil(object)
             
@@ -296,7 +296,7 @@ class MonreauCoreTests: XCTestCase {
         
         do {
             
-            try self.monreau.update(by: "id < 6") { objects in
+            try self.monreau.update(byPredicate: "id < 6") { objects in
                 
                 let objects = objects.sorted(by: { (f, s) -> Bool in
                     
@@ -310,7 +310,7 @@ class MonreauCoreTests: XCTestCase {
                 }
             }
             
-            try self.monreau.find(by: "id < 6").forEach {
+            try self.monreau.find(byPredicate: "id < 6").forEach {
                 
                 XCTAssertEqual($0.age, 17)
                 XCTAssertEqual($0.name, "wed")
@@ -343,7 +343,7 @@ class MonreauCoreTests: XCTestCase {
         
         do {
             
-            try self.monreau.remove(by: "id < 6")
+            try self.monreau.remove(byPredicate: "id < 6")
             
             XCTAssertEqual(try self.monreau.findAll().count, 5)
             
@@ -364,7 +364,7 @@ class MonreauCoreTests: XCTestCase {
         
         do {
             
-            try self.monreau.remove(by: 1)
+            try self.monreau.remove(byPrimaryKey: 1)
             
             XCTAssertEqual(try self.monreau.findAll().count, 0)
             

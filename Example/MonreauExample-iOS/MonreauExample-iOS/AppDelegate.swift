@@ -31,7 +31,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             user.age  = 20
             user.id   = 1
             
-            monreau.find(by: 1, success: { (user) in
+            monreau.find(byPrimaryKey: 1, success: { (user) in
                 
                 if let user = user {
                     
@@ -49,7 +49,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                         print("Id: \(user.id)")
                         print()
                         
-                        monreau.remove(by: 1, success: {
+                        monreau.remove(byPrimaryKey: 1, success: {
                             
                             monreau.findAll(success: { (users) in
                                 
@@ -92,7 +92,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 user.id   = 1
             }
             
-            if let user = try monreau.find(by: 1) {
+            if let user = try monreau.find(byPrimaryKey: 1) {
                 
                 print("Name: \(user.name)")
                 print("Age: \(user.age)")
@@ -108,7 +108,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 print("Id: \(user.id)")
                 print()
                 
-                try monreau.remove(by: 1)
+                try monreau.remove(byPrimaryKey: 1)
                 
                 print(try monreau.findAll())
             }
