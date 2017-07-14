@@ -12,6 +12,8 @@ import CoreData
 
 public protocol Storable: class {
     
+    associatedtype PrimaryType: Hashable
+    
     /// Storable entity name
     
     static var entityName: String { get }

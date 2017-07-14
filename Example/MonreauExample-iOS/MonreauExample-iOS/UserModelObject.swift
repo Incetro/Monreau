@@ -12,6 +12,8 @@ import Monreau
 // MARK: - UserModelObject
 
 class UserModelObject: NSManagedObject, Storable {
+    typealias PrimaryType = Int64
+
     
     @NSManaged var name: String
     @NSManaged var age: Int16

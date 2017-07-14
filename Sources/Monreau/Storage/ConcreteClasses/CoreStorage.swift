@@ -10,10 +10,10 @@ import CoreData
 
 // MARK: - CoreStorage
 
-public class CoreStorage<Model, PrimaryKey: Hashable> where Model: NSManagedObject, Model: Storable {
+public class CoreStorage<Model> where Model: NSManagedObject, Model: Storable {
     
     public typealias S = Model
-    public typealias K = PrimaryKey
+    public typealias K = Model.PrimaryType
     
     private let persistentStoreCoordinator: NSPersistentStoreCoordinator
     
@@ -25,7 +25,7 @@ public class CoreStorage<Model, PrimaryKey: Hashable> where Model: NSManagedObje
     ///
     /// - Parameter context: CoreData context
     
-    public init(with config: CoreStorageConfig, primaryKeyType: PrimaryKey.Type) throws {
+    public init(with config: CoreStorageConfig) throws {
         
         guard let url = Bundle(for: Model.self).url(forResource: config.containerName, withExtension: "momd") else {
             
@@ -50,9 +50,9 @@ public class CoreStorage<Model, PrimaryKey: Hashable> where Model: NSManagedObje
         context.persistentStoreCoordinator = persistentStoreCoordinator
     }
     
-    public convenience init(with config: CoreStorageConfig, model: Model.Type, primaryKeyType: PrimaryKey.Type) throws {
+    public convenience init(with config: CoreStorageConfig, model: Model.Type) throws {
         
-        try self.init(with: config, primaryKeyType: primaryKeyType)
+        try self.init(with: config)
     }
     
     /// Save changes in context
@@ -104,7 +104,7 @@ extension CoreStorage: Storage {
         return try self.find(by: request)
     }
     
-    public func find(by primaryKey: PrimaryKey, includeSubentities: Bool, sortDescriptors: [SortDescriptor]) throws -> Model? {
+    public func find(by primaryKey: S.PrimaryType, includeSubentities: Bool, sortDescriptors: [SortDescriptor]) throws -> Model? {
         
         let predicate = NSPredicate(format: "\(Model.primaryKey) == %@", argumentArray: [primaryKey])
         
@@ -129,7 +129,7 @@ extension CoreStorage: Storage {
         return entities
     }
     
-    public func update(by primaryKey: PrimaryKey, configuration: (Model?) -> ()) throws -> Model? {
+    public func update(by primaryKey: S.PrimaryType, configuration: (Model?) -> ()) throws -> Model? {
         
         let entity = try self.find(by: primaryKey)
         
@@ -168,7 +168,7 @@ extension CoreStorage: Storage {
         }
     }
     
-    public func remove(by primaryKey: PrimaryKey) throws {
+    public func remove(by primaryKey: S.PrimaryType) throws {
         
         if let object = try self.find(by: primaryKey) {
             

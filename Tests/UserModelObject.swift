@@ -12,6 +12,8 @@ import CoreData
 
 public class UserModelObject: NSManagedObject, Storable {
     
+    public typealias PrimaryType = Int64
+    
     @NSManaged public var name: String
     @NSManaged public var age: Int16
     @NSManaged public var id: Int64
