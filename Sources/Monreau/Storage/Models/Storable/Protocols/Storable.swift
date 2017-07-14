@@ -8,10 +8,6 @@
 
 import CoreData
 
-/// Identifier type (which means primary key)
-
-public typealias PrimaryKeyType = Int64
-
 // MARK: - Storable
 
 public protocol Storable: class {

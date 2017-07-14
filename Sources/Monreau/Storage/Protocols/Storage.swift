@@ -12,9 +12,8 @@ import Foundation
 
 public protocol Storage: class {
     
-    // Обозреваемый тип
-    
     associatedtype S: Storable
+    associatedtype K: Hashable
     
     /// Create object in storage
     ///
@@ -47,7 +46,7 @@ public protocol Storage: class {
     ///   - sortDescriptors: Descriptors for sorting result
     /// - Returns: Found object
     
-    func find(by primaryKey: PrimaryKeyType,  includeSubentities: Bool, sortDescriptors: [SortDescriptor]) throws -> S?
+    func find(by primaryKey: K,  includeSubentities: Bool, sortDescriptors: [SortDescriptor]) throws -> S?
     
     /// Find objects by filter and update with the given configuration
     ///
@@ -65,7 +64,7 @@ public protocol Storage: class {
     ///   - configuration: Block which updates found objects
     /// - Returns: Updated objects
     
-    func update(by primaryKey: PrimaryKeyType, configuration: (S?) -> ()) throws -> S?
+    func update(by primaryKey: K, configuration: (S?) -> ()) throws -> S?
     
     /// Update all objects in storage with the given configuration
     ///
@@ -85,7 +84,7 @@ public protocol Storage: class {
     ///
     /// - Parameter identifier: identifier
     
-    func remove(by primaryKey: PrimaryKeyType) throws
+    func remove(by primaryKey: K) throws
     
     /// Clear storage
     
@@ -110,7 +109,7 @@ extension Storage {
     ///   - identifier: Primary key
     /// - Returns: Found object
     
-    func find(by primaryKey: PrimaryKeyType) throws -> S? {
+    func find(by primaryKey: K) throws -> S? {
         
         return try self.find(by: primaryKey, includeSubentities: true, sortDescriptors: [])
     }

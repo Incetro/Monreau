@@ -10,9 +10,10 @@ import CoreData
 
 // MARK: - CoreStorage
 
-public class CoreStorage<M> where M: NSManagedObject, M: Storable {
+public class CoreStorage<Model, PrimaryKey: Hashable> where Model: NSManagedObject, Model: Storable {
     
-    public typealias S = M
+    public typealias S = Model
+    public typealias K = PrimaryKey
     
     private let persistentStoreCoordinator: NSPersistentStoreCoordinator
     
@@ -24,9 +25,9 @@ public class CoreStorage<M> where M: NSManagedObject, M: Storable {
     ///
     /// - Parameter context: CoreData context
     
-    public init(with config: CoreStorageConfig) throws {
+    public init(with config: CoreStorageConfig, primaryKeyType: PrimaryKey.Type) throws {
         
-        guard let url = Bundle(for: M.self).url(forResource: config.containerName, withExtension: "momd") else {
+        guard let url = Bundle(for: Model.self).url(forResource: config.containerName, withExtension: "momd") else {
             
             throw NSError(domain: "com.incetro.Monreau.CoreStorage", code: 600, userInfo: [NSLocalizedDescriptionKey: "Cannot create url for container '\(config.containerName)'"])
         }
@@ -49,9 +50,9 @@ public class CoreStorage<M> where M: NSManagedObject, M: Storable {
         context.persistentStoreCoordinator = persistentStoreCoordinator
     }
     
-    public convenience init(with config: CoreStorageConfig, model: M.Type) throws {
+    public convenience init(with config: CoreStorageConfig, model: Model.Type, primaryKeyType: PrimaryKey.Type) throws {
         
-        try self.init(with: config)
+        try self.init(with: config, primaryKeyType: primaryKeyType)
     }
     
     /// Save changes in context
@@ -103,9 +104,9 @@ extension CoreStorage: Storage {
         return try self.find(by: request)
     }
     
-    public func find(by primaryKey: PrimaryKeyType, includeSubentities: Bool, sortDescriptors: [SortDescriptor]) throws -> M? {
+    public func find(by primaryKey: PrimaryKey, includeSubentities: Bool, sortDescriptors: [SortDescriptor]) throws -> Model? {
         
-        let predicate = NSPredicate(format: "\(M.primaryKey) = %@", NSNumber(value: primaryKey))
+        let predicate = NSPredicate(format: "\(Model.primaryKey) == %@", argumentArray: [primaryKey])
         
         let entities = try self.find(by: predicate, includeSubentities: includeSubentities, sortDescriptors: sortDescriptors)
         
@@ -128,7 +129,7 @@ extension CoreStorage: Storage {
         return entities
     }
     
-    public func update(by primaryKey: PrimaryKeyType, configuration: (M?) -> ()) throws -> M? {
+    public func update(by primaryKey: PrimaryKey, configuration: (Model?) -> ()) throws -> Model? {
         
         let entity = try self.find(by: primaryKey)
         
@@ -139,7 +140,7 @@ extension CoreStorage: Storage {
         return entity
     }
     
-    public func updateAll(_ configuration: ([M]) -> ()) throws -> [M] {
+    public func updateAll(_ configuration: ([Model]) -> ()) throws -> [Model] {
         
         let entities = try self.findAll()
         
@@ -167,7 +168,7 @@ extension CoreStorage: Storage {
         }
     }
     
-    public func remove(by primaryKey: PrimaryKeyType) throws {
+    public func remove(by primaryKey: PrimaryKey) throws {
         
         if let object = try self.find(by: primaryKey) {
             

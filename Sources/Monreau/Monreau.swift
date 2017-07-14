@@ -12,6 +12,9 @@ import Foundation
 
 public class Monreau<CacheType: Storage> {
     
+    public typealias PKType = CacheType.K
+    public typealias Entity = CacheType.S
+    
     /// Storage which provides objects
     
     fileprivate var storage: CacheType
@@ -30,7 +33,7 @@ public class Monreau<CacheType: Storage> {
     /// - Parameter configuration: Block for object's configuration
     /// - Returns: Created object
     
-    @discardableResult public func create(_ configuration: (CacheType.S) -> ()) throws -> CacheType.S {
+    @discardableResult public func create(_ configuration: (Entity) -> ()) throws -> Entity {
         
         return try self.storage.create(configuration)
     }
@@ -39,7 +42,7 @@ public class Monreau<CacheType: Storage> {
     ///
     /// - Returns: All found objects
     
-    public func findAll() throws -> [CacheType.S] {
+    public func findAll() throws -> [Entity] {
         
         return try self.storage.findAll()
     }
@@ -52,7 +55,7 @@ public class Monreau<CacheType: Storage> {
     ///   - sortDescriptors: Descriptors for sorting result
     /// - Returns: Found objects
     
-    public func find(by predicate: Predicate, includeSubentities: Bool = true, sortDescriptors: [SortDescriptor] = []) throws -> [CacheType.S] {
+    public func find(by predicate: Predicate, includeSubentities: Bool = true, sortDescriptors: [SortDescriptor] = []) throws -> [Entity] {
         
         return try self.storage.find(by: predicate, includeSubentities: includeSubentities, sortDescriptors: sortDescriptors)
     }
@@ -65,7 +68,7 @@ public class Monreau<CacheType: Storage> {
     ///   - sortDescriptors: Descriptors for sorting result
     /// - Returns: Found object
     
-    public func find(by primaryKey: PrimaryKeyType, includeSubentities: Bool = true, sortDescriptors: [SortDescriptor] = []) throws -> CacheType.S? {
+    public func find(by primaryKey: PKType, includeSubentities: Bool = true, sortDescriptors: [SortDescriptor] = []) throws -> Entity? {
         
         return try self.storage.find(by: primaryKey, includeSubentities: includeSubentities, sortDescriptors: sortDescriptors)
     }
@@ -77,7 +80,7 @@ public class Monreau<CacheType: Storage> {
     ///   - configuration: Block which updates found object
     /// - Returns: Updated objects
     
-    @discardableResult public func update(by primaryKey: PrimaryKeyType, configuration: (CacheType.S?) -> ()) throws -> CacheType.S? {
+    @discardableResult public func update(by primaryKey: PKType, configuration: (Entity?) -> ()) throws -> Entity? {
         
         return try self.storage.update(by: primaryKey, configuration: configuration)
     }
@@ -89,7 +92,7 @@ public class Monreau<CacheType: Storage> {
     ///   - configuration: Block which updates found objects
     /// - Returns: Updated objects
     
-    @discardableResult public func update(by predicate: Predicate, _ configuration: ([CacheType.S]) -> ()) throws -> [CacheType.S] {
+    @discardableResult public func update(by predicate: Predicate, _ configuration: ([Entity]) -> ()) throws -> [Entity] {
         
         return try self.storage.update(by: predicate, configuration)
     }
@@ -100,7 +103,7 @@ public class Monreau<CacheType: Storage> {
     ///   - configuration: Block which updates objects
     /// - Returns: Updated objects
     
-    @discardableResult public func updateAll(_ configuration: ([CacheType.S]) -> ()) throws -> [CacheType.S] {
+    @discardableResult public func updateAll(_ configuration: ([Entity]) -> ()) throws -> [Entity] {
         
         return try self.storage.updateAll(configuration)
     }
@@ -109,7 +112,7 @@ public class Monreau<CacheType: Storage> {
     ///
     /// - Parameter object: Given object
     
-    public func remove(_ object: CacheType.S) throws {
+    public func remove(_ object: Entity) throws {
         
         try self.storage.remove(object)
     }
@@ -134,7 +137,7 @@ public class Monreau<CacheType: Storage> {
     ///
     /// - Parameter identifier: primary key
     
-    public func remove(by primaryKey: PrimaryKeyType) throws {
+    public func remove(by primaryKey: PKType) throws {
         
         try self.storage.remove(by: primaryKey)
     }
@@ -156,7 +159,7 @@ public extension Monreau {
     ///   - failure: Block for errors handling
     /// - Returns: Created object
     
-    public func create(configuration: (CacheType.S) -> (), failure: (Error) -> ()) {
+    public func create(configuration: (Entity) -> (), failure: (Error) -> ()) {
         
         do {
             
@@ -175,7 +178,7 @@ public extension Monreau {
     ///   - failure: Block for errors handling
     /// - Returns: Created object
     
-    public func create(configuration: (CacheType.S) -> (), success: (CacheType.S) -> (), failure: (Error) -> ()) {
+    public func create(configuration: (Entity) -> (), success: (Entity) -> (), failure: (Error) -> ()) {
         
         do {
             
@@ -191,7 +194,7 @@ public extension Monreau {
     ///
     /// - Returns: All found objects
     
-    public func findAll(success: ([CacheType.S]) -> (), failure: (Error) -> ()) {
+    public func findAll(success: ([Entity]) -> (), failure: (Error) -> ()) {
         
         do {
             
@@ -211,7 +214,7 @@ public extension Monreau {
     ///   - sortDescriptors: Descriptors for sorting result
     /// - Returns: Found objects
     
-    public func find(by predicate: Predicate, includeSubentities: Bool = true, sortDescriptors: [SortDescriptor] = [], success: ([CacheType.S]) -> (), failure: (Error) -> ()) {
+    public func find(by predicate: Predicate, includeSubentities: Bool = true, sortDescriptors: [SortDescriptor] = [], success: ([Entity]) -> (), failure: (Error) -> ()) {
         
         do {
             
@@ -231,7 +234,7 @@ public extension Monreau {
     ///   - sortDescriptors: Descriptors for sorting result
     /// - Returns: Found object
     
-    public func find(by primaryKey: PrimaryKeyType, includeSubentities: Bool = true, sortDescriptors: [SortDescriptor] = [], success: (CacheType.S?) -> (), failure: (Error) -> ()) {
+    public func find(by primaryKey: PKType, includeSubentities: Bool = true, sortDescriptors: [SortDescriptor] = [], success: (Entity?) -> (), failure: (Error) -> ()) {
         
         do {
             
@@ -249,7 +252,7 @@ public extension Monreau {
     ///   - configuration: Block which updates objects
     /// - Returns: Updated objects
     
-    public func updateAll(_ configuration: ([CacheType.S]) -> (), failure: (Error) -> ()) {
+    public func updateAll(_ configuration: ([Entity]) -> (), failure: (Error) -> ()) {
         
         do {
             
@@ -267,7 +270,7 @@ public extension Monreau {
     ///   - configuration: Block which updates objects
     /// - Returns: Updated objects
     
-    public func updateAll(_ configuration: ([CacheType.S]) -> (), success: ([CacheType.S]) -> (), failure: (Error) -> ()) {
+    public func updateAll(_ configuration: ([Entity]) -> (), success: ([Entity]) -> (), failure: (Error) -> ()) {
         
         do {
             
@@ -286,7 +289,7 @@ public extension Monreau {
     ///   - configuration: Block which updates found objects
     /// - Returns: Updated objects
     
-    public func update(by predicate: Predicate, _ configuration: ([CacheType.S]) -> (), success: ([CacheType.S]) -> (), failure: (Error) -> ()) {
+    public func update(by predicate: Predicate, _ configuration: ([Entity]) -> (), success: ([Entity]) -> (), failure: (Error) -> ()) {
         
         do {
             
@@ -305,7 +308,7 @@ public extension Monreau {
     ///   - configuration: Block which updates found objects
     /// - Returns: Updated objects
     
-    public func update(by predicate: Predicate, _ configuration: ([CacheType.S]) -> (), failure: (Error) -> ()) {
+    public func update(by predicate: Predicate, _ configuration: ([Entity]) -> (), failure: (Error) -> ()) {
         
         do {
             
@@ -324,7 +327,7 @@ public extension Monreau {
     ///   - configuration: Block which updates found object
     /// - Returns: Updated objects
     
-    public func update(by primaryKey: PrimaryKeyType, configuration: (CacheType.S?) -> (), success: (CacheType.S?) -> (), failure: (Error) -> ()) {
+    public func update(by primaryKey: PKType, configuration: (Entity?) -> (), success: (Entity?) -> (), failure: (Error) -> ()) {
         
         do {
             
@@ -340,7 +343,7 @@ public extension Monreau {
     ///
     /// - Parameter object: Given object
     
-    public func remove(_ object: CacheType.S, success: () -> (), failure: (Error) -> ()) {
+    public func remove(_ object: Entity, success: () -> (), failure: (Error) -> ()) {
         
         do {
             
@@ -392,7 +395,7 @@ public extension Monreau {
     ///
     /// - Parameter identifier: primary key
     
-    public func remove(by primaryKey: PrimaryKeyType, success: () -> (), failure: (Error) -> ()) {
+    public func remove(by primaryKey: PKType, success: () -> (), failure: (Error) -> ()) {
         
         do {
             
