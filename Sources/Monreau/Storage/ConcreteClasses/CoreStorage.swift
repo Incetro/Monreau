@@ -15,8 +15,6 @@ public class CoreStorage<Model> where Model: NSManagedObject, Model: Storable {
     public typealias S = Model
     public typealias K = Model.PrimaryType
     
-    private let persistentStoreCoordinator: NSPersistentStoreCoordinator
-    
     /// CoreData context
     
     fileprivate var context: NSManagedObjectContext
@@ -25,34 +23,14 @@ public class CoreStorage<Model> where Model: NSManagedObject, Model: Storable {
     ///
     /// - Parameter context: CoreData context
     
-    public init(with config: CoreStorageConfig) throws {
+    public init(with config: CoreStorageConfig) {
         
-        guard let url = Bundle(for: Model.self).url(forResource: config.containerName, withExtension: "momd") else {
-            
-            throw NSError(domain: "com.incetro.Monreau.CoreStorage", code: 600, userInfo: [NSLocalizedDescriptionKey: "Cannot create url for container '\(config.containerName)'"])
-        }
-        
-        guard let model = NSManagedObjectModel(contentsOf: url) else {
-            
-            throw NSError(domain: "com.incetro.Monreau.CoreStorage", code: 601, userInfo: [NSLocalizedDescriptionKey: "Cannot create model for url '\(url)'"])
-        }
-        
-        guard let libraryDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).last else {
-         
-            throw NSError(domain: "com.incetro.Monreau.CoreStorage", code: 602, userInfo: [NSLocalizedDescriptionKey: "Cannot create storage directory"])
-        }
-        
-        persistentStoreCoordinator = NSPersistentStoreCoordinator(managedObjectModel: model)
-        
-        try persistentStoreCoordinator.addPersistentStore(ofType: config.storeType, configurationName: nil, at: libraryDirectory.appendingPathComponent("\(config.containerName).sqlite"), options: config.options)
-        
-        context = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
-        context.persistentStoreCoordinator = persistentStoreCoordinator
+        self.context = CoreDataConfigurator.setup(withBundle: Bundle(for: Model.self), config: config)
     }
     
-    public convenience init(with config: CoreStorageConfig, model: Model.Type) throws {
+    public convenience init(with config: CoreStorageConfig, model: Model.Type) {
         
-        try self.init(with: config)
+        self.init(with: config)
     }
     
     /// Save changes in context

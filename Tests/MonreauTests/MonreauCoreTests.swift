@@ -50,19 +50,7 @@ class MonreauCoreTests: XCTestCase {
         return managedObjectContext
     }
     
-    lazy var monreau: Monreau<CoreStorage<UserModelObject>> = {
-        
-        do {
-            
-            let storage = try CoreStorage<UserModelObject>(with: CoreStorageConfig(containerName: "Monreau", storeType: .memory))
-            
-            return Monreau(with: storage)
-            
-        } catch {
-            
-            fatalError(error.localizedDescription)
-        }
-    }()
+    var monreau = Monreau(with: CoreStorage<UserModelObject>(with: CoreStorageConfig(containerName: "Monreau", storeType: .memory)))
     
     func testThatMonreauCanCreateObject() {
         

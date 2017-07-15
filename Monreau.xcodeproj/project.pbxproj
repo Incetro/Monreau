@@ -62,6 +62,10 @@
 		3358A8C31F0C06BD00D4BD9C /* NSManagedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3358A8B81F0C06BD00D4BD9C /* NSManagedObject.swift */; };
 		3358A8C41F0C06BD00D4BD9C /* Storable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3358A8BA1F0C06BD00D4BD9C /* Storable.swift */; };
 		3358A8C51F0C06BD00D4BD9C /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3358A8BC1F0C06BD00D4BD9C /* Storage.swift */; };
+		3358B69E1F1A759C00CBD8CF /* CoreDataConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3358B69D1F1A759C00CBD8CF /* CoreDataConfigurator.swift */; };
+		3358B69F1F1A759C00CBD8CF /* CoreDataConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3358B69D1F1A759C00CBD8CF /* CoreDataConfigurator.swift */; };
+		3358B6A01F1A759C00CBD8CF /* CoreDataConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3358B69D1F1A759C00CBD8CF /* CoreDataConfigurator.swift */; };
+		3358B6A11F1A759C00CBD8CF /* CoreDataConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3358B69D1F1A759C00CBD8CF /* CoreDataConfigurator.swift */; };
 		336041331F17C7470038BE3C /* CoreStorageConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 336041321F17C7470038BE3C /* CoreStorageConfig.swift */; };
 		336041351F17C7FA0038BE3C /* CoreStoreType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 336041341F17C7FA0038BE3C /* CoreStoreType.swift */; };
 		336041361F17C82D0038BE3C /* CoreStorageConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 336041321F17C7470038BE3C /* CoreStorageConfig.swift */; };
@@ -120,6 +124,7 @@
 		3358A8B81F0C06BD00D4BD9C /* NSManagedObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSManagedObject.swift; sourceTree = "<group>"; };
 		3358A8BA1F0C06BD00D4BD9C /* Storable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storable.swift; sourceTree = "<group>"; };
 		3358A8BC1F0C06BD00D4BD9C /* Storage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
+		3358B69D1F1A759C00CBD8CF /* CoreDataConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataConfigurator.swift; sourceTree = "<group>"; };
 		336041321F17C7470038BE3C /* CoreStorageConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreStorageConfig.swift; sourceTree = "<group>"; };
 		336041341F17C7FA0038BE3C /* CoreStoreType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreStoreType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -263,6 +268,7 @@
 		3358A8AB1F0C06BD00D4BD9C /* ConcreteClasses */ = {
 			isa = PBXGroup;
 			children = (
+				3358B69C1F1A756900CBD8CF /* CoreData */,
 				3358A8AC1F0C06BD00D4BD9C /* CoreStorage.swift */,
 			);
 			path = ConcreteClasses;
@@ -344,6 +350,14 @@
 				3358A8BC1F0C06BD00D4BD9C /* Storage.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		3358B69C1F1A756900CBD8CF /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				3358B69D1F1A759C00CBD8CF /* CoreDataConfigurator.swift */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 		336041311F17C7390038BE3C /* Config */ = {
@@ -667,6 +681,7 @@
 				3358A8BE1F0C06BD00D4BD9C /* CoreStorage.swift in Sources */,
 				3358A8C21F0C06BD00D4BD9C /* Predicate.swift in Sources */,
 				3358A8BD1F0C06BD00D4BD9C /* Monreau.swift in Sources */,
+				3358B69E1F1A759C00CBD8CF /* CoreDataConfigurator.swift in Sources */,
 				3331E6F91F0D22C1007BE883 /* UserModelObject.swift in Sources */,
 				3358A8C31F0C06BD00D4BD9C /* NSManagedObject.swift in Sources */,
 				3358A8C11F0C06BD00D4BD9C /* String.swift in Sources */,
@@ -687,6 +702,7 @@
 				3331E6A71F0CFCBB007BE883 /* CoreStorage.swift in Sources */,
 				3331E6AB1F0CFCBB007BE883 /* Predicate.swift in Sources */,
 				3331E6A61F0CFCBB007BE883 /* Monreau.swift in Sources */,
+				3358B69F1F1A759C00CBD8CF /* CoreDataConfigurator.swift in Sources */,
 				3331E6F81F0D22C0007BE883 /* UserModelObject.swift in Sources */,
 				3331E6AC1F0CFCBB007BE883 /* NSManagedObject.swift in Sources */,
 				3331E6AA1F0CFCBB007BE883 /* String.swift in Sources */,
@@ -707,6 +723,7 @@
 				3331E69E1F0CFCBB007BE883 /* CoreStorage.swift in Sources */,
 				3331E6A21F0CFCBB007BE883 /* Predicate.swift in Sources */,
 				3331E69D1F0CFCBB007BE883 /* Monreau.swift in Sources */,
+				3358B6A01F1A759C00CBD8CF /* CoreDataConfigurator.swift in Sources */,
 				3331E6F71F0D22C0007BE883 /* UserModelObject.swift in Sources */,
 				3331E6A31F0CFCBB007BE883 /* NSManagedObject.swift in Sources */,
 				3331E6A11F0CFCBB007BE883 /* String.swift in Sources */,
@@ -727,6 +744,7 @@
 				3331E6951F0CFCBA007BE883 /* CoreStorage.swift in Sources */,
 				3331E6991F0CFCBA007BE883 /* Predicate.swift in Sources */,
 				3331E6941F0CFCBA007BE883 /* Monreau.swift in Sources */,
+				3358B6A11F1A759C00CBD8CF /* CoreDataConfigurator.swift in Sources */,
 				3331E6F61F0D22C0007BE883 /* UserModelObject.swift in Sources */,
 				3331E69A1F0CFCBA007BE883 /* NSManagedObject.swift in Sources */,
 				3331E6981F0CFCBA007BE883 /* String.swift in Sources */,
