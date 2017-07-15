@@ -67,11 +67,11 @@ public class CoreStorage<Model> where Model: NSManagedObject, Model: Storable {
 
 extension CoreStorage: Storage {
     
-    public func create(_ configuration: (S) -> ()) throws -> S {
+    public func create(_ configuration: (S) throws -> ()) throws -> S {
         
         let modelObject = try S(in: context)
         
-        configuration(modelObject)
+        try configuration(modelObject)
         
         try self.saveContext()
         
@@ -118,33 +118,33 @@ extension CoreStorage: Storage {
         return try self.find(by: S.request())
     }
     
-    public func update(byPredicate predicate: Predicate, _ configuration: ([S]) -> ()) throws -> [S] {
+    public func update(byPredicate predicate: Predicate, _ configuration: ([S]) throws -> ()) throws -> [S] {
         
         let entities = try self.find(byPredicate: predicate)
         
-        configuration(entities)
+        try configuration(entities)
         
         try self.saveContext()
         
         return entities
     }
     
-    public func update(byPrimaryKey primaryKey: S.PrimaryType, configuration: (Model?) -> ()) throws -> Model? {
+    public func update(byPrimaryKey primaryKey: S.PrimaryType, configuration: (Model?) throws -> ()) throws -> Model? {
         
         let entity = try self.find(byPrimaryKey: primaryKey)
         
-        configuration(entity)
+        try configuration(entity)
         
         try self.saveContext()
         
         return entity
     }
     
-    public func updateAll(_ configuration: ([Model]) -> ()) throws -> [Model] {
+    public func updateAll(_ configuration: ([Model]) throws -> ()) throws -> [Model] {
         
         let entities = try self.findAll()
         
-        configuration(entities)
+        try configuration(entities)
         
         try self.saveContext()
         

@@ -21,7 +21,7 @@ public protocol Storage: class {
     /// - Parameter configuration: Block for object's configuration
     /// - Returns: Created object
     
-    func create(_ configuration: (Model) -> ()) throws -> Model
+    func create(_ configuration: (Model) throws -> ()) throws -> Model
     
     /// Find all objects in storage
     ///
@@ -56,7 +56,7 @@ public protocol Storage: class {
     ///   - configuration: Block which updates found objects
     /// - Returns: Updated objects
     
-    func update(byPredicate predicate: Predicate, _ configuration: ([Model]) -> ()) throws -> [Model]
+    func update(byPredicate predicate: Predicate, _ configuration: ([Model]) throws -> ()) throws -> [Model]
     
     /// Find objects by filter and update with the given configuration
     ///
@@ -65,7 +65,7 @@ public protocol Storage: class {
     ///   - configuration: Block which updates found objects
     /// - Returns: Updated objects
     
-    func update(byPrimaryKey primaryKey: Key, configuration: (Model?) -> ()) throws -> Model?
+    func update(byPrimaryKey primaryKey: Key, configuration: (Model?) throws -> ()) throws -> Model?
     
     /// Update all objects in storage with the given configuration
     ///
@@ -73,7 +73,7 @@ public protocol Storage: class {
     ///   - configuration: Block which updates objects
     /// - Returns: Updated objects
     
-    func updateAll(_ configuration: ([Model]) -> ()) throws -> [Model]
+    func updateAll(_ configuration: ([Model]) throws -> ()) throws -> [Model]
     
     /// Remove the given object
     ///
