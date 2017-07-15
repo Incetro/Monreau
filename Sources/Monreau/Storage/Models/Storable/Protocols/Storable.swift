@@ -17,6 +17,10 @@ public protocol Storable: class {
     /// Storable entity name
     
     static var entityName: String { get }
+    
+    /// Primary key name
+    
+    static var primaryKey: String { get }
 }
 
 extension Storable {
