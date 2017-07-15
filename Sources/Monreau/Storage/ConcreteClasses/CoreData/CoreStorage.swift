@@ -21,16 +21,31 @@ public class CoreStorage<Model> where Model: NSManagedObject, Model: Storable {
     
     /// Standard initializer
     ///
-    /// - Parameter context: CoreData context
+    /// - Parameter config: CoreData config
     
-    public init(with config: CoreStorageConfig) {
+    public init(withConfig config: CoreStorageConfig) {
         
         self.context = CoreDataConfigurator.setup(withBundle: Bundle(for: Model.self), config: config)
     }
     
-    public convenience init(with config: CoreStorageConfig, model: Model.Type) {
+    /// Standard initializer
+    ///
+    /// - Parameter context: CoreData context
+    
+    public init(withContext context: NSManagedObjectContext) {
         
-        self.init(with: config)
+        self.context = context
+    }
+    
+    /// Standard initializer
+    ///
+    /// - Parameters:
+    ///   - config: CoreData config
+    ///   - model: CoreData model
+    
+    public convenience init(withConfig config: CoreStorageConfig, model: Model.Type) {
+        
+        self.init(withConfig: config)
     }
     
     /// Save changes in context

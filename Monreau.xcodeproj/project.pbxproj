@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		3331E6941F0CFCBA007BE883 /* Monreau.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3358A8A91F0C06BD00D4BD9C /* Monreau.swift */; };
-		3331E6951F0CFCBA007BE883 /* CoreStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3358A8AC1F0C06BD00D4BD9C /* CoreStorage.swift */; };
 		3331E6961F0CFCBA007BE883 /* SortDescriptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3358A8AF1F0C06BD00D4BD9C /* SortDescriptor.swift */; };
 		3331E6971F0CFCBA007BE883 /* NSPredicate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3358A8B21F0C06BD00D4BD9C /* NSPredicate.swift */; };
 		3331E6981F0CFCBA007BE883 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3358A8B31F0C06BD00D4BD9C /* String.swift */; };
@@ -17,7 +16,6 @@
 		3331E69B1F0CFCBA007BE883 /* Storable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3358A8BA1F0C06BD00D4BD9C /* Storable.swift */; };
 		3331E69C1F0CFCBA007BE883 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3358A8BC1F0C06BD00D4BD9C /* Storage.swift */; };
 		3331E69D1F0CFCBB007BE883 /* Monreau.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3358A8A91F0C06BD00D4BD9C /* Monreau.swift */; };
-		3331E69E1F0CFCBB007BE883 /* CoreStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3358A8AC1F0C06BD00D4BD9C /* CoreStorage.swift */; };
 		3331E69F1F0CFCBB007BE883 /* SortDescriptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3358A8AF1F0C06BD00D4BD9C /* SortDescriptor.swift */; };
 		3331E6A01F0CFCBB007BE883 /* NSPredicate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3358A8B21F0C06BD00D4BD9C /* NSPredicate.swift */; };
 		3331E6A11F0CFCBB007BE883 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3358A8B31F0C06BD00D4BD9C /* String.swift */; };
@@ -26,7 +24,6 @@
 		3331E6A41F0CFCBB007BE883 /* Storable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3358A8BA1F0C06BD00D4BD9C /* Storable.swift */; };
 		3331E6A51F0CFCBB007BE883 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3358A8BC1F0C06BD00D4BD9C /* Storage.swift */; };
 		3331E6A61F0CFCBB007BE883 /* Monreau.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3358A8A91F0C06BD00D4BD9C /* Monreau.swift */; };
-		3331E6A71F0CFCBB007BE883 /* CoreStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3358A8AC1F0C06BD00D4BD9C /* CoreStorage.swift */; };
 		3331E6A81F0CFCBB007BE883 /* SortDescriptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3358A8AF1F0C06BD00D4BD9C /* SortDescriptor.swift */; };
 		3331E6A91F0CFCBB007BE883 /* NSPredicate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3358A8B21F0C06BD00D4BD9C /* NSPredicate.swift */; };
 		3331E6AA1F0CFCBB007BE883 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3358A8B31F0C06BD00D4BD9C /* String.swift */; };
@@ -54,7 +51,6 @@
 		3358A8A71F0C042B00D4BD9C /* Monreau.h in Headers */ = {isa = PBXBuildFile; fileRef = 3358A8A21F0C042400D4BD9C /* Monreau.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3358A8A81F0C042B00D4BD9C /* Monreau.h in Headers */ = {isa = PBXBuildFile; fileRef = 3358A8A21F0C042400D4BD9C /* Monreau.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3358A8BD1F0C06BD00D4BD9C /* Monreau.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3358A8A91F0C06BD00D4BD9C /* Monreau.swift */; };
-		3358A8BE1F0C06BD00D4BD9C /* CoreStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3358A8AC1F0C06BD00D4BD9C /* CoreStorage.swift */; };
 		3358A8BF1F0C06BD00D4BD9C /* SortDescriptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3358A8AF1F0C06BD00D4BD9C /* SortDescriptor.swift */; };
 		3358A8C01F0C06BD00D4BD9C /* NSPredicate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3358A8B21F0C06BD00D4BD9C /* NSPredicate.swift */; };
 		3358A8C11F0C06BD00D4BD9C /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3358A8B31F0C06BD00D4BD9C /* String.swift */; };
@@ -66,6 +62,7 @@
 		3358B69F1F1A759C00CBD8CF /* CoreDataConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3358B69D1F1A759C00CBD8CF /* CoreDataConfigurator.swift */; };
 		3358B6A01F1A759C00CBD8CF /* CoreDataConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3358B69D1F1A759C00CBD8CF /* CoreDataConfigurator.swift */; };
 		3358B6A11F1A759C00CBD8CF /* CoreDataConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3358B69D1F1A759C00CBD8CF /* CoreDataConfigurator.swift */; };
+		3358B6A31F1AAC9200CBD8CF /* CoreStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3358B6A21F1AAC9200CBD8CF /* CoreStorage.swift */; };
 		336041331F17C7470038BE3C /* CoreStorageConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 336041321F17C7470038BE3C /* CoreStorageConfig.swift */; };
 		336041351F17C7FA0038BE3C /* CoreStoreType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 336041341F17C7FA0038BE3C /* CoreStoreType.swift */; };
 		336041361F17C82D0038BE3C /* CoreStorageConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 336041321F17C7470038BE3C /* CoreStorageConfig.swift */; };
@@ -116,7 +113,6 @@
 		3358A8A11F0C042400D4BD9C /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3358A8A21F0C042400D4BD9C /* Monreau.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Monreau.h; sourceTree = "<group>"; };
 		3358A8A91F0C06BD00D4BD9C /* Monreau.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Monreau.swift; sourceTree = "<group>"; };
-		3358A8AC1F0C06BD00D4BD9C /* CoreStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreStorage.swift; sourceTree = "<group>"; };
 		3358A8AF1F0C06BD00D4BD9C /* SortDescriptor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SortDescriptor.swift; sourceTree = "<group>"; };
 		3358A8B21F0C06BD00D4BD9C /* NSPredicate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSPredicate.swift; sourceTree = "<group>"; };
 		3358A8B31F0C06BD00D4BD9C /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
@@ -125,6 +121,7 @@
 		3358A8BA1F0C06BD00D4BD9C /* Storable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storable.swift; sourceTree = "<group>"; };
 		3358A8BC1F0C06BD00D4BD9C /* Storage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		3358B69D1F1A759C00CBD8CF /* CoreDataConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataConfigurator.swift; sourceTree = "<group>"; };
+		3358B6A21F1AAC9200CBD8CF /* CoreStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreStorage.swift; sourceTree = "<group>"; };
 		336041321F17C7470038BE3C /* CoreStorageConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreStorageConfig.swift; sourceTree = "<group>"; };
 		336041341F17C7FA0038BE3C /* CoreStoreType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreStoreType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -269,7 +266,6 @@
 			isa = PBXGroup;
 			children = (
 				3358B69C1F1A756900CBD8CF /* CoreData */,
-				3358A8AC1F0C06BD00D4BD9C /* CoreStorage.swift */,
 			);
 			path = ConcreteClasses;
 			sourceTree = "<group>";
@@ -355,6 +351,7 @@
 		3358B69C1F1A756900CBD8CF /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
+				3358B6A21F1AAC9200CBD8CF /* CoreStorage.swift */,
 				3358B69D1F1A759C00CBD8CF /* CoreDataConfigurator.swift */,
 			);
 			path = CoreData;
@@ -678,9 +675,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3358A8BE1F0C06BD00D4BD9C /* CoreStorage.swift in Sources */,
 				3358A8C21F0C06BD00D4BD9C /* Predicate.swift in Sources */,
 				3358A8BD1F0C06BD00D4BD9C /* Monreau.swift in Sources */,
+				3358B6A31F1AAC9200CBD8CF /* CoreStorage.swift in Sources */,
 				3358B69E1F1A759C00CBD8CF /* CoreDataConfigurator.swift in Sources */,
 				3331E6F91F0D22C1007BE883 /* UserModelObject.swift in Sources */,
 				3358A8C31F0C06BD00D4BD9C /* NSManagedObject.swift in Sources */,
@@ -699,7 +696,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3331E6A71F0CFCBB007BE883 /* CoreStorage.swift in Sources */,
 				3331E6AB1F0CFCBB007BE883 /* Predicate.swift in Sources */,
 				3331E6A61F0CFCBB007BE883 /* Monreau.swift in Sources */,
 				3358B69F1F1A759C00CBD8CF /* CoreDataConfigurator.swift in Sources */,
@@ -720,7 +716,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3331E69E1F0CFCBB007BE883 /* CoreStorage.swift in Sources */,
 				3331E6A21F0CFCBB007BE883 /* Predicate.swift in Sources */,
 				3331E69D1F0CFCBB007BE883 /* Monreau.swift in Sources */,
 				3358B6A01F1A759C00CBD8CF /* CoreDataConfigurator.swift in Sources */,
@@ -741,7 +736,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3331E6951F0CFCBA007BE883 /* CoreStorage.swift in Sources */,
 				3331E6991F0CFCBA007BE883 /* Predicate.swift in Sources */,
 				3331E6941F0CFCBA007BE883 /* Monreau.swift in Sources */,
 				3358B6A11F1A759C00CBD8CF /* CoreDataConfigurator.swift in Sources */,

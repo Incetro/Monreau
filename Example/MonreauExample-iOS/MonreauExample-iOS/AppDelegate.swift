@@ -18,12 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
-        guard let storage = try? CoreStorage(with: CoreStorageConfig(containerName: "MonreauExample_iOS"), model: UserModelObject.self) else {
-            
-            return false
-        }
-        
-        let monreau = Monreau(with: storage)
+        let monreau = Monreau(with: CoreStorage(withConfig: CoreStorageConfig(containerName: "MonreauExample_iOS"), model: UserModelObject.self))
         
         monreau.create(configuration: { (user) in
             

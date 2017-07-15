@@ -50,7 +50,7 @@ class MonreauCoreTests: XCTestCase {
         return managedObjectContext
     }
     
-    var monreau = Monreau(with: CoreStorage<UserModelObject>(with: CoreStorageConfig(containerName: "Monreau", storeType: .memory)))
+    var monreau = Monreau(with: CoreStorage<UserModelObject>(withConfig: CoreStorageConfig(containerName: "Monreau", storeType: .memory)))
     
     func testThatMonreauCanCreateObject() {
         

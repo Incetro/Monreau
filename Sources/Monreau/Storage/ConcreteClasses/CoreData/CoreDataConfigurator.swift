@@ -21,7 +21,7 @@ public class CoreDataConfigurator {
     ///   - config: Configuration
     /// - Returns: Global managed object context (or moc for unit testing)
     
-    static func setup(withBundle bundle: Bundle, config: CoreStorageConfig) -> NSManagedObjectContext {
+    public static func setup(withBundle bundle: Bundle, config: CoreStorageConfig) -> NSManagedObjectContext {
         
         if config.storeType == NSInMemoryStoreType {
             
