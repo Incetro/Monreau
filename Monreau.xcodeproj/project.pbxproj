@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		33318CFA1F1BDEDA00F27BC7 /* CoreStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3358B6A21F1AAC9200CBD8CF /* CoreStorage.swift */; };
+		33318CFB1F1BDEDA00F27BC7 /* CoreStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3358B6A21F1AAC9200CBD8CF /* CoreStorage.swift */; };
+		33318CFC1F1BDEDB00F27BC7 /* CoreStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3358B6A21F1AAC9200CBD8CF /* CoreStorage.swift */; };
 		3331E6941F0CFCBA007BE883 /* Monreau.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3358A8A91F0C06BD00D4BD9C /* Monreau.swift */; };
 		3331E6961F0CFCBA007BE883 /* SortDescriptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3358A8AF1F0C06BD00D4BD9C /* SortDescriptor.swift */; };
 		3331E6971F0CFCBA007BE883 /* NSPredicate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3358A8B21F0C06BD00D4BD9C /* NSPredicate.swift */; };
@@ -698,6 +701,7 @@
 			files = (
 				3331E6AB1F0CFCBB007BE883 /* Predicate.swift in Sources */,
 				3331E6A61F0CFCBB007BE883 /* Monreau.swift in Sources */,
+				33318CFA1F1BDEDA00F27BC7 /* CoreStorage.swift in Sources */,
 				3358B69F1F1A759C00CBD8CF /* CoreDataConfigurator.swift in Sources */,
 				3331E6F81F0D22C0007BE883 /* UserModelObject.swift in Sources */,
 				3331E6AC1F0CFCBB007BE883 /* NSManagedObject.swift in Sources */,
@@ -718,6 +722,7 @@
 			files = (
 				3331E6A21F0CFCBB007BE883 /* Predicate.swift in Sources */,
 				3331E69D1F0CFCBB007BE883 /* Monreau.swift in Sources */,
+				33318CFB1F1BDEDA00F27BC7 /* CoreStorage.swift in Sources */,
 				3358B6A01F1A759C00CBD8CF /* CoreDataConfigurator.swift in Sources */,
 				3331E6F71F0D22C0007BE883 /* UserModelObject.swift in Sources */,
 				3331E6A31F0CFCBB007BE883 /* NSManagedObject.swift in Sources */,
@@ -738,6 +743,7 @@
 			files = (
 				3331E6991F0CFCBA007BE883 /* Predicate.swift in Sources */,
 				3331E6941F0CFCBA007BE883 /* Monreau.swift in Sources */,
+				33318CFC1F1BDEDB00F27BC7 /* CoreStorage.swift in Sources */,
 				3358B6A11F1A759C00CBD8CF /* CoreDataConfigurator.swift in Sources */,
 				3331E6F61F0D22C0007BE883 /* UserModelObject.swift in Sources */,
 				3331E69A1F0CFCBA007BE883 /* NSManagedObject.swift in Sources */,
