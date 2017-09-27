@@ -12,6 +12,6 @@ import Foundation
 
 extension NSPredicate: Predicate {
     public var filter: String {
-        return self.predicateFormat
+        return predicateFormat
     }
 }

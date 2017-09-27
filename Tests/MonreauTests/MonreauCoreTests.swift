@@ -14,47 +14,11 @@ import CoreData
 
 class MonreauCoreTests: XCTestCase {
     
-    func setUpInMemoryManagedObjectContext() -> NSManagedObjectContext? {
-        
-        guard let jasmineBundle = Bundle(identifier: "com.incetro.Monreau") else {
-            
-            return nil
-        }
-        
-        guard let modelURL = jasmineBundle.url(forResource: "Monreau", withExtension: "momd") else {
-            
-            return nil
-        }
-        
-        guard let managedObjectModel = NSManagedObjectModel(contentsOf: modelURL) else {
-            
-            return nil
-        }
-        
-        let persistentStoreCoordinator = NSPersistentStoreCoordinator(managedObjectModel: managedObjectModel)
-        
-        do {
-            
-            try persistentStoreCoordinator.addPersistentStore(ofType: NSInMemoryStoreType, configurationName: nil, at: nil, options: nil)
-            
-        } catch {
-            
-            print("Adding in-memory persistent store failed")
-            
-            return nil
-        }
-        
-        let managedObjectContext = NSManagedObjectContext(concurrencyType: NSManagedObjectContextConcurrencyType.mainQueueConcurrencyType)
-        managedObjectContext.persistentStoreCoordinator = persistentStoreCoordinator
-        
-        return managedObjectContext
-    }
-    
     var monreau = Monreau(with: CoreStorage<UserModelObject>(withConfig: CoreStorageConfig(containerName: "Monreau", storeType: .memory)))
     
     func testThatMonreauCanCreateObject() {
         
-        XCTAssertNoThrow(try self.monreau.create({ user in
+        XCTAssertNoThrow(try monreau.create({ user in
             
             user.id   = 1
             user.age  = 20
@@ -73,7 +37,7 @@ class MonreauCoreTests: XCTestCase {
         
         for data in usersData {
             
-            XCTAssertNoThrow(try self.monreau.create({ user in
+            XCTAssertNoThrow(try monreau.create({ user in
                 
                 user.id   = data.id
                 user.age  = data.age
@@ -119,7 +83,7 @@ class MonreauCoreTests: XCTestCase {
         
         for data in usersData {
             
-            XCTAssertNoThrow(try self.monreau.create({ user in
+            XCTAssertNoThrow(try monreau.create({ user in
                 
                 user.id   = data.id
                 user.age  = data.age
@@ -165,7 +129,7 @@ class MonreauCoreTests: XCTestCase {
         
         for data in usersData {
             
-            XCTAssertNoThrow(try self.monreau.create({ user in
+            XCTAssertNoThrow(try monreau.create({ user in
                 
                 user.id   = data.id
                 user.age  = data.age
@@ -197,7 +161,7 @@ class MonreauCoreTests: XCTestCase {
     
     func testThatMonreauCanFindObjectByPrimaryKey() {
         
-        XCTAssertNoThrow(try self.monreau.create({ user in
+        XCTAssertNoThrow(try monreau.create({ user in
             
             user.id   = 1
             user.age  = 20
@@ -206,7 +170,7 @@ class MonreauCoreTests: XCTestCase {
         
         do {
             
-            let object = try self.monreau.find(byPrimaryKey: 1)
+            let object = try monreau.find(byPrimaryKey: 1)
             
             XCTAssertNotNil(object)
             
@@ -227,7 +191,7 @@ class MonreauCoreTests: XCTestCase {
         
         for data in usersData {
             
-            XCTAssertNoThrow(try self.monreau.create({ user in
+            XCTAssertNoThrow(try monreau.create({ user in
                 
                 user.id   = data.id
                 user.age  = data.age
@@ -237,7 +201,7 @@ class MonreauCoreTests: XCTestCase {
         
         do {
             
-            try self.monreau.updateAll { objects in
+            try monreau.updateAll { objects in
                 
                 let objects = objects.sorted(by: { (f, s) -> Bool in
                     
@@ -251,7 +215,7 @@ class MonreauCoreTests: XCTestCase {
                 }
             }
             
-            try self.monreau.findAll().forEach {
+            try monreau.findAll().forEach {
                 
                 XCTAssertEqual($0.age, 17)
                 XCTAssertEqual($0.name, "wed")
@@ -274,7 +238,7 @@ class MonreauCoreTests: XCTestCase {
         
         for data in usersData {
             
-            XCTAssertNoThrow(try self.monreau.create({ user in
+            XCTAssertNoThrow(try monreau.create({ user in
                 
                 user.id   = data.id
                 user.age  = data.age
@@ -284,7 +248,7 @@ class MonreauCoreTests: XCTestCase {
         
         do {
             
-            try self.monreau.update(byPredicate: "id < 6") { objects in
+            try monreau.update(byPredicate: "id < 6") { objects in
                 
                 let objects = objects.sorted(by: { (f, s) -> Bool in
                     
@@ -298,8 +262,8 @@ class MonreauCoreTests: XCTestCase {
                 }
             }
             
-            try self.monreau.find(byPredicate: "id < 6").forEach {
-                
+            try monreau.find(byPredicate: "id < 6").forEach {
+
                 XCTAssertEqual($0.age, 17)
                 XCTAssertEqual($0.name, "wed")
             }
@@ -321,7 +285,7 @@ class MonreauCoreTests: XCTestCase {
         
         for data in usersData {
             
-            XCTAssertNoThrow(try self.monreau.create({ user in
+            XCTAssertNoThrow(try monreau.create({ user in
                 
                 user.id   = data.id
                 user.age  = data.age
@@ -331,9 +295,9 @@ class MonreauCoreTests: XCTestCase {
         
         do {
             
-            try self.monreau.remove(byPredicate: "id < 6")
+            try monreau.remove(byPredicate: "id < 6")
             
-            XCTAssertEqual(try self.monreau.findAll().count, 5)
+            XCTAssertEqual(try monreau.findAll().count, 5)
             
         } catch {
             
@@ -343,7 +307,7 @@ class MonreauCoreTests: XCTestCase {
     
     func testThatMonreauCenRemoveObjectByPrimaryKey() {
         
-        XCTAssertNoThrow(try self.monreau.create({ user in
+        XCTAssertNoThrow(try monreau.create({ user in
             
             user.id   = 1
             user.age  = 20
@@ -352,9 +316,9 @@ class MonreauCoreTests: XCTestCase {
         
         do {
             
-            try self.monreau.remove(byPrimaryKey: 1)
+            try monreau.remove(byPrimaryKey: 1)
             
-            XCTAssertEqual(try self.monreau.findAll().count, 0)
+            XCTAssertEqual(try monreau.findAll().count, 0)
             
         } catch {
             

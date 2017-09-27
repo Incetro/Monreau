@@ -26,11 +26,11 @@ public class CoreDataConfigurator {
             return createContext(withBundle: bundle, config: config)
         }
         
-        if let moc = self.context {
+        if let moc = context {
             return moc
         } else {
             let moc = createContext(withBundle: bundle, config: config)
-            self.context = moc
+            context = moc
             return moc
         }
     }

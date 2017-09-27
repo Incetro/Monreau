@@ -98,7 +98,7 @@ extension Storage {
     ///   - identifier: Primary key
     /// - Returns: Found object
     public func find(byPrimaryKey primaryKey: Key) throws -> Model? {
-        return try self.find(byPrimaryKey: primaryKey, includeSubentities: true, sortDescriptors: [])
+        return try find(byPrimaryKey: primaryKey, includeSubentities: true, sortDescriptors: [])
     }
     
     /// Find objects in storage by filter
@@ -107,6 +107,6 @@ extension Storage {
     ///   - predicate: Filter
     /// - Returns: Found objects
     public func find(byPredicate predicate: Predicate) throws -> [Model] {
-        return try self.find(byPredicate: predicate, includeSubentities: true, sortDescriptors: [])
+        return try find(byPredicate: predicate, includeSubentities: true, sortDescriptors: [])
     }
 }
