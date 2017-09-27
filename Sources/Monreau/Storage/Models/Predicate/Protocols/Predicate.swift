@@ -13,6 +13,5 @@ import Foundation
 public protocol Predicate {
 
     /// Filter string
-    
     var filter: String { get }
 }

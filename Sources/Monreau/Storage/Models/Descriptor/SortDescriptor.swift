@@ -13,11 +13,9 @@ import Foundation
 public struct SortDescriptor {
     
     public let key: String
-    
     public let ascending: Bool
     
-    public init(withKey key: String, ascending: Bool) {
-        
+    public init(key: String, ascending: Bool) {
         self.key = key
         self.ascending = ascending
     }

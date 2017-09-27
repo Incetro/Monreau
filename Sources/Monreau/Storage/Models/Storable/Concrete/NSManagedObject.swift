@@ -13,7 +13,6 @@ import CoreData
 public extension Storable where Self: NSManagedObject {
     
     static var entityName: String {
-        
         return NSStringFromClass(self).components(separatedBy: ".").last ?? ""
     }
     
@@ -22,7 +21,6 @@ public extension Storable where Self: NSManagedObject {
     /// - Returns: Request for current object
     
     static func request() -> NSFetchRequest<Self> {
-        
         return NSFetchRequest<Self>(entityName: Self.entityName)
     }
     
@@ -33,7 +31,6 @@ public extension Storable where Self: NSManagedObject {
     init(in context: NSManagedObjectContext) throws {
         
         guard let entity = NSEntityDescription.entity(forEntityName: Self.entityName, in: context) else {
-            
             throw NSError(domain: "Storable.NSManagedObject", code: 1, userInfo: nil)
         }
         

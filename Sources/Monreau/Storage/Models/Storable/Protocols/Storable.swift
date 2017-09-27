@@ -15,18 +15,15 @@ public protocol Storable: class {
     associatedtype PrimaryType: Hashable
     
     /// Storable entity name
-    
     static var entityName: String { get }
     
     /// Primary key name
-    
     static var primaryKey: String { get }
 }
 
 extension Storable {
     
     public static var primaryKey: String {
-     
         return "id"
     }
 }

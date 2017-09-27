@@ -11,9 +11,7 @@ import Foundation
 // MARK: - Predicate
 
 extension String: Predicate {
-    
     public var filter: String {
-        
         return self
     }
 }

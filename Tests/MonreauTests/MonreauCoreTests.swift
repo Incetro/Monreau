@@ -175,7 +175,7 @@ class MonreauCoreTests: XCTestCase {
         
         do {
             
-            var objects = try monreau.find(byPredicate: "id > 5", includeSubentities: true, sortDescriptors: [SortDescriptor(withKey: "age", ascending: false)])
+            var objects = try monreau.find(byPredicate: "id > 5", includeSubentities: true, sortDescriptors: [SortDescriptor(key: "age", ascending: false)])
             
             XCTAssertEqual(objects.count, 5)
             

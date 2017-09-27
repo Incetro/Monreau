@@ -11,9 +11,7 @@ import Foundation
 // MARK: - Predicate
 
 extension NSPredicate: Predicate {
-    
     public var filter: String {
-        
         return self.predicateFormat
     }
 }

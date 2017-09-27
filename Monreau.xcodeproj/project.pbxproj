@@ -67,13 +67,13 @@
 		3358B6A11F1A759C00CBD8CF /* CoreDataConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3358B69D1F1A759C00CBD8CF /* CoreDataConfigurator.swift */; };
 		3358B6A31F1AAC9200CBD8CF /* CoreStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3358B6A21F1AAC9200CBD8CF /* CoreStorage.swift */; };
 		336041331F17C7470038BE3C /* CoreStorageConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 336041321F17C7470038BE3C /* CoreStorageConfig.swift */; };
-		336041351F17C7FA0038BE3C /* CoreStoreType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 336041341F17C7FA0038BE3C /* CoreStoreType.swift */; };
+		336041351F17C7FA0038BE3C /* CoreStorageType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 336041341F17C7FA0038BE3C /* CoreStorageType.swift */; };
 		336041361F17C82D0038BE3C /* CoreStorageConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 336041321F17C7470038BE3C /* CoreStorageConfig.swift */; };
-		336041371F17C82D0038BE3C /* CoreStoreType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 336041341F17C7FA0038BE3C /* CoreStoreType.swift */; };
+		336041371F17C82D0038BE3C /* CoreStorageType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 336041341F17C7FA0038BE3C /* CoreStorageType.swift */; };
 		336041381F17C82D0038BE3C /* CoreStorageConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 336041321F17C7470038BE3C /* CoreStorageConfig.swift */; };
-		336041391F17C82D0038BE3C /* CoreStoreType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 336041341F17C7FA0038BE3C /* CoreStoreType.swift */; };
+		336041391F17C82D0038BE3C /* CoreStorageType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 336041341F17C7FA0038BE3C /* CoreStorageType.swift */; };
 		3360413A1F17C82E0038BE3C /* CoreStorageConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 336041321F17C7470038BE3C /* CoreStorageConfig.swift */; };
-		3360413B1F17C82E0038BE3C /* CoreStoreType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 336041341F17C7FA0038BE3C /* CoreStoreType.swift */; };
+		3360413B1F17C82E0038BE3C /* CoreStorageType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 336041341F17C7FA0038BE3C /* CoreStorageType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -126,7 +126,7 @@
 		3358B69D1F1A759C00CBD8CF /* CoreDataConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataConfigurator.swift; sourceTree = "<group>"; };
 		3358B6A21F1AAC9200CBD8CF /* CoreStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreStorage.swift; sourceTree = "<group>"; };
 		336041321F17C7470038BE3C /* CoreStorageConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreStorageConfig.swift; sourceTree = "<group>"; };
-		336041341F17C7FA0038BE3C /* CoreStoreType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreStoreType.swift; sourceTree = "<group>"; };
+		336041341F17C7FA0038BE3C /* CoreStorageType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreStorageType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -364,7 +364,7 @@
 			isa = PBXGroup;
 			children = (
 				336041321F17C7470038BE3C /* CoreStorageConfig.swift */,
-				336041341F17C7FA0038BE3C /* CoreStoreType.swift */,
+				336041341F17C7FA0038BE3C /* CoreStorageType.swift */,
 			);
 			path = Config;
 			sourceTree = "<group>";
@@ -540,7 +540,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 0830;
+				LastUpgradeCheck = 0900;
 				TargetAttributes = {
 					3331E6B21F0D0D80007BE883 = {
 						CreatedOnToolsVersion = 8.3.3;
@@ -556,19 +556,22 @@
 					};
 					3358A8611F0C037100D4BD9C = {
 						CreatedOnToolsVersion = 8.3.3;
-						LastSwiftMigration = 0830;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 					};
 					3358A86E1F0C038400D4BD9C = {
 						CreatedOnToolsVersion = 8.3.3;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 					};
 					3358A8881F0C039D00D4BD9C = {
 						CreatedOnToolsVersion = 8.3.3;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 					};
 					3358A8951F0C03A800D4BD9C = {
 						CreatedOnToolsVersion = 8.3.3;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -690,7 +693,7 @@
 				3358A8C41F0C06BD00D4BD9C /* Storable.swift in Sources */,
 				3358A8C01F0C06BD00D4BD9C /* NSPredicate.swift in Sources */,
 				3358A8BF1F0C06BD00D4BD9C /* SortDescriptor.swift in Sources */,
-				336041351F17C7FA0038BE3C /* CoreStoreType.swift in Sources */,
+				336041351F17C7FA0038BE3C /* CoreStorageType.swift in Sources */,
 				3331E6F51F0D13EE007BE883 /* Monreau.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -711,7 +714,7 @@
 				3331E6AD1F0CFCBB007BE883 /* Storable.swift in Sources */,
 				3331E6A91F0CFCBB007BE883 /* NSPredicate.swift in Sources */,
 				3331E6A81F0CFCBB007BE883 /* SortDescriptor.swift in Sources */,
-				3360413B1F17C82E0038BE3C /* CoreStoreType.swift in Sources */,
+				3360413B1F17C82E0038BE3C /* CoreStorageType.swift in Sources */,
 				3331E6F41F0D13EE007BE883 /* Monreau.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -732,7 +735,7 @@
 				3331E6A41F0CFCBB007BE883 /* Storable.swift in Sources */,
 				3331E6A01F0CFCBB007BE883 /* NSPredicate.swift in Sources */,
 				3331E69F1F0CFCBB007BE883 /* SortDescriptor.swift in Sources */,
-				336041391F17C82D0038BE3C /* CoreStoreType.swift in Sources */,
+				336041391F17C82D0038BE3C /* CoreStorageType.swift in Sources */,
 				3331E6F31F0D13ED007BE883 /* Monreau.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -753,7 +756,7 @@
 				3331E69B1F0CFCBA007BE883 /* Storable.swift in Sources */,
 				3331E6971F0CFCBA007BE883 /* NSPredicate.swift in Sources */,
 				3331E6961F0CFCBA007BE883 /* SortDescriptor.swift in Sources */,
-				336041371F17C82D0038BE3C /* CoreStoreType.swift in Sources */,
+				336041371F17C82D0038BE3C /* CoreStorageType.swift in Sources */,
 				3331E6F21F0D13ED007BE883 /* Monreau.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1098,8 +1101,33 @@
 		3358A84D1F0C035800D4BD9C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				ONLY_ACTIVE_ARCH = YES;
 				SWIFT_VERSION = "";
 			};
 			name = Debug;
@@ -1107,6 +1135,29 @@
 		3358A84E1F0C035800D4BD9C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				SWIFT_VERSION = "";
@@ -1136,7 +1187,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -1172,7 +1223,8 @@
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -1202,7 +1254,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -1230,7 +1282,8 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -1296,7 +1349,8 @@
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -1354,7 +1408,8 @@
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -1420,7 +1475,8 @@
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 3;
 				TVOS_DEPLOYMENT_TARGET = 9.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -1477,7 +1533,8 @@
 				SDKROOT = appletvos;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 3;
 				TVOS_DEPLOYMENT_TARGET = 9.0;
 				VALIDATE_PRODUCT = YES;
@@ -1546,7 +1603,8 @@
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
+				SWIFT_VERSION = 4.0;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -1604,7 +1662,8 @@
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
+				SWIFT_VERSION = 4.0;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};

@@ -16,15 +16,12 @@ public class Monreau<CacheType: Storage> {
     public typealias Model  = CacheType.Model
     
     /// Storage which provides objects
-    
     fileprivate var storage: CacheType
     
     /// Standard initializer
     ///
     /// - Parameter storage: Storage instance
-    
     public init(with storage: CacheType) {
-        
         self.storage = storage
     }
     
@@ -32,18 +29,14 @@ public class Monreau<CacheType: Storage> {
     ///
     /// - Parameter configuration: Block for object's configuration
     /// - Returns: Created object
-    
     @discardableResult public func create(_ configuration: (Model) -> ()) throws -> Model {
-        
         return try self.storage.create(configuration)
     }
     
     /// Find all objects in storage
     ///
     /// - Returns: All found objects
-    
     public func findAll() throws -> [Model] {
-        
         return try self.storage.findAll()
     }
     
@@ -54,9 +47,7 @@ public class Monreau<CacheType: Storage> {
     ///   - includeSubentities: true if need to include subentities
     ///   - sortDescriptors: Descriptors for sorting result
     /// - Returns: Found objects
-    
     public func find(byPredicate predicate: Predicate, includeSubentities: Bool = true, sortDescriptors: [SortDescriptor] = []) throws -> [Model] {
-        
         return try self.storage.find(byPredicate: predicate, includeSubentities: includeSubentities, sortDescriptors: sortDescriptors)
     }
     
@@ -67,9 +58,7 @@ public class Monreau<CacheType: Storage> {
     ///   - includeSubentities: true if need to include subentities
     ///   - sortDescriptors: Descriptors for sorting result
     /// - Returns: Found object
-    
     public func find(byPrimaryKey primaryKey: PKType, includeSubentities: Bool = true, sortDescriptors: [SortDescriptor] = []) throws -> Model? {
-        
         return try self.storage.find(byPrimaryKey: primaryKey, includeSubentities: includeSubentities, sortDescriptors: sortDescriptors)
     }
     
@@ -79,9 +68,7 @@ public class Monreau<CacheType: Storage> {
     ///   - identifier: Primary key
     ///   - configuration: Block which updates found object
     /// - Returns: Updated objects
-    
     @discardableResult public func update(byPrimaryKey primaryKey: PKType, configuration: (Model?) -> ()) throws -> Model? {
-        
         return try self.storage.update(byPrimaryKey: primaryKey, configuration: configuration)
     }
     
@@ -91,9 +78,7 @@ public class Monreau<CacheType: Storage> {
     ///   - predicate: Filter
     ///   - configuration: Block which updates found objects
     /// - Returns: Updated objects
-    
     @discardableResult public func update(byPredicate predicate: Predicate, _ configuration: ([Model]) -> ()) throws -> [Model] {
-        
         return try self.storage.update(byPredicate: predicate, configuration)
     }
     
@@ -102,50 +87,38 @@ public class Monreau<CacheType: Storage> {
     /// - Parameters:
     ///   - configuration: Block which updates objects
     /// - Returns: Updated objects
-    
     @discardableResult public func updateAll(_ configuration: ([Model]) -> ()) throws -> [Model] {
-        
         return try self.storage.updateAll(configuration)
     }
     
     /// Remove the given object
     ///
     /// - Parameter object: Given object
-    
     public func remove(_ object: Model) throws {
-        
         try self.storage.remove(object)
     }
     
     /// Clear storage
-    
     public func removeAll() throws {
-        
         try self.storage.removeAll()
     }
     
     /// Remove objects by filter
     ///
     /// - Parameter predicate: Filter for finding object
-    
     public func remove(byPredicate predicate: Predicate) throws {
-        
         try self.storage.remove(byPredicate: predicate)
     }
     
     /// Remove objects by primary key
     ///
     /// - Parameter identifier: primary key
-    
     public func remove(byPrimaryKey primaryKey: PKType) throws {
-        
         try self.storage.remove(byPrimaryKey: primaryKey)
     }
     
     /// Save changes in storage
-    
     public func save() throws {
-        
         try self.storage.save()
     }
 }
@@ -158,15 +131,11 @@ public extension Monreau {
     ///   - configuration: Block for object's configuration
     ///   - failure: Block for errors handling
     /// - Returns: Created object
-    
     public func create(configuration: (Model) -> (), failure: (Error) -> ()) {
-        
+
         do {
-            
-            _ = try self.storage.create(configuration)
-            
+            try self.storage.create(configuration)
         } catch {
-            
             failure(error)
         }
     }
@@ -177,15 +146,11 @@ public extension Monreau {
     ///   - configuration: Block for object's configuration
     ///   - failure: Block for errors handling
     /// - Returns: Created object
-    
     public func create(configuration: (Model) -> (), success: (Model) -> (), failure: (Error) -> ()) {
         
         do {
-            
             success(try self.storage.create(configuration))
-            
         } catch {
-            
             failure(error)
         }
     }
@@ -193,15 +158,11 @@ public extension Monreau {
     /// Find all objects in storage
     ///
     /// - Returns: All found objects
-    
     public func findAll(success: ([Model]) -> (), failure: (Error) -> ()) {
         
         do {
-            
             success(try self.storage.findAll())
-            
         } catch {
-        
             failure(error)
         }
     }
@@ -213,15 +174,11 @@ public extension Monreau {
     ///   - includeSubentities: true if need to include subentities
     ///   - sortDescriptors: Descriptors for sorting result
     /// - Returns: Found objects
-    
     public func find(byPredicate predicate: Predicate, includeSubentities: Bool = true, sortDescriptors: [SortDescriptor] = [], success: ([Model]) -> (), failure: (Error) -> ()) {
         
         do {
-            
             success(try self.storage.find(byPredicate: predicate, includeSubentities: includeSubentities, sortDescriptors: sortDescriptors))
-            
         } catch {
-            
             failure(error)
         }
     }
@@ -233,15 +190,11 @@ public extension Monreau {
     ///   - includeSubentities: true if need to include subentities
     ///   - sortDescriptors: Descriptors for sorting result
     /// - Returns: Found object
-    
     public func find(byPrimaryKey primaryKey: PKType, includeSubentities: Bool = true, sortDescriptors: [SortDescriptor] = [], success: (Model?) -> (), failure: (Error) -> ()) {
         
         do {
-            
             success(try self.storage.find(byPrimaryKey: primaryKey, includeSubentities: includeSubentities, sortDescriptors: sortDescriptors))
-            
         } catch {
-            
             failure(error)
         }
     }
@@ -251,15 +204,11 @@ public extension Monreau {
     /// - Parameters:
     ///   - configuration: Block which updates objects
     /// - Returns: Updated objects
-    
     public func updateAll(_ configuration: ([Model]) -> (), failure: (Error) -> ()) {
         
         do {
-            
-            _ = try self.storage.updateAll(configuration)
-            
+            try self.storage.updateAll(configuration)
         } catch {
-            
             failure(error)
         }
     }
@@ -269,15 +218,11 @@ public extension Monreau {
     /// - Parameters:
     ///   - configuration: Block which updates objects
     /// - Returns: Updated objects
-    
     public func updateAll(_ configuration: ([Model]) -> (), success: ([Model]) -> (), failure: (Error) -> ()) {
         
         do {
-            
             success(try self.storage.updateAll(configuration))
-            
         } catch {
-            
             failure(error)
         }
     }
@@ -288,15 +233,11 @@ public extension Monreau {
     ///   - predicate: Filter
     ///   - configuration: Block which updates found objects
     /// - Returns: Updated objects
-    
     public func update(byPredicate predicate: Predicate, _ configuration: ([Model]) -> (), success: ([Model]) -> (), failure: (Error) -> ()) {
         
         do {
-            
             success(try self.storage.update(byPredicate: predicate, configuration))
-            
         } catch {
-            
             failure(error)
         }
     }
@@ -307,15 +248,11 @@ public extension Monreau {
     ///   - predicate: Filter
     ///   - configuration: Block which updates found objects
     /// - Returns: Updated objects
-    
     public func update(byPredicate predicate: Predicate, _ configuration: ([Model]) -> (), failure: (Error) -> ()) {
         
         do {
-            
-            _ = try self.storage.update(byPredicate: predicate, configuration)
-            
+            try self.storage.update(byPredicate: predicate, configuration)
         } catch {
-            
             failure(error)
         }
     }
@@ -326,15 +263,11 @@ public extension Monreau {
     ///   - identifier: Primary key
     ///   - configuration: Block which updates found object
     /// - Returns: Updated objects
-    
     public func update(byPrimaryKey primaryKey: PKType, configuration: (Model?) -> (), success: (Model?) -> (), failure: (Error) -> ()) {
         
         do {
-            
             success(try self.storage.update(byPrimaryKey: primaryKey, configuration: configuration))
-            
         } catch {
-            
             failure(error)
         }
     }
@@ -342,33 +275,23 @@ public extension Monreau {
     /// Remove the given object
     ///
     /// - Parameter object: Given object
-    
     public func remove(_ object: Model, success: () -> (), failure: (Error) -> ()) {
         
         do {
-            
             try self.storage.remove(object)
-            
             success()
-            
         } catch {
-            
             failure(error)
         }
     }
     
     /// Clear storage
-    
     public func removeAll(success: () -> (), failure: (Error) -> ()) {
         
         do {
-            
             try self.storage.removeAll()
-            
             success()
-            
         } catch {
-            
             failure(error)
         }
     }
@@ -376,17 +299,12 @@ public extension Monreau {
     /// Remove objects by filter
     ///
     /// - Parameter predicate: Filter for finding object
-    
     public func remove(byPredicate predicate: Predicate, success: () -> (), failure: (Error) -> ()) {
         
         do {
-            
             try self.storage.remove(byPredicate: predicate)
-            
             success()
-            
         } catch {
-            
             failure(error)
         }
     }
@@ -394,33 +312,23 @@ public extension Monreau {
     /// Remove objects by primary key
     ///
     /// - Parameter identifier: primary key
-    
     public func remove(byPrimaryKey primaryKey: PKType, success: () -> (), failure: (Error) -> ()) {
         
         do {
-            
             try self.storage.remove(byPrimaryKey: primaryKey)
-            
             success()
-            
         } catch {
-            
             failure(error)
         }
     }
     
     /// Save changes in storage
-    
     public func save(success: () -> (), failure: (Error) -> ()) {
         
         do {
-            
             try self.storage.save()
-            
             success()
-            
         } catch {
-            
             failure(error)
         }
     }
