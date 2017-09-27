@@ -1,5 +1,5 @@
-Monreau
-==========
+![Placeholder](https://user-images.githubusercontent.com/13930558/28310017-c3f8c296-6bb3-11e7-9572-83f99515149e.png)
+
 [![Build Status](https://travis-ci.org/incetro/Monreau.svg?branch=master)](https://travis-ci.org/incetro/Monreau)
 [![CocoaPods](https://img.shields.io/cocoapods/v/Monreau.svg)](https://img.shields.io/cocoapods/v/Monreau.svg)
 [![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
@@ -55,7 +55,7 @@ class UserModelObject: NSManagedObject, Storable {
 // Create Monreau instance
 
 let config  = CoreStorageConfig(containerName: "Name of container also is filename for `*.xcdatamodeld` file.")
-let storage = try CoreStorage(with: config, model: UserModelObject.self)
+let storage = CoreStorage(with: config, model: UserModelObject.self)
 let monreau = Monreau(with: storage)
 ```
 ### Create
