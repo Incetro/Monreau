@@ -19,7 +19,6 @@ public extension Storable where Self: NSManagedObject {
     /// Make request for current object
     ///
     /// - Returns: Request for current object
-    
     static func request() -> NSFetchRequest<Self> {
         return NSFetchRequest<Self>(entityName: Self.entityName)
     }
@@ -27,7 +26,6 @@ public extension Storable where Self: NSManagedObject {
     /// Standard initializer
     ///
     /// - Parameter context: Context for creating
-    
     init(in context: NSManagedObjectContext) throws {
         
         guard let entity = NSEntityDescription.entity(forEntityName: Self.entityName, in: context) else {

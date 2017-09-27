@@ -17,7 +17,6 @@ public enum CoreStorageType {
     case memory
     
     var asString: String {
-        
         switch self {
         case .coredata:
             return NSSQLiteStoreType
