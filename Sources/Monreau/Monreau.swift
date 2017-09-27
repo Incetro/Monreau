@@ -132,7 +132,6 @@ public extension Monreau {
     ///   - failure: Block for errors handling
     /// - Returns: Created object
     public func create(configuration: (Model) -> (), failure: (Error) -> ()) {
-
         do {
             try storage.create(configuration)
         } catch {
@@ -147,7 +146,6 @@ public extension Monreau {
     ///   - failure: Block for errors handling
     /// - Returns: Created object
     public func create(configuration: (Model) -> (), success: (Model) -> (), failure: (Error) -> ()) {
-        
         do {
             success(try storage.create(configuration))
         } catch {
@@ -159,7 +157,6 @@ public extension Monreau {
     ///
     /// - Returns: All found objects
     public func findAll(success: ([Model]) -> (), failure: (Error) -> ()) {
-        
         do {
             success(try storage.findAll())
         } catch {
@@ -175,7 +172,6 @@ public extension Monreau {
     ///   - sortDescriptors: Descriptors for sorting result
     /// - Returns: Found objects
     public func find(byPredicate predicate: Predicate, includeSubentities: Bool = true, sortDescriptors: [SortDescriptor] = [], success: ([Model]) -> (), failure: (Error) -> ()) {
-        
         do {
             success(try storage.find(byPredicate: predicate, includeSubentities: includeSubentities, sortDescriptors: sortDescriptors))
         } catch {
@@ -191,7 +187,6 @@ public extension Monreau {
     ///   - sortDescriptors: Descriptors for sorting result
     /// - Returns: Found object
     public func find(byPrimaryKey primaryKey: PKType, includeSubentities: Bool = true, sortDescriptors: [SortDescriptor] = [], success: (Model?) -> (), failure: (Error) -> ()) {
-        
         do {
             success(try storage.find(byPrimaryKey: primaryKey, includeSubentities: includeSubentities, sortDescriptors: sortDescriptors))
         } catch {
@@ -205,7 +200,6 @@ public extension Monreau {
     ///   - configuration: Block which updates objects
     /// - Returns: Updated objects
     public func updateAll(_ configuration: ([Model]) -> (), failure: (Error) -> ()) {
-        
         do {
             try storage.updateAll(configuration)
         } catch {
@@ -219,7 +213,6 @@ public extension Monreau {
     ///   - configuration: Block which updates objects
     /// - Returns: Updated objects
     public func updateAll(_ configuration: ([Model]) -> (), success: ([Model]) -> (), failure: (Error) -> ()) {
-        
         do {
             success(try storage.updateAll(configuration))
         } catch {
@@ -234,7 +227,6 @@ public extension Monreau {
     ///   - configuration: Block which updates found objects
     /// - Returns: Updated objects
     public func update(byPredicate predicate: Predicate, _ configuration: ([Model]) -> (), success: ([Model]) -> (), failure: (Error) -> ()) {
-        
         do {
             success(try storage.update(byPredicate: predicate, configuration))
         } catch {
@@ -249,7 +241,6 @@ public extension Monreau {
     ///   - configuration: Block which updates found objects
     /// - Returns: Updated objects
     public func update(byPredicate predicate: Predicate, _ configuration: ([Model]) -> (), failure: (Error) -> ()) {
-        
         do {
             try storage.update(byPredicate: predicate, configuration)
         } catch {
@@ -264,7 +255,6 @@ public extension Monreau {
     ///   - configuration: Block which updates found object
     /// - Returns: Updated objects
     public func update(byPrimaryKey primaryKey: PKType, configuration: (Model?) -> (), success: (Model?) -> (), failure: (Error) -> ()) {
-        
         do {
             success(try storage.update(byPrimaryKey: primaryKey, configuration: configuration))
         } catch {
@@ -276,7 +266,6 @@ public extension Monreau {
     ///
     /// - Parameter object: Given object
     public func remove(_ object: Model, success: () -> (), failure: (Error) -> ()) {
-        
         do {
             try storage.remove(object)
             success()
@@ -287,7 +276,6 @@ public extension Monreau {
     
     /// Clear storage
     public func removeAll(success: () -> (), failure: (Error) -> ()) {
-        
         do {
             try storage.removeAll()
             success()
@@ -300,7 +288,6 @@ public extension Monreau {
     ///
     /// - Parameter predicate: Filter for finding object
     public func remove(byPredicate predicate: Predicate, success: () -> (), failure: (Error) -> ()) {
-        
         do {
             try storage.remove(byPredicate: predicate)
             success()
@@ -313,7 +300,6 @@ public extension Monreau {
     ///
     /// - Parameter identifier: primary key
     public func remove(byPrimaryKey primaryKey: PKType, success: () -> (), failure: (Error) -> ()) {
-        
         do {
             try storage.remove(byPrimaryKey: primaryKey)
             success()
@@ -324,7 +310,6 @@ public extension Monreau {
     
     /// Save changes in storage
     public func save(success: () -> (), failure: (Error) -> ()) {
-        
         do {
             try storage.save()
             success()

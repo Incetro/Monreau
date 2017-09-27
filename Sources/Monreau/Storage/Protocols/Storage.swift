@@ -15,7 +15,7 @@ public protocol Storage: class {
     associatedtype Model: Storable
     
     typealias Key = Model.PrimaryType
-    
+
     /// Create object in storage
     ///
     /// - Parameter configuration: Block for object's configuration
