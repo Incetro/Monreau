@@ -15,4 +15,6 @@ Pod::Spec.new do |spec|
 
     spec.source                 = { git: "https://github.com/incetro/Monreau.git", tag: "#{spec.version}"}
     spec.source_files           = "Sources/Monreau/**/*.{h,swift}"
+
+    spec.dependency "RealmSwift"
 end
