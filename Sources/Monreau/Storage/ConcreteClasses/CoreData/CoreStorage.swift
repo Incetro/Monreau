@@ -58,7 +58,7 @@ extension CoreStorage: Storage {
         return modelObject
     }
     
-    func find(by request: NSFetchRequest<S>) throws -> [S] {
+    public func find(by request: NSFetchRequest<S>) throws -> [S] {
         return try context.fetch(request)
     }
     
@@ -70,35 +70,47 @@ extension CoreStorage: Storage {
         return try find(by: request)
     }
     
-    public func find(byPrimaryKey primaryKey: S.PrimaryType, includeSubentities: Bool, sortDescriptors: [SortDescriptor]) throws -> Model? {
+    public func find(byPrimaryKey primaryKey: S.PrimaryType, includeSubentities: Bool) throws -> Model? {
         let predicate = NSPredicate(format: "\(Model.primaryKey) == %@", argumentArray: [primaryKey])
-        let entities = try find(byPredicate: predicate, includeSubentities: includeSubentities, sortDescriptors: sortDescriptors)
+        let entities = try find(byPredicate: predicate, includeSubentities: includeSubentities, sortDescriptors: [])
         return entities.first
+    }
+    
+    public func find(byPredicate predicate: Predicate, orderedBy key: String, ascending: Bool) throws -> [Model] {
+        let request = S.request()
+        request.includesSubentities = true
+        request.predicate = NSPredicate(format: predicate.filter)
+        request.sortDescriptors = [NSSortDescriptor(key: key, ascending: ascending)]
+        return try find(by: request)
     }
     
     public func findAll() throws -> [S] {
         return try find(by: S.request())
     }
+    
+    public func findAll(orderedBy key: String, ascending: Bool) throws -> [Model] {
+        let request = S.request()
+        request.includesSubentities = true
+        request.sortDescriptors = [NSSortDescriptor(key: key, ascending: ascending)]
+        return try find(by: request)
+    }
 
-    public func update(byPredicate predicate: Predicate, _ configuration: ([S]) throws -> ()) throws -> [S] {
+    public func update(byPredicate predicate: Predicate, _ configuration: ([S]) throws -> ()) throws {
         let entities = try find(byPredicate: predicate)
         try configuration(entities)
         try saveContext()
-        return entities
     }
     
-    public func update(byPrimaryKey primaryKey: S.PrimaryType, configuration: (Model?) throws -> ()) throws -> Model? {
+    public func update(byPrimaryKey primaryKey: S.PrimaryType, configuration: (Model?) throws -> ()) throws {
         let entity = try find(byPrimaryKey: primaryKey)
         try configuration(entity)
         try self.saveContext()
-        return entity
     }
     
-    public func updateAll(_ configuration: ([Model]) throws -> ()) throws -> [Model] {
+    public func updateAll(_ configuration: ([Model]) throws -> ()) throws {
         let entities = try findAll()
         try configuration(entities)
         try saveContext()
-        return entities
     }
     
     public func remove(_ object: S) throws {

@@ -29,7 +29,7 @@ public class Monreau<CacheType: Storage> {
     ///
     /// - Parameter configuration: Block for object's configuration
     /// - Returns: Created object
-    @discardableResult public func create(_ configuration: (Model) -> ()) throws -> Model {
+    @discardableResult public func create(_ configuration: (Model) throws -> ()) throws -> Model {
         return try storage.create(configuration)
     }
     
@@ -38,6 +38,16 @@ public class Monreau<CacheType: Storage> {
     /// - Returns: All found objects
     public func findAll() throws -> [Model] {
         return try storage.findAll()
+    }
+    
+    /// Find all objects in storage ordered by the given key
+    ///
+    /// - Parameters:
+    ///   - key: key for sorting
+    ///   - ascending: ascending flag
+    /// - Returns: all found objects ordered by the given key
+    public func findAll(orderedBy key: String, ascending: Bool) throws -> [Model] {
+        return try storage.findAll(orderedBy: key, ascending: ascending)
     }
     
     /// Find objects in storage by filter
@@ -51,6 +61,17 @@ public class Monreau<CacheType: Storage> {
         return try storage.find(byPredicate: predicate, includeSubentities: includeSubentities, sortDescriptors: sortDescriptors)
     }
     
+    /// Find objects in storage by filter
+    ///
+    /// - Parameters:
+    ///   - predicate: filter
+    ///   - orderedBy: sorting key
+    ///   - ascending: ascending flag
+    /// - Returns: found objects
+    public func find(byPredicate predicate: Predicate, orderedBy key: String, ascending: Bool) throws -> [Model] {
+        return try storage.find(byPredicate: predicate, orderedBy: key, ascending: ascending)
+    }
+    
     /// Find object in storage by primary key
     ///
     /// - Parameters:
@@ -58,8 +79,8 @@ public class Monreau<CacheType: Storage> {
     ///   - includeSubentities: true if need to include subentities
     ///   - sortDescriptors: Descriptors for sorting result
     /// - Returns: Found object
-    public func find(byPrimaryKey primaryKey: PKType, includeSubentities: Bool = true, sortDescriptors: [SortDescriptor] = []) throws -> Model? {
-        return try storage.find(byPrimaryKey: primaryKey, includeSubentities: includeSubentities, sortDescriptors: sortDescriptors)
+    public func find(byPrimaryKey primaryKey: PKType, includeSubentities: Bool = true) throws -> Model? {
+        return try storage.find(byPrimaryKey: primaryKey, includeSubentities: includeSubentities)
     }
     
     /// Update object by primary key
@@ -68,8 +89,8 @@ public class Monreau<CacheType: Storage> {
     ///   - identifier: Primary key
     ///   - configuration: Block which updates found object
     /// - Returns: Updated objects
-    @discardableResult public func update(byPrimaryKey primaryKey: PKType, configuration: (Model?) -> ()) throws -> Model? {
-        return try storage.update(byPrimaryKey: primaryKey, configuration: configuration)
+    public func update(byPrimaryKey primaryKey: PKType, configuration: (Model?) throws -> ()) throws {
+        try storage.update(byPrimaryKey: primaryKey, configuration: configuration)
     }
     
     /// Find objects by filter and update with the given configuration
@@ -78,8 +99,8 @@ public class Monreau<CacheType: Storage> {
     ///   - predicate: Filter
     ///   - configuration: Block which updates found objects
     /// - Returns: Updated objects
-    @discardableResult public func update(byPredicate predicate: Predicate, _ configuration: ([Model]) -> ()) throws -> [Model] {
-        return try storage.update(byPredicate: predicate, configuration)
+    public func update(byPredicate predicate: Predicate, _ configuration: ([Model]) throws -> ()) throws {
+        try storage.update(byPredicate: predicate, configuration)
     }
     
     /// Update all objects in storage with the given configuration
@@ -87,8 +108,8 @@ public class Monreau<CacheType: Storage> {
     /// - Parameters:
     ///   - configuration: Block which updates objects
     /// - Returns: Updated objects
-    @discardableResult public func updateAll(_ configuration: ([Model]) -> ()) throws -> [Model] {
-        return try storage.updateAll(configuration)
+    public func updateAll(_ configuration: ([Model]) throws -> ()) throws {
+        try storage.updateAll(configuration)
     }
     
     /// Remove the given object
@@ -131,7 +152,7 @@ public extension Monreau {
     ///   - configuration: Block for object's configuration
     ///   - failure: Block for errors handling
     /// - Returns: Created object
-    public func create(configuration: (Model) -> (), failure: (Error) -> ()) {
+    public func create(configuration: (Model) throws -> (), failure: (Error) -> ()) {
         do {
             try storage.create(configuration)
         } catch {
@@ -145,9 +166,9 @@ public extension Monreau {
     ///   - configuration: Block for object's configuration
     ///   - failure: Block for errors handling
     /// - Returns: Created object
-    public func create(configuration: (Model) -> (), success: (Model) -> (), failure: (Error) -> ()) {
+    public func create(configuration: (Model) throws -> (), success: (Model) throws -> (), failure: (Error) -> ()) {
         do {
-            success(try storage.create(configuration))
+            try success(try storage.create(configuration))
         } catch {
             failure(error)
         }
@@ -159,6 +180,20 @@ public extension Monreau {
     public func findAll(success: ([Model]) -> (), failure: (Error) -> ()) {
         do {
             success(try storage.findAll())
+        } catch {
+            failure(error)
+        }
+    }
+    
+    /// Find all objects in storage ordered by the given key
+    ///
+    /// - Parameters:
+    ///   - key: key for sorting
+    ///   - ascending: ascending flag
+    /// - Returns: all found objects ordered by the given key
+    public func findAll(orderedBy key: String, ascending: Bool, success: ([Model]) -> (), failure: (Error) -> ()) {
+        do {
+            success(try storage.findAll(orderedBy: key, ascending: ascending))
         } catch {
             failure(error)
         }
@@ -179,6 +214,21 @@ public extension Monreau {
         }
     }
     
+    /// Find objects in storage by filter
+    ///
+    /// - Parameters:
+    ///   - predicate: filter
+    ///   - orderedBy: sorting key
+    ///   - ascending: ascending flag
+    /// - Returns: found objects
+    public func find(byPredicate predicate: Predicate, orderedBy key: String, ascending: Bool, success: ([Model]) -> (), failure: (Error) -> ()) {
+        do {
+            success(try storage.find(byPredicate: predicate, orderedBy: key, ascending: ascending))
+        } catch {
+            failure(error)
+        }
+    }
+    
     /// Find object in storage by primary key
     ///
     /// - Parameters:
@@ -186,9 +236,9 @@ public extension Monreau {
     ///   - includeSubentities: true if need to include subentities
     ///   - sortDescriptors: Descriptors for sorting result
     /// - Returns: Found object
-    public func find(byPrimaryKey primaryKey: PKType, includeSubentities: Bool = true, sortDescriptors: [SortDescriptor] = [], success: (Model?) -> (), failure: (Error) -> ()) {
+    public func find(byPrimaryKey primaryKey: PKType, includeSubentities: Bool = true, success: (Model?) -> (), failure: (Error) -> ()) {
         do {
-            success(try storage.find(byPrimaryKey: primaryKey, includeSubentities: includeSubentities, sortDescriptors: sortDescriptors))
+            success(try storage.find(byPrimaryKey: primaryKey, includeSubentities: includeSubentities))
         } catch {
             failure(error)
         }
@@ -199,7 +249,7 @@ public extension Monreau {
     /// - Parameters:
     ///   - configuration: Block which updates objects
     /// - Returns: Updated objects
-    public func updateAll(_ configuration: ([Model]) -> (), failure: (Error) -> ()) {
+    public func updateAll(_ configuration: ([Model]) throws -> (), failure: (Error) -> ()) {
         do {
             try storage.updateAll(configuration)
         } catch {
@@ -212,9 +262,10 @@ public extension Monreau {
     /// - Parameters:
     ///   - configuration: Block which updates objects
     /// - Returns: Updated objects
-    public func updateAll(_ configuration: ([Model]) -> (), success: ([Model]) -> (), failure: (Error) -> ()) {
+    public func updateAll(_ configuration: ([Model]) throws -> (), success: () -> (), failure: (Error) -> ()) {
         do {
-            success(try storage.updateAll(configuration))
+            try storage.updateAll(configuration)
+            success()
         } catch {
             failure(error)
         }
@@ -226,9 +277,10 @@ public extension Monreau {
     ///   - predicate: Filter
     ///   - configuration: Block which updates found objects
     /// - Returns: Updated objects
-    public func update(byPredicate predicate: Predicate, _ configuration: ([Model]) -> (), success: ([Model]) -> (), failure: (Error) -> ()) {
+    public func update(byPredicate predicate: Predicate, _ configuration: ([Model]) throws -> (), success: () -> (), failure: (Error) -> ()) {
         do {
-            success(try storage.update(byPredicate: predicate, configuration))
+            try storage.update(byPredicate: predicate, configuration)
+            success()
         } catch {
             failure(error)
         }
@@ -240,7 +292,7 @@ public extension Monreau {
     ///   - predicate: Filter
     ///   - configuration: Block which updates found objects
     /// - Returns: Updated objects
-    public func update(byPredicate predicate: Predicate, _ configuration: ([Model]) -> (), failure: (Error) -> ()) {
+    public func update(byPredicate predicate: Predicate, _ configuration: ([Model]) throws -> (), failure: (Error) -> ()) {
         do {
             try storage.update(byPredicate: predicate, configuration)
         } catch {
@@ -254,9 +306,10 @@ public extension Monreau {
     ///   - identifier: Primary key
     ///   - configuration: Block which updates found object
     /// - Returns: Updated objects
-    public func update(byPrimaryKey primaryKey: PKType, configuration: (Model?) -> (), success: (Model?) -> (), failure: (Error) -> ()) {
+    public func update(byPrimaryKey primaryKey: PKType, configuration: (Model?) throws -> (), success: () -> (), failure: (Error) -> ()) {
         do {
-            success(try storage.update(byPrimaryKey: primaryKey, configuration: configuration))
+            try storage.update(byPrimaryKey: primaryKey, configuration: configuration)
+            success()
         } catch {
             failure(error)
         }

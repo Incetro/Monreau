@@ -1,0 +1,29 @@
+use_frameworks!
+
+target "Monreau iOS" do
+  pod "RealmSwift"
+  target "Monreau iOS-Tests" do
+    pod "Nimble"
+    inherit! :search_paths
+  end
+end
+
+target "Monreau watchOS" do
+  pod "RealmSwift"
+end
+
+target "Monreau tvOS" do
+  pod "RealmSwift"
+  target "Monreau tvOS-Tests" do
+    pod "Nimble"
+    inherit! :search_paths
+  end
+end
+
+target "Monreau macOS" do
+  pod "RealmSwift"
+  target "Monreau macOS-Tests" do
+    pod "Nimble"
+    inherit! :search_paths
+  end
+end
