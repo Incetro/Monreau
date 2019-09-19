@@ -12,6 +12,7 @@ import CoreData
 
 public class CoreDataConfigurator {
     
+    /// NSManagedObjectContext instance
     private static var context: NSManagedObjectContext?
 
     /// Setup CoreData stack
@@ -21,11 +22,9 @@ public class CoreDataConfigurator {
     ///   - config: Configuration
     /// - Returns: Global managed object context (or moc for unit testing)
     public static func setup(withBundle bundle: Bundle, config: CoreStorageConfig) -> NSManagedObjectContext {
-        
         if config.storeType == NSInMemoryStoreType {
             return createContext(withBundle: bundle, config: config)
         }
-        
         if let moc = context {
             return moc
         } else {

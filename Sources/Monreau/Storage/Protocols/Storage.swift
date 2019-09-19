@@ -18,14 +18,14 @@ public protocol Storage: class {
 
     /// Create object in storage
     ///
-    /// - Parameter configuration: Block for object's configuration
+    /// - Parameter configuration: block for object's configuration
     /// - Returns: Created object
-    @discardableResult func create(_ configuration: (Model) throws -> ()) throws -> Model
+    func create() throws -> Model
     
     /// Find all objects in storage
     ///
     /// - Returns: all found objects
-    func findAll() throws -> [Model]
+    func read() throws -> [Model]
     
     /// Find all objects in storage ordered by the given key
     ///
@@ -33,16 +33,16 @@ public protocol Storage: class {
     ///   - key: key for sorting
     ///   - ascending: ascending flag
     /// - Returns: all found objects ordered by the given key
-    func findAll(orderedBy key: String, ascending: Bool) throws -> [Model]
+    func read(orderedBy key: String, ascending: Bool) throws -> [Model]
     
     /// Find objects in storage by filter
     ///
     /// - Parameters:
-    ///   - predicate: Filter
+    ///   - predicate: filter
     ///   - includeSubentities: true if need to include subentities
-    ///   - sortDescriptors: Descriptors for sorting result
+    ///   - sortDescriptors: descriptors for sorting result
     /// - Returns: Found objects
-    func find(byPredicate predicate: Predicate, includeSubentities: Bool, sortDescriptors: [SortDescriptor]) throws -> [Model]
+    func read(predicatedBy predicate: Predicate, includeSubentities: Bool, sortDescriptors: [SortDescriptor]) throws -> [Model]
     
     /// Find objects in storage by filter
     ///
@@ -51,57 +51,50 @@ public protocol Storage: class {
     ///   - orderedBy: sorting key
     ///   - ascending: ascending flag
     /// - Returns: found objects
-    func find(byPredicate predicate: Predicate, orderedBy key: String, ascending: Bool) throws -> [Model]
+    func read(predicatedBy predicate: Predicate, orderedBy key: String, ascending: Bool) throws -> [Model]
     
     /// Find object in storage by primary key
     ///
     /// - Parameters:
-    ///   - identifier: Primary key
+    ///   - identifier: primary key
     ///   - includeSubentities: true if need to include subentities
-    ///   - sortDescriptors: Descriptors for sorting result
+    ///   - sortDescriptors: descriptors for sorting result
     /// - Returns: Found object
-    func find(byPrimaryKey primaryKey: Key, includeSubentities: Bool) throws -> Model?
+    func read(byPrimaryKey primaryKey: Key, includeSubentities: Bool) throws -> Model?
     
     /// Find objects by filter and update with the given configuration
     ///
     /// - Parameters:
-    ///   - predicate: Filter
-    ///   - configuration: Block which updates found objects
+    ///   - predicate: filter
+    ///   - configuration: block which updates found objects
     /// - Returns: Updated objects
-    func update(byPredicate predicate: Predicate, _ configuration: ([Model]) throws -> ()) throws
+    func persist(predicatedBy predicate: Predicate, _ configuration: ([Model]) throws -> ()) throws
     
     /// Find objects by filter and update with the given configuration
     ///
     /// - Parameters:
-    ///   - predicate: Filter
-    ///   - configuration: Block which updates found objects
+    ///   - predicate: filter
+    ///   - configuration: block which updates found objects
     /// - Returns: Updated objects
-    func update(byPrimaryKey primaryKey: Key, configuration: (Model?) throws -> ()) throws
-    
-    /// Update all objects in storage with the given configuration
-    ///
-    /// - Parameters:
-    ///   - configuration: Block which updates objects
-    /// - Returns: Updated objects
-    func updateAll(_ configuration: ([Model]) throws -> ()) throws
+    func persist(withPrimaryKey primaryKey: Key, configuration: (Model?) throws -> ()) throws
     
     /// Remove the given object
     ///
-    /// - Parameter object: Given object
-    func remove(_ object: Model) throws
+    /// - Parameter object: given object
+    func erase(object: Model) throws
     
     /// Remove object by identifier
     ///
     /// - Parameter identifier: identifier
-    func remove(byPrimaryKey primaryKey: Key) throws
+    func erase(byPrimaryKey primaryKey: Key) throws
     
     /// Clear storage
-    func removeAll() throws
+    func erase() throws
     
     /// Remove objects by filter
     ///
-    /// - Parameter predicate: Filter for finding object
-    func remove(byPredicate predicate: Predicate) throws
+    /// - Parameter predicate: filter for finding object
+    func erase(predicatedBy predicate: Predicate) throws
     
     /// Save changes in storage
     func save() throws
@@ -112,18 +105,18 @@ extension Storage {
     /// Find object in storage by primary key
     ///
     /// - Parameters:
-    ///   - identifier: Primary key
-    /// - Returns: Found object
-    public func find(byPrimaryKey primaryKey: Key) throws -> Model? {
-        return try find(byPrimaryKey: primaryKey, includeSubentities: true)
+    ///   - identifier: primary key
+    /// - Returns: found object
+    public func read(byPrimaryKey primaryKey: Key) throws -> Model? {
+        return try read(byPrimaryKey: primaryKey, includeSubentities: true)
     }
     
     /// Find objects in storage by filter
     ///
     /// - Parameters:
-    ///   - predicate: Filter
-    /// - Returns: Found objects
-    public func find(byPredicate predicate: Predicate) throws -> [Model] {
-        return try find(byPredicate: predicate, includeSubentities: true, sortDescriptors: [])
+    ///   - predicate: filter
+    /// - Returns: found objects
+    public func read(predicatedBy predicate: Predicate) throws -> [Model] {
+        return try read(predicatedBy: predicate, includeSubentities: true, sortDescriptors: [])
     }
 }

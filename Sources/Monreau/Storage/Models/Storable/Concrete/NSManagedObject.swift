@@ -27,11 +27,9 @@ public extension Storable where Self: NSManagedObject {
     ///
     /// - Parameter context: Context for creating
     init(in context: NSManagedObjectContext) throws {
-        
         guard let entity = NSEntityDescription.entity(forEntityName: Self.entityName, in: context) else {
             throw NSError(domain: "Storable.NSManagedObject", code: 1, userInfo: nil)
         }
-        
         self.init(entity: entity, insertInto: context)
     }
 }
