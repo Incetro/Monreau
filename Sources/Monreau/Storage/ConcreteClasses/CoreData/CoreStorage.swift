@@ -147,9 +147,17 @@ extension CoreStorage: Storage {
     public func persist(withPrimaryKey primaryKey: S.PrimaryType, configuration: (Model?) throws -> ()) throws {
         let entity = try read(byPrimaryKey: primaryKey)
         try configuration(entity)
-        try self.saveContext()
+        try saveContext()
     }
-    
+
+    public func persist(object: Model) throws {
+        try saveContext()
+    }
+
+    public func persist(objects: [Model]) throws {
+        try saveContext()
+    }
+
     public func erase(object: S) throws {
         context.delete(object)
         try saveContext()

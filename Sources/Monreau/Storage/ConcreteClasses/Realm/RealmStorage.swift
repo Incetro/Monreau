@@ -222,6 +222,22 @@ extension RealmStorage: Storage {
             }
         }
     }
+
+    public func persist(object: Model) throws {
+        try autoreleasepool {
+            try realm().beginWrite()
+            try realm().add(object, update: .modified)
+            try realm().commitWrite()
+        }
+    }
+
+    public func persist(objects: [Model]) throws {
+        try autoreleasepool {
+            try realm().beginWrite()
+            try realm().add(objects, update: .modified)
+            try realm().commitWrite()
+        }
+    }
     
     public func erase(object: S) throws {
         try delete(object)

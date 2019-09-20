@@ -77,6 +77,16 @@ public protocol Storage: class {
     ///   - configuration: block which updates found objects
     /// - Returns: Updated objects
     func persist(withPrimaryKey primaryKey: Key, configuration: (Model?) throws -> ()) throws
+
+    /// Update the given object in the database
+    ///
+    /// - Parameter object: some object
+    func persist(object: Model) throws
+
+    /// Update some objects in the database
+    ///
+    /// - Parameter objects: some objects
+    func persist(objects: [Model]) throws
     
     /// Remove the given object
     ///
