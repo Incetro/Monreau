@@ -18,9 +18,14 @@ public protocol Storage: class {
 
     /// Create object in storage
     ///
-    /// - Parameter configuration: block for object's configuration
     /// - Returns: Created object
     func create() throws -> Model
+
+    /// Create object in storage
+    ///
+    /// - Parameter configuration: block for object's configuration
+    /// - Returns: Created object
+    @discardableResult func create(_ configuration: (Model) throws -> ()) throws -> Model
     
     /// Find all objects in storage
     ///

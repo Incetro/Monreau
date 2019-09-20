@@ -170,6 +170,13 @@ extension RealmStorage: Storage {
         try write(modelObject)
         return modelObject
     }
+
+    public func create(_ configuration: (S) throws -> ()) throws -> S {
+        let modelObject = S()
+        try configuration(modelObject)
+        try write(modelObject)
+        return modelObject
+    }
     
     public func read(predicatedBy predicate: Predicate, includeSubentities: Bool, sortDescriptors: [SortDescriptor]) throws -> [S] {
         let results: Results<S> = try read(predicatedBy: predicate)

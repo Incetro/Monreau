@@ -101,6 +101,13 @@ extension CoreStorage: Storage {
         return modelObject
     }
 
+    public func create(_ configuration: (S) throws -> ()) throws -> S {
+        let modelObject = try S(in: context)
+        try configuration(modelObject)
+        try saveContext()
+        return modelObject
+    }
+
     public func read(withRequest request: NSFetchRequest<S>) throws -> [S] {
         return try context.fetch(request)
     }
