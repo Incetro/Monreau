@@ -15,3 +15,10 @@ public protocol Predicate {
     /// Filter string
     var filter: String { get }
 }
+
+extension Predicate {
+    
+    var nsPredicate: NSPredicate {
+        return NSPredicate(format: filter)
+    }
+}

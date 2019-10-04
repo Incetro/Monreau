@@ -1,5 +1,5 @@
 //
-//  UserModelObject.swift
+//  UserCoreDataObject.swift
 //  Monreau
 //
 //  Created by incetro on 05/07/2017.
@@ -8,9 +8,9 @@
 
 import CoreData
 
-// MARK: - UserModelObject
+// MARK: - UserCoreDataObject
 
-public class UserModelObject: NSManagedObject, Storable {
+public class UserCoreDataObject: NSManagedObject, Storable {
     
     public typealias PrimaryType = Int64
     

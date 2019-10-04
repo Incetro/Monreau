@@ -6,7 +6,6 @@
 //
 
 import XCTest
-import Nimble
 import Monreau
 import RealmSwift
 
@@ -14,248 +13,424 @@ import RealmSwift
 
 class MonreauRealmTests: XCTestCase {
     
-    // MARK: - Properties
-    
-    let categoryMonreau = Monreau(with: RealmStorage<CategoryModelObject>())
-    let positionMonreau = Monreau(with: RealmStorage<PositionModelObject>())
-    
-    private func clear() {
-        try? positionMonreau.removeAll()
-        try? categoryMonreau.removeAll()
-    }
-    
-    override func setUp() {
-        try? categoryMonreau.removeAll()
-    }
-    
-    // MARK: - Create
-    
-    func testCreate() {
-        do {
-            clear()
-            
-            let model = try categoryMonreau.create { category in
-                category.id = 1
-                category.name = "name"
-            }
-            
-            let category = try categoryMonreau.findAll().first
-            
-            expect(model.id).to(equal(category?.id))
-            expect(model.name).to(equal(category?.name))
+    typealias UserStorage = RealmStorage<UserRealmObject>
 
-        } catch {
-            fail(error.localizedDescription)
-        }
-    }
+    private lazy var storage: UserStorage = {
+        return UserStorage(configuration: RealmConfiguration(inMemoryIdentifier: "Monreau"))
+    }()
     
-    // MARK: - Read
-    
-    func testFindByPK() {
+    /// Create an object using configuration
+    func testMNRC1() {
         do {
-            clear()
-            
-            let category = try categoryMonreau.create { category in
-                category.id = 1
-                category.name = "name"
+            let name = "Name"
+            let id: Int64 = 13
+            let age: Int16 = 20
+            let user = try storage.create { user in
+                user.name = name
+                user.id = id
+                user.age = age
             }
-            
-            let foundCategory = try categoryMonreau.find(byPrimaryKey: 1)
-            expect(foundCategory?.id).to(equal(category.id))
-            expect(foundCategory?.name).to(equal(category.name))
-            
+            XCTAssertEqual(user.id, id)
+            XCTAssertEqual(user.age, age)
+            XCTAssertEqual(user.name, name)
         } catch {
-            fail(error.localizedDescription)
+            XCTFail(error.localizedDescription)
         }
     }
     
-    func testFindAll() {
-        do {
-            clear()
-            
-            var info: [(id: Int, name: String)] = []
-            
-            for i in 1..<10 {
-                info.append((id: i, name: "name#\(i)"))
-            }
-            
-            for i in info {
-                try categoryMonreau.create {
-                    $0.id = i.id
-                    $0.name = i.name
-                }
-            }
-            
-            let models = try categoryMonreau.findAll(orderedBy: "id", ascending: true)
-            
-            expect(models.count).to(equal(9))
-            
-            for (index, model) in models.enumerated() {
-                expect(model.id).to(equal(info[index].id))
-                expect(model.name).to(equal(info[index].name))
-            }
-            
-        } catch {
-            fail(error.localizedDescription)
-        }
-    }
-    
-    func testFindByPredicateWithSortDescriptors() {
-        do {
-            clear()
-            
-            var info: [(id: Int, name: String)] = []
-            
-            for i in 1..<10 {
-                info.append((id: i, name: "name#\(10 - i % 3 - 1)"))
-            }
-            
-            for i in info {
-                try categoryMonreau.create {
-                    $0.id = i.id
-                    $0.name = i.name
-                }
-            }
-            
-            let models = try categoryMonreau.find(byPredicate: "id > 1", sortDescriptors: [
-                SortDescriptor(key: "name", ascending: true),
-                SortDescriptor(key: "id", ascending: true)
-            ])
-            
-            expect(models.count).to(equal(8))
-            
-            let correct = [
-                (2, "name#7"),
-                (5, "name#7"),
-                (8, "name#7"),
-                (4, "name#8"),
-                (7, "name#8"),
-                (3, "name#9"),
-                (6, "name#9"),
-                (9, "name#9"),
-            ]
-            
-            for (index, model) in models.enumerated() {
-                expect(model.id).to(equal(correct[index].0))
-                expect(model.name).to(equal(correct[index].1))
-            }
-            
-        } catch {
-            fail(error.localizedDescription)
-        }
-    }
-    
-    func testFindByPredicate() {
-        do {
-            clear()
-            
-            var info: [(id: Int, name: String)] = []
-            
-            for i in 1..<10 {
-                info.append((id: i, name: "name#\(i)"))
-            }
-            
-            for i in info {
-                try categoryMonreau.create {
-                    $0.id = i.id
-                    $0.name = i.name
-                }
-            }
-            
-            let models = try categoryMonreau.find(byPredicate: "id > 5", orderedBy: "id", ascending: true)
-            
-            expect(models.count).to(equal(4))
-            
-            info = info.filter { $0.id > 5 }
-            
-            for (index, model) in models.enumerated() {
-                expect(model.id).to(equal(info[index].id))
-                expect(model.name).to(equal(info[index].name))
-            }
-            
-        } catch {
-            fail(error.localizedDescription)
-        }
-    }
-    
-    // MARK: - Update
-    
-    func testUpdateByPK() {
-        do {
-            clear()
-            
-            try categoryMonreau.create { category in
-                category.id = 1
-                category.name = "name"
-            }
-            
-            try categoryMonreau.update(byPrimaryKey: 1, configuration: { category in
-                category?.name = "name2"
-            })
-            
-            let foundCategory = try categoryMonreau.find(byPrimaryKey: 1)
-            expect(foundCategory?.id).to(equal(1))
-            expect(foundCategory?.name).to(equal("name2"))
-            
-        } catch {
-            fail(error.localizedDescription)
-        }
-    }
-    
-    // MARK: - Delete
-    
-    func testCascadeDeletion() {
+    /// Read all
+    func testMNRC2() {
         
+        /// given
+
+        let modelsCount = 1000
+        var usersData: [(id: Int64, name: String, age: Int16)] = []
+
+        for i in 0..<modelsCount {
+            usersData.append((id: Int64(i), name: "Name #\(i)", age: Int16(i + 10)))
+        }
+
         do {
-            clear()
-            
-            for i in 0..<10 {
-                try positionMonreau.create { position in
-                    position.id = i + 1
-                    position.name = "name#\(i)"
+
+            /// when
+
+            for data in usersData {
+                try storage.create { user in
+                    user.id   = data.id
+                    user.age  = data.age
+                    user.name = data.name
                 }
             }
             
-            let positions = try positionMonreau.findAll()
+            /// then
             
-            let model = try categoryMonreau.create { category in
-                category.id = 1
-                category.name = "name"
-                category.positions.append(objectsIn: positions)
+            let objects = try storage.read().sorted { $0.id < $1.id }
+            XCTAssert(objects.count == modelsCount)
+            
+            for i in 0..<objects.count {
+                let data   = usersData[i]
+                let object = objects[i]
+                XCTAssertEqual(data.id,   object.id)
+                XCTAssertEqual(data.age,  object.age)
+                XCTAssertEqual(data.name, object.name)
             }
             
-            let category = try categoryMonreau.findAll().first
-            
-            expect(model.id).to(equal(category?.id))
-            expect(model.name).to(equal(category?.name))
-            expect(model.positions.count).to(equal(category?.positions.count))
-
-            expect(try self.positionMonreau.findAll().count).to(equal(10))
-            
-            try categoryMonreau.remove(byPrimaryKey: 1)
-            
-            expect(try self.positionMonreau.findAll().count).to(equal(0))
-            
         } catch {
-            fail(error.localizedDescription)
+            XCTFail(error.localizedDescription)
         }
     }
     
-    func testRemoveByPK() {
+    /// Read all with ordering by the given property
+    func testMNRC3() {
+        
+        /// given
+
+        let modelsCount = 1000
+        var usersData: [(id: Int64, name: String, age: Int16)] = []
+
+        for i in 0..<modelsCount {
+            usersData.append((id: Int64(i), name: "Name #\(i)", age: Int16(i + 10)))
+        }
+
         do {
-            clear()
-            
-            try categoryMonreau.create { category in
-                category.id = 1
-                category.name = "name"
+
+            /// when
+
+            for data in usersData {
+                try storage.create { user in
+                    user.id   = data.id
+                    user.age  = data.age
+                    user.name = data.name
+                }
             }
             
-            expect(try self.categoryMonreau.find(byPrimaryKey: 1)).toNot(beNil())
-            try categoryMonreau.remove(byPrimaryKey: 1)
-            expect(try self.categoryMonreau.find(byPrimaryKey: 1)).to(beNil())
+            /// then
+            
+            let objects = try storage.read(orderedBy: UserRealmObject.primaryKey, ascending: true)
+            XCTAssert(objects.count == modelsCount)
+            
+            for i in 0..<objects.count {
+                let data   = usersData[i]
+                let object = objects[i]
+                XCTAssertEqual(data.id,   object.id)
+                XCTAssertEqual(data.age,  object.age)
+                XCTAssertEqual(data.name, object.name)
+            }
             
         } catch {
-            fail(error.localizedDescription)
+            XCTFail(error.localizedDescription)
+        }
+    }
+    
+    /// Read objects with the given predicate
+    func testMNRC4() {
+        
+        /// given
+
+        let modelsCount = 1000
+        let predicateId = 5
+        let predicate = "id > \(predicateId)"
+        var usersData: [(id: Int64, name: String, age: Int16)] = []
+
+        for i in 0..<modelsCount {
+            usersData.append((id: Int64(i), name: "Name #\(i)", age: Int16(i + 10)))
+        }
+
+        do {
+
+            /// when
+
+            for data in usersData {
+                try storage.create { user in
+                    user.id   = data.id
+                    user.age  = data.age
+                    user.name = data.name
+                }
+            }
+            
+            /// then
+            
+            let objects = try storage.read(predicatedBy: predicate).sorted { $0.id < $1.id }
+            XCTAssert(objects.count == modelsCount - predicateId - 1)
+            
+            for i in 0..<objects.count {
+                let data   = usersData[i + predicateId + 1]
+                let object = objects[i]
+                XCTAssertEqual(data.id,   object.id)
+                XCTAssertEqual(data.age,  object.age)
+                XCTAssertEqual(data.name, object.name)
+            }
+            
+        } catch {
+            XCTFail(error.localizedDescription)
+        }
+    }
+    
+    /// Read objects with the given predicate and sort descriptor
+    func testMNRC5() {
+        
+        /// given
+
+        let modelsCount = 1000
+        let predicateId = 5
+        let predicate = "id > \(predicateId)"
+        let sortDescriptor = SortDescriptor(key: "id", ascending: true)
+        var usersData: [(id: Int64, name: String, age: Int16)] = []
+
+        for i in 0..<modelsCount {
+            usersData.append((id: Int64(i), name: "Name #\(i)", age: Int16(i + 10)))
+        }
+
+        do {
+
+            /// when
+
+            for data in usersData {
+                try storage.create { user in
+                    user.id   = data.id
+                    user.age  = data.age
+                    user.name = data.name
+                }
+            }
+            
+            /// then
+            
+            let objects = try storage.read(predicatedBy: predicate, includeSubentities: true, sortDescriptors: [sortDescriptor])
+            XCTAssert(objects.count == modelsCount - predicateId - 1)
+            
+            for i in 0..<objects.count {
+                let data   = usersData[i + predicateId + 1]
+                let object = objects[i]
+                XCTAssertEqual(data.id,   object.id)
+                XCTAssertEqual(data.age,  object.age)
+                XCTAssertEqual(data.name, object.name)
+            }
+            
+        } catch {
+            XCTFail(error.localizedDescription)
+        }
+    }
+    
+    /// Read by primary key
+    func testMNRC6() {
+        
+        /// given
+
+        let modelsCount = 1000
+        let primaryKey: UserRealmObject.PrimaryType = 5
+        var usersData: [(id: Int64, name: String, age: Int16)] = []
+
+        for i in 0..<modelsCount {
+            usersData.append((id: Int64(i), name: "Name #\(i)", age: Int16(i + 10)))
+        }
+
+        do {
+
+            /// when
+
+            for data in usersData {
+                try storage.create { user in
+                    user.id   = data.id
+                    user.age  = data.age
+                    user.name = data.name
+                }
+            }
+
+            /// then
+            
+            let object = try storage.read(byPrimaryKey: primaryKey)
+            XCTAssertNotNil(object)
+            
+        } catch {
+            XCTFail(error.localizedDescription)
+        }
+    }
+    
+    /// Persist objects array
+    func testMNRC7() {
+        
+        /// given
+
+        let modelsCount = 1000
+        var usersData: [(id: Int64, name: String, age: Int16)] = []
+
+        for i in 0..<modelsCount {
+            usersData.append((id: Int64(i), name: "Name #\(i)", age: Int16(i + 10)))
+        }
+
+        do {
+
+            /// when
+
+            do {
+                let objects = usersData.map { data -> UserRealmObject in
+                    let user = UserRealmObject()
+                    user.id   = data.id
+                    user.age  = 13
+                    user.name = data.name
+                    return user
+                }
+                try storage.persist(objects: objects)
+            }
+            
+            /// then
+            
+            let objects = try storage.read().sorted { $0.id < $1.id }
+            XCTAssertEqual(objects.count, modelsCount)
+            
+            for i in 0..<objects.count {
+                let data   = usersData[i]
+                let object = objects[i]
+                XCTAssertEqual(data.id, object.id)
+                XCTAssertEqual(13, object.age)
+                XCTAssertEqual(data.name, object.name)
+            }
+            
+        } catch {
+            XCTFail(error.localizedDescription)
+        }
+    }
+    
+    /// Persist objects by predicate
+    func testMNRC8() {
+        
+        /// given
+
+        let modelsCount = 1000
+        let predicateId = 5
+        let predicate = "id > \(predicateId)"
+        let sortDescriptor = SortDescriptor(key: "id", ascending: true)
+        var usersData: [(id: Int64, name: String, age: Int16)] = []
+
+        for i in 0..<modelsCount {
+            usersData.append((id: Int64(i), name: "Name #\(i)", age: Int16(i + 10)))
+        }
+
+        do {
+
+            /// when
+
+            for data in usersData {
+                try storage.create { user in
+                    user.id   = data.id
+                    user.age  = data.age
+                    user.name = data.name
+                }
+            }
+            
+            /// then
+            
+            try storage.persist(predicatedBy: predicate) { objects in
+                objects.forEach {
+                    $0.age = 13
+                }
+            }
+            let objects = try storage.read(predicatedBy: predicate, includeSubentities: true, sortDescriptors: [sortDescriptor])
+            XCTAssert(objects.count == modelsCount - predicateId - 1)
+            
+            for i in 0..<objects.count {
+                let data   = usersData[i + predicateId + 1]
+                let object = objects[i]
+                XCTAssertEqual(data.id, object.id)
+                XCTAssertEqual(13, object.age)
+                XCTAssertEqual(data.name, object.name)
+            }
+            
+        } catch {
+            XCTFail(error.localizedDescription)
+        }
+    }
+
+    /// Create without config
+    func testMNRC9() {
+        
+        /// given
+
+        let modelsCount = 1000
+        var usersData: [(id: Int64, name: String, age: Int16)] = []
+
+        for i in 0..<modelsCount {
+            usersData.append((id: Int64(i), name: "Name #\(i)", age: Int16(i + 10)))
+        }
+
+        do {
+
+            /// when
+            
+            var objects: [UserRealmObject] = []
+            for data in usersData {
+                let object = try storage.create()
+                object.age = data.age
+                object.id = data.id
+                object.name = data.name
+                objects.append(object)
+            }
+
+            try storage.persist(objects: objects)
+            
+            /// then
+            
+            objects = try storage.read().sorted { $0.id < $1.id }
+            XCTAssert(objects.count == modelsCount)
+            
+            for i in 0..<objects.count {
+                let data   = usersData[i]
+                let object = objects[i]
+                XCTAssertEqual(data.id, object.id)
+                XCTAssertEqual(data.age, object.age)
+                XCTAssertEqual(data.name, object.name)
+            }
+            
+        } catch {
+            XCTFail(error.localizedDescription)
+        }
+    }
+    
+    /// Persisting by primary key
+    func testMNRC10() {
+        
+        /// given
+
+        let modelsCount = 1000
+        var usersData: [(id: Int64, name: String, age: Int16)] = []
+
+        for i in 0..<modelsCount {
+            usersData.append((id: Int64(i), name: "Name #\(i)", age: Int16(i + 10)))
+        }
+
+        do {
+
+            /// when
+
+            for data in usersData {
+                try storage.create { user in
+                    user.id   = data.id
+                    user.age  = data.age
+                    user.name = data.name
+                }
+            }
+            
+            /// then
+            
+            for i in 0..<modelsCount {
+                try storage.persist(withPrimaryKey: Int64(i)) {
+                    $0?.age = 13
+                }
+            }
+            
+            let objects = try storage.read().sorted { $0.id < $1.id }
+            XCTAssert(objects.count == modelsCount)
+            
+            for i in 0..<objects.count {
+                let data   = usersData[i]
+                let object = objects[i]
+                XCTAssertEqual(data.id, object.id)
+                XCTAssertEqual(13, object.age)
+                XCTAssertEqual(data.name, object.name)
+            }
+            
+        } catch {
+            XCTFail(error.localizedDescription)
         }
     }
 }

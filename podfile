@@ -1,29 +1,37 @@
 use_frameworks!
 
-target "Monreau iOS" do
+def standard_pods
   pod "RealmSwift"
+end
+
+target "Monreau iOS" do
+  platform :ios, "10.3"
+  standard_pods
   target "Monreau iOS-Tests" do
-    pod "Nimble"
-    inherit! :search_paths
+    #inherit! :search_paths
+    standard_pods
   end
 end
 
 target "Monreau watchOS" do
-  pod "RealmSwift"
+  platform :watchos, "3.0"
+  standard_pods
 end
 
 target "Monreau tvOS" do
-  pod "RealmSwift"
+  platform :tvos, "10.2"
+  standard_pods
   target "Monreau tvOS-Tests" do
-    pod "Nimble"
-    inherit! :search_paths
+    #inherit! :search_paths
+    standard_pods
   end
 end
 
 target "Monreau macOS" do
-  pod "RealmSwift"
+  platform :osx, "10.12"
+  standard_pods
   target "Monreau macOS-Tests" do
-    pod "Nimble"
-    inherit! :search_paths
+    #inherit! :search_paths
+    standard_pods
   end
 end

@@ -10,7 +10,10 @@ import RealmSwift
 
 // MARK: - RealmStorage
 
+/// `Realm` wrapper for CRUD actions
 public class RealmStorage<Model> where Model: Object, Model: Storable {
+    
+    // MARK: - Aliases
     
     public typealias S = Model
     public typealias K = Model.PrimaryType
@@ -165,18 +168,22 @@ public class RealmStorage<Model> where Model: Object, Model: Storable {
 
 extension RealmStorage: Storage {
    
+    // MARK: - Create
+    
     public func create() throws -> S {
         let modelObject = S()
         try write(modelObject)
         return modelObject
     }
 
-    public func create(_ configuration: (S) throws -> ()) throws -> S {
+    @discardableResult public func create(_ configuration: (S) throws -> ()) throws -> S {
         let modelObject = S()
         try configuration(modelObject)
         try write(modelObject)
         return modelObject
     }
+    
+    // MARK: - Read
     
     public func read(predicatedBy predicate: Predicate, includeSubentities: Bool, sortDescriptors: [SortDescriptor]) throws -> [S] {
         let results: Results<S> = try read(predicatedBy: predicate)
@@ -194,18 +201,20 @@ extension RealmStorage: Storage {
     
     public func read(predicatedBy predicate: Predicate, orderedBy key: String, ascending: Bool) throws -> [Model] {
         let results: Results<S> = try read(predicatedBy: predicate).sorted(byKeyPath: key, ascending: ascending)
-        return results.map { $0 }
+        return Array(results)
     }
     
     public func read() throws -> [S] {
         let models: Results<S> = try read()
-        return models.map { $0 }
+        return Array(models)
     }
     
     public func read(orderedBy key: String, ascending: Bool) throws -> [Model] {
         let models: Results<S> = try read().sorted(byKeyPath: key, ascending: ascending)
-        return models.map { $0 }
+        return Array(models)
     }
+    
+    // MARK: - Persist
     
     public func persist(predicatedBy predicate: Predicate, _ configuration: ([S]) throws -> ()) throws {
         let models = try read(predicatedBy: predicate)
@@ -231,20 +240,18 @@ extension RealmStorage: Storage {
     }
 
     public func persist(object: Model) throws {
-        try autoreleasepool {
-            try realm().beginWrite()
-            try realm().add(object, update: .modified)
-            try realm().commitWrite()
-        }
+        try realm().beginWrite()
+        try realm().add(object, update: .modified)
+        try realm().commitWrite()
     }
 
     public func persist(objects: [Model]) throws {
-        try autoreleasepool {
-            try realm().beginWrite()
-            try realm().add(objects, update: .modified)
-            try realm().commitWrite()
-        }
+        try realm().beginWrite()
+        try realm().add(objects, update: .modified)
+        try realm().commitWrite()
     }
+    
+    // MARK: - Erase
     
     public func erase(object: S) throws {
         try delete(object)
@@ -270,6 +277,20 @@ extension RealmStorage: Storage {
         try delete(models)
     }
     
+    // MARK: - Other
+    
     public func save() throws {
+    }
+    
+    public func isEntityExist(primaryKey: Model.PrimaryType) throws -> Bool {
+        return try read(byPrimaryKey: primaryKey) != nil
+    }
+    
+    public func count(predicatedBy predicate: Predicate?) throws -> Int {
+        let objects = try realm().objects(S.self)
+        if let predicate = predicate {
+            return objects.filter(predicate.nsPredicate).count
+        }
+        return objects.count
     }
 }

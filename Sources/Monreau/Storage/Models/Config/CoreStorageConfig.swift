@@ -22,7 +22,7 @@ public struct CoreStorageConfig {
     public let options: [String: NSObject]
 
     /// URL of persistent store file
-    public let persistentStoreURL:URL?
+    public let persistentStoreURL: URL?
 
     /// Create an instance with specified `containerName`, `storeType`, `options`.
     ///

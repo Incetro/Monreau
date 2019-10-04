@@ -13,7 +13,6 @@ import Foundation
 public protocol Storage: class {
     
     associatedtype Model: Storable
-    
     typealias Key = Model.PrimaryType
 
     /// Create object in storage
@@ -110,9 +109,14 @@ public protocol Storage: class {
     ///
     /// - Parameter predicate: filter for finding object
     func erase(predicatedBy predicate: Predicate) throws
+
+    /// Returns true if an entity with the given primary key already exists
+    /// - Parameter primaryKey: entity primary key
+    func isEntityExist(primaryKey: Key) throws -> Bool
     
-    /// Save changes in storage
-    func save() throws
+    /// Returns the number of objects which fits the predicate
+    /// - Parameter predicate: some predicate
+    func count(predicatedBy predicate: Predicate?) throws -> Int
 }
 
 extension Storage {
@@ -133,5 +137,10 @@ extension Storage {
     /// - Returns: found objects
     public func read(predicatedBy predicate: Predicate) throws -> [Model] {
         return try read(predicatedBy: predicate, includeSubentities: true, sortDescriptors: [])
+    }
+
+    /// Returns the number of objects in the current storage
+    public func count() throws -> Int {
+        return try count(predicatedBy: nil)
     }
 }

@@ -14,39 +14,63 @@ import CoreData
 
 class MonreauCoreTests: XCTestCase {
     
-    var monreau = Monreau(with: CoreStorage<UserModelObject>(withConfig: CoreStorageConfig(containerName: "Monreau", storeType: .memory)))
+    typealias UserStorage = CoreStorage<UserCoreDataObject>
+
+    private lazy var storage: UserStorage = {
+        do {
+            return try CoreStorage<UserCoreDataObject>(configuration: CoreStorageConfig(containerName: "Monreau", storeType: .memory))
+        } catch {
+            fatalError()
+        }
+    }()
     
-    func testThatMonreauCanCreateObject() {
-        XCTAssertNoThrow(try monreau.create({ user in
-            user.id   = 1
-            user.age  = 20
-            user.name = "name"
-        }))
+    /// Create an object using configuration
+    func testMNRC1() {
+        do {
+            let name = "Name"
+            let id: Int64 = 13
+            let age: Int16 = 20
+            let user = try storage.create { user in
+                user.name = name
+                user.id = id
+                user.age = age
+            }
+            XCTAssertEqual(user.id, id)
+            XCTAssertEqual(user.age, age)
+            XCTAssertEqual(user.name, name)
+        } catch {
+            XCTFail(error.localizedDescription)
+        }
     }
     
-    func testThatMonreauCanFindAllObjects() {
+    /// Read all
+    func testMNRC2() {
         
+        /// given
+
+        let modelsCount = 1000
         var usersData: [(id: Int64, name: String, age: Int16)] = []
-        
-        for i in 1...10 {
+
+        for i in 0..<modelsCount {
             usersData.append((id: Int64(i), name: "Name #\(i)", age: Int16(i + 10)))
         }
-        
-        for data in usersData {
-            XCTAssertNoThrow(try monreau.create({ user in
-                user.id   = data.id
-                user.age  = data.age
-                user.name = data.name
-            }))
-        }
-        
+
         do {
-            var objects = try monreau.findAll()
-            objects.sort(by: { (f, s) -> Bool in
-                f.id < s.id
-            })
+
+            /// when
+
+            for data in usersData {
+                try storage.create { user in
+                    user.id   = data.id
+                    user.age  = data.age
+                    user.name = data.name
+                }
+            }
             
-            XCTAssertEqual(objects.count, 10)
+            /// then
+            
+            let objects = try storage.read().sorted { $0.id < $1.id }
+            XCTAssert(objects.count == modelsCount)
             
             for i in 0..<objects.count {
                 let data   = usersData[i]
@@ -61,34 +85,37 @@ class MonreauCoreTests: XCTestCase {
         }
     }
     
-    func testThatMonreauCanFindObjectsByPredicate() {
+    /// Read all with ordering by the given property
+    func testMNRC3() {
         
+        /// given
+
+        let modelsCount = 1000
         var usersData: [(id: Int64, name: String, age: Int16)] = []
-        
-        for i in 1...10 {
+
+        for i in 0..<modelsCount {
             usersData.append((id: Int64(i), name: "Name #\(i)", age: Int16(i + 10)))
         }
-        
-        for data in usersData {
-            XCTAssertNoThrow(try monreau.create({ user in
-                user.id   = data.id
-                user.age  = data.age
-                user.name = data.name
-            }))
-        }
-        
+
         do {
+
+            /// when
+
+            for data in usersData {
+                try storage.create { user in
+                    user.id   = data.id
+                    user.age  = data.age
+                    user.name = data.name
+                }
+            }
             
-            var objects = try monreau.find(byPredicate: "id > 5")
+            /// then
             
-            objects.sort(by: { (f, s) -> Bool in
-                f.id < s.id
-            })
-            
-            XCTAssertEqual(objects.count, 5)
+            let objects = try storage.read(orderedBy: UserCoreDataObject.primaryKey, ascending: true)
+            XCTAssert(objects.count == modelsCount)
             
             for i in 0..<objects.count {
-                let data   = usersData[i + 5]
+                let data   = usersData[i]
                 let object = objects[i]
                 XCTAssertEqual(data.id,   object.id)
                 XCTAssertEqual(data.age,  object.age)
@@ -100,30 +127,39 @@ class MonreauCoreTests: XCTestCase {
         }
     }
     
-    func testThatMonreauCanFindAllObjectsByPredicateWithSortDescriptor() {
+    /// Read objects with the given predicate
+    func testMNRC4() {
         
+        /// given
+
+        let modelsCount = 1000
+        let predicateId = 5
+        let predicate = "id > \(predicateId)"
         var usersData: [(id: Int64, name: String, age: Int16)] = []
-        
-        for i in 1...10 {
+
+        for i in 0..<modelsCount {
             usersData.append((id: Int64(i), name: "Name #\(i)", age: Int16(i + 10)))
         }
-        
-        for data in usersData {
-            XCTAssertNoThrow(try monreau.create({ user in
-                user.id   = data.id
-                user.age  = data.age
-                user.name = data.name
-            }))
-        }
-        
+
         do {
+
+            /// when
+
+            for data in usersData {
+                try storage.create { user in
+                    user.id   = data.id
+                    user.age  = data.age
+                    user.name = data.name
+                }
+            }
             
-            var objects = try monreau.find(byPredicate: "id > 5", includeSubentities: true, sortDescriptors: [SortDescriptor(key: "age", ascending: false)])
+            /// then
             
-            XCTAssertEqual(objects.count, 5)
+            let objects = try storage.read(predicatedBy: predicate).sorted { $0.id < $1.id }
+            XCTAssert(objects.count == modelsCount - predicateId - 1)
             
             for i in 0..<objects.count {
-                let data   = usersData[9 - i]
+                let data   = usersData[i + predicateId + 1]
                 let object = objects[i]
                 XCTAssertEqual(data.id,   object.id)
                 XCTAssertEqual(data.age,  object.age)
@@ -131,61 +167,132 @@ class MonreauCoreTests: XCTestCase {
             }
             
         } catch {
-            
             XCTFail(error.localizedDescription)
         }
     }
     
-    func testThatMonreauCanFindObjectByPrimaryKey() {
+    /// Read objects with the given predicate and sort descriptor
+    func testMNRC5() {
         
-        XCTAssertNoThrow(try monreau.create({ user in
-            user.id   = 1
-            user.age  = 20
-            user.name = "name"
-        }))
-        
+        /// given
+
+        let modelsCount = 1000
+        let predicateId = 5
+        let predicate = "id > \(predicateId)"
+        let sortDescriptor = SortDescriptor(key: "id", ascending: true)
+        var usersData: [(id: Int64, name: String, age: Int16)] = []
+
+        for i in 0..<modelsCount {
+            usersData.append((id: Int64(i), name: "Name #\(i)", age: Int16(i + 10)))
+        }
+
         do {
-            let object = try monreau.find(byPrimaryKey: 1)
+
+            /// when
+
+            for data in usersData {
+                try storage.create { user in
+                    user.id   = data.id
+                    user.age  = data.age
+                    user.name = data.name
+                }
+            }
+            
+            /// then
+            
+            let objects = try storage.read(predicatedBy: predicate, includeSubentities: true, sortDescriptors: [sortDescriptor])
+            XCTAssert(objects.count == modelsCount - predicateId - 1)
+            
+            for i in 0..<objects.count {
+                let data   = usersData[i + predicateId + 1]
+                let object = objects[i]
+                XCTAssertEqual(data.id,   object.id)
+                XCTAssertEqual(data.age,  object.age)
+                XCTAssertEqual(data.name, object.name)
+            }
+            
+        } catch {
+            XCTFail(error.localizedDescription)
+        }
+    }
+    
+    /// Read by primary key
+    func testMNRC6() {
+        
+        /// given
+
+        let modelsCount = 1000
+        let primaryKey: UserCoreDataObject.PrimaryType = 5
+        var usersData: [(id: Int64, name: String, age: Int16)] = []
+
+        for i in 0..<modelsCount {
+            usersData.append((id: Int64(i), name: "Name #\(i)", age: Int16(i + 10)))
+        }
+
+        do {
+
+            /// when
+
+            for data in usersData {
+                try storage.create { user in
+                    user.id   = data.id
+                    user.age  = data.age
+                    user.name = data.name
+                }
+            }
+
+            /// then
+            
+            let object = try storage.read(byPrimaryKey: primaryKey)
             XCTAssertNotNil(object)
+            
         } catch {
             XCTFail(error.localizedDescription)
         }
     }
     
-    func testThatMonreauCanUpdateAllObjects() {
+    /// Persist objects array
+    func testMNRC7() {
         
+        /// given
+
+        let modelsCount = 1000
         var usersData: [(id: Int64, name: String, age: Int16)] = []
-        
-        for i in 1...10 {
+
+        for i in 0..<modelsCount {
             usersData.append((id: Int64(i), name: "Name #\(i)", age: Int16(i + 10)))
         }
-        
-        for data in usersData {
-            
-            XCTAssertNoThrow(try monreau.create({ user in
-                user.id   = data.id
-                user.age  = data.age
-                user.name = data.name
-            }))
-        }
-        
+
         do {
-            
-            try monreau.updateAll { objects in
-                
-                let objects = objects.sorted(by: { (f, s) -> Bool in
-                    f.id < s.id
-                })
-                
-                for object in objects {
-                    object.age  = 17
-                    object.name = "wed"
+
+            /// when
+
+            for data in usersData {
+                try storage.create { user in
+                    user.id   = data.id
+                    user.age  = data.age
+                    user.name = data.name
                 }
             }
             
-            try monreau.findAll().forEach {
-                XCTAssertEqual($0.age, 17)
-                XCTAssertEqual($0.name, "wed")
+            /// then
+            
+            do {
+                let objects = try storage.read()
+                objects.forEach {
+                    $0.age = 14
+                }
+                try storage.persist(objects: objects)
+            }
+            let objects = try storage.read().sorted { $0.id < $1.id }
+            XCTAssert(objects.count == modelsCount)
+            
+            for i in 0..<objects.count {
+                let data   = usersData[i]
+                let object = objects[i]
+                XCTAssertEqual(data.id, object.id)
+                XCTAssertEqual(14, object.age)
+                XCTAssertEqual(data.name, object.name)
             }
             
         } catch {
@@ -193,39 +300,94 @@ class MonreauCoreTests: XCTestCase {
         }
     }
     
-    func testThatMonreauCanUpdateObjectsByPredicate() {
+    /// Persist objects by predicate
+    func testMNRC8() {
         
+        /// given
+
+        let modelsCount = 1000
+        let predicateId = 5
+        let predicate = "id > \(predicateId)"
+        let sortDescriptor = SortDescriptor(key: "id", ascending: true)
         var usersData: [(id: Int64, name: String, age: Int16)] = []
-        
-        for i in 1...10 {
+
+        for i in 0..<modelsCount {
             usersData.append((id: Int64(i), name: "Name #\(i)", age: Int16(i + 10)))
         }
-        
-        for data in usersData {
-            XCTAssertNoThrow(try monreau.create({ user in
-                user.id   = data.id
-                user.age  = data.age
-                user.name = data.name
-            }))
-        }
-        
+
         do {
-            
-            try monreau.update(byPredicate: "id < 6") { objects in
-                
-                let objects = objects.sorted(by: { (f, s) -> Bool in
-                    f.id < s.id
-                })
-                
-                for object in objects {
-                    object.age  = 17
-                    object.name = "wed"
+
+            /// when
+
+            for data in usersData {
+                try storage.create { user in
+                    user.id   = data.id
+                    user.age  = data.age
+                    user.name = data.name
                 }
             }
             
-            try monreau.find(byPredicate: "id < 6").forEach {
-                XCTAssertEqual($0.age, 17)
-                XCTAssertEqual($0.name, "wed")
+            /// then
+            
+            try storage.persist(predicatedBy: predicate) { objects in
+                objects.forEach {
+                    $0.age = 13
+                }
+            }
+            let objects = try storage.read(predicatedBy: predicate, includeSubentities: true, sortDescriptors: [sortDescriptor])
+            XCTAssert(objects.count == modelsCount - predicateId - 1)
+            
+            for i in 0..<objects.count {
+                let data   = usersData[i + predicateId + 1]
+                let object = objects[i]
+                XCTAssertEqual(data.id, object.id)
+                XCTAssertEqual(13, object.age)
+                XCTAssertEqual(data.name, object.name)
+            }
+            
+        } catch {
+            XCTFail(error.localizedDescription)
+        }
+    }
+
+    /// Create without config
+    func testMNRC9() {
+        
+        /// given
+
+        let modelsCount = 1000
+        var usersData: [(id: Int64, name: String, age: Int16)] = []
+
+        for i in 0..<modelsCount {
+            usersData.append((id: Int64(i), name: "Name #\(i)", age: Int16(i + 10)))
+        }
+
+        do {
+
+            /// when
+            
+            var objects: [UserCoreDataObject] = []
+            for data in usersData {
+                let object = try storage.create()
+                object.age = data.age
+                object.id = data.id
+                object.name = data.name
+                objects.append(object)
+            }
+
+            try storage.persist(objects: objects)
+            
+            /// then
+            
+            objects = try storage.read().sorted { $0.id < $1.id }
+            XCTAssert(objects.count == modelsCount)
+            
+            for i in 0..<objects.count {
+                let data   = usersData[i]
+                let object = objects[i]
+                XCTAssertEqual(data.id, object.id)
+                XCTAssertEqual(data.age, object.age)
+                XCTAssertEqual(data.name, object.name)
             }
             
         } catch {
@@ -233,41 +395,49 @@ class MonreauCoreTests: XCTestCase {
         }
     }
     
-    func testThatMonreauCenRemoveObjectsByPredicate() {
+    /// Persisting by primary key
+    func testMNRC10() {
         
+        /// given
+
+        let modelsCount = 1000
         var usersData: [(id: Int64, name: String, age: Int16)] = []
-        
-        for i in 1...10 {
+
+        for i in 0..<modelsCount {
             usersData.append((id: Int64(i), name: "Name #\(i)", age: Int16(i + 10)))
         }
-        
-        for data in usersData {
-            XCTAssertNoThrow(try monreau.create({ user in
-                user.id   = data.id
-                user.age  = data.age
-                user.name = data.name
-            }))
-        }
-        
+
         do {
-            try monreau.remove(byPredicate: "id < 6")
-            XCTAssertEqual(try monreau.findAll().count, 5)
-        } catch {
-            XCTFail(error.localizedDescription)
-        }
-    }
-    
-    func testThatMonreauCenRemoveObjectByPrimaryKey() {
-        
-        XCTAssertNoThrow(try monreau.create({ user in
-            user.id   = 1
-            user.age  = 20
-            user.name = "name"
-        }))
-        
-        do {
-            try monreau.remove(byPrimaryKey: 1)
-            XCTAssertEqual(try monreau.findAll().count, 0)
+
+            /// when
+
+            for data in usersData {
+                try storage.create { user in
+                    user.id   = data.id
+                    user.age  = data.age
+                    user.name = data.name
+                }
+            }
+            
+            /// then
+            
+            for i in 0..<modelsCount {
+                try storage.persist(withPrimaryKey: Int64(i)) {
+                    $0?.age = 13
+                }
+            }
+            
+            let objects = try storage.read().sorted { $0.id < $1.id }
+            XCTAssert(objects.count == modelsCount)
+            
+            for i in 0..<objects.count {
+                let data   = usersData[i]
+                let object = objects[i]
+                XCTAssertEqual(data.id, object.id)
+                XCTAssertEqual(13, object.age)
+                XCTAssertEqual(data.name, object.name)
+            }
+            
         } catch {
             XCTFail(error.localizedDescription)
         }

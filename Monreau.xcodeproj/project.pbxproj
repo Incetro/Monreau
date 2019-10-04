@@ -7,7 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		22576AA8F9A4C9C3FB5BAC4E /* Pods_Monreau_tvOS_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B02F18F2C858F6F06FFF963 /* Pods_Monreau_tvOS_Tests.framework */; };
+		0491A49809CFD945BBA4AEBC /* Pods_Monreau_tvOS_Monreau_tvOS_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4457B1F7C31BE1D4F34D9E6D /* Pods_Monreau_tvOS_Monreau_tvOS_Tests.framework */; };
+		21FD3333899B163FD65092C5 /* Pods_Monreau_iOS_Monreau_iOS_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FD0AF0D39D516EC0E94084F /* Pods_Monreau_iOS_Monreau_iOS_Tests.framework */; };
+		3308FF662343AEBE002786A2 /* MonreauCoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3331E6DF1F0D0E12007BE883 /* MonreauCoreTests.swift */; };
+		3308FF672343AEBE002786A2 /* MonreauCoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3331E6DF1F0D0E12007BE883 /* MonreauCoreTests.swift */; };
+		3308FF682343AEBF002786A2 /* MonreauCoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3331E6DF1F0D0E12007BE883 /* MonreauCoreTests.swift */; };
 		331D04291FB84FAD004EF879 /* RealmStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331D04281FB84FAD004EF879 /* RealmStorage.swift */; };
 		331D042A1FB85015004EF879 /* RealmStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331D04281FB84FAD004EF879 /* RealmStorage.swift */; };
 		331D042B1FB85016004EF879 /* RealmStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331D04281FB84FAD004EF879 /* RealmStorage.swift */; };
@@ -20,10 +24,10 @@
 		331D04381FB8AE16004EF879 /* Object.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331D04361FB8AE16004EF879 /* Object.swift */; };
 		331D04391FB8AE16004EF879 /* Object.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331D04361FB8AE16004EF879 /* Object.swift */; };
 		331D043A1FB8AE16004EF879 /* Object.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331D04361FB8AE16004EF879 /* Object.swift */; };
-		331D043B1FB8AEFB004EF879 /* CategoryModelObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331D042F1FB8AC0B004EF879 /* CategoryModelObject.swift */; };
-		331D043C1FB8AEFC004EF879 /* CategoryModelObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331D042F1FB8AC0B004EF879 /* CategoryModelObject.swift */; };
-		331D043D1FB8AEFC004EF879 /* CategoryModelObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331D042F1FB8AC0B004EF879 /* CategoryModelObject.swift */; };
-		331D043E1FB8AEFD004EF879 /* CategoryModelObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331D042F1FB8AC0B004EF879 /* CategoryModelObject.swift */; };
+		331D043B1FB8AEFB004EF879 /* UserRealmObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331D042F1FB8AC0B004EF879 /* UserRealmObject.swift */; };
+		331D043C1FB8AEFC004EF879 /* UserRealmObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331D042F1FB8AC0B004EF879 /* UserRealmObject.swift */; };
+		331D043D1FB8AEFC004EF879 /* UserRealmObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331D042F1FB8AC0B004EF879 /* UserRealmObject.swift */; };
+		331D043E1FB8AEFD004EF879 /* UserRealmObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331D042F1FB8AC0B004EF879 /* UserRealmObject.swift */; };
 		33318CFA1F1BDEDA00F27BC7 /* CoreStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3358B6A21F1AAC9200CBD8CF /* CoreStorage.swift */; };
 		33318CFB1F1BDEDA00F27BC7 /* CoreStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3358B6A21F1AAC9200CBD8CF /* CoreStorage.swift */; };
 		33318CFC1F1BDEDB00F27BC7 /* CoreStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3358B6A21F1AAC9200CBD8CF /* CoreStorage.swift */; };
@@ -55,10 +59,13 @@
 		3331E6F31F0D13ED007BE883 /* Monreau.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3331E6E71F0D1015007BE883 /* Monreau.xcdatamodeld */; };
 		3331E6F41F0D13EE007BE883 /* Monreau.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3331E6E71F0D1015007BE883 /* Monreau.xcdatamodeld */; };
 		3331E6F51F0D13EE007BE883 /* Monreau.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3331E6E71F0D1015007BE883 /* Monreau.xcdatamodeld */; };
-		3331E6F61F0D22C0007BE883 /* UserModelObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3331E6ED1F0D1165007BE883 /* UserModelObject.swift */; };
-		3331E6F71F0D22C0007BE883 /* UserModelObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3331E6ED1F0D1165007BE883 /* UserModelObject.swift */; };
-		3331E6F81F0D22C0007BE883 /* UserModelObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3331E6ED1F0D1165007BE883 /* UserModelObject.swift */; };
-		3331E6F91F0D22C1007BE883 /* UserModelObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3331E6ED1F0D1165007BE883 /* UserModelObject.swift */; };
+		3331E6F61F0D22C0007BE883 /* UserCoreDataObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3331E6ED1F0D1165007BE883 /* UserCoreDataObject.swift */; };
+		3331E6F71F0D22C0007BE883 /* UserCoreDataObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3331E6ED1F0D1165007BE883 /* UserCoreDataObject.swift */; };
+		3331E6F81F0D22C0007BE883 /* UserCoreDataObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3331E6ED1F0D1165007BE883 /* UserCoreDataObject.swift */; };
+		3331E6F91F0D22C1007BE883 /* UserCoreDataObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3331E6ED1F0D1165007BE883 /* UserCoreDataObject.swift */; };
+		3342EFDA23475F3800DAB099 /* MonreauRealmTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331D043F1FB8B0CF004EF879 /* MonreauRealmTests.swift */; };
+		3342EFDB23475F3800DAB099 /* MonreauRealmTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331D043F1FB8B0CF004EF879 /* MonreauRealmTests.swift */; };
+		3342EFDC23475F3900DAB099 /* MonreauRealmTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331D043F1FB8B0CF004EF879 /* MonreauRealmTests.swift */; };
 		3358A8A51F0C042400D4BD9C /* Monreau.h in Headers */ = {isa = PBXBuildFile; fileRef = 3358A8A21F0C042400D4BD9C /* Monreau.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3358A8A61F0C042B00D4BD9C /* Monreau.h in Headers */ = {isa = PBXBuildFile; fileRef = 3358A8A21F0C042400D4BD9C /* Monreau.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3358A8A71F0C042B00D4BD9C /* Monreau.h in Headers */ = {isa = PBXBuildFile; fileRef = 3358A8A21F0C042400D4BD9C /* Monreau.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -87,10 +94,9 @@
 		3378F7D81FB83C6900CF60DF /* RealmConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3378F7D61FB83B6A00CF60DF /* RealmConfiguration.swift */; };
 		3378F7D91FB83C6900CF60DF /* RealmConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3378F7D61FB83B6A00CF60DF /* RealmConfiguration.swift */; };
 		3378F7DA1FB83C6900CF60DF /* RealmConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3378F7D61FB83B6A00CF60DF /* RealmConfiguration.swift */; };
-		6AB2017838F71B36B678A478 /* Pods_Monreau_macOS_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A7651178D0219D6C443CCC5 /* Pods_Monreau_macOS_Tests.framework */; };
+		392E114048AB8ACDFD0AA9A2 /* Pods_Monreau_macOS_Monreau_macOS_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16F872F88A67E3C466D88A5B /* Pods_Monreau_macOS_Monreau_macOS_Tests.framework */; };
 		796953A66CE0EACA39F4F60A /* Pods_Monreau_watchOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E68501A9A576BE17C8C25881 /* Pods_Monreau_watchOS.framework */; };
 		8100727D043B426AD8C54F98 /* Pods_Monreau_macOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74C8A3A570B0F81438049325 /* Pods_Monreau_macOS.framework */; };
-		840E91F3D52E359E524C4A76 /* Pods_Monreau_iOS_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1C359DAE85E2F4C20C2D59E /* Pods_Monreau_iOS_Tests.framework */; };
 		DA1CDACDF6020580767D182F /* Pods_Monreau_tvOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6931180D82986491F1A227A1 /* Pods_Monreau_tvOS.framework */; };
 		E4A1B3F3D88BC3DC5F25B280 /* Pods_Monreau_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ECB303C86C3E4BBBC7393FB /* Pods_Monreau_iOS.framework */; };
 /* End PBXBuildFile section */
@@ -120,11 +126,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2D91E97A2B1A15E28BA6877F /* Pods-Monreau tvOS-Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Monreau tvOS-Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Monreau tvOS-Tests/Pods-Monreau tvOS-Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		05C5813473E7C65A48C04D3A /* Pods-Monreau tvOS-Monreau tvOS-Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Monreau tvOS-Monreau tvOS-Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Monreau tvOS-Monreau tvOS-Tests/Pods-Monreau tvOS-Monreau tvOS-Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		0FD0AF0D39D516EC0E94084F /* Pods_Monreau_iOS_Monreau_iOS_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Monreau_iOS_Monreau_iOS_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		16F872F88A67E3C466D88A5B /* Pods_Monreau_macOS_Monreau_macOS_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Monreau_macOS_Monreau_macOS_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		310F48A724B09B1FC84AD28C /* Pods-Monreau iOS-Monreau iOS-Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Monreau iOS-Monreau iOS-Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Monreau iOS-Monreau iOS-Tests/Pods-Monreau iOS-Monreau iOS-Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		3310CCEF1F0F72D900081792 /* Package.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		331D04281FB84FAD004EF879 /* RealmStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmStorage.swift; sourceTree = "<group>"; };
 		331D042D1FB86ECD004EF879 /* Cascadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cascadable.swift; sourceTree = "<group>"; };
-		331D042F1FB8AC0B004EF879 /* CategoryModelObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryModelObject.swift; sourceTree = "<group>"; };
+		331D042F1FB8AC0B004EF879 /* UserRealmObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserRealmObject.swift; sourceTree = "<group>"; };
 		331D04361FB8AE16004EF879 /* Object.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Object.swift; sourceTree = "<group>"; };
 		331D043F1FB8B0CF004EF879 /* MonreauRealmTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonreauRealmTests.swift; sourceTree = "<group>"; };
 		3331E6B31F0D0D80007BE883 /* Monreau macOS-Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Monreau macOS-Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -133,7 +142,7 @@
 		3331E6DD1F0D0DC2007BE883 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3331E6DF1F0D0E12007BE883 /* MonreauCoreTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonreauCoreTests.swift; sourceTree = "<group>"; };
 		3331E6E81F0D1015007BE883 /* Monreau.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Monreau.xcdatamodel; sourceTree = "<group>"; };
-		3331E6ED1F0D1165007BE883 /* UserModelObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserModelObject.swift; sourceTree = "<group>"; };
+		3331E6ED1F0D1165007BE883 /* UserCoreDataObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserCoreDataObject.swift; sourceTree = "<group>"; };
 		3358A8621F0C037100D4BD9C /* Monreau.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Monreau.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3358A86F1F0C038400D4BD9C /* Monreau.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Monreau.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3358A8891F0C039D00D4BD9C /* Monreau.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Monreau.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -152,25 +161,22 @@
 		336041321F17C7470038BE3C /* CoreStorageConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreStorageConfig.swift; sourceTree = "<group>"; };
 		336041341F17C7FA0038BE3C /* CoreStorageType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreStorageType.swift; sourceTree = "<group>"; };
 		3378F7D61FB83B6A00CF60DF /* RealmConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmConfiguration.swift; sourceTree = "<group>"; };
-		3A7651178D0219D6C443CCC5 /* Pods_Monreau_macOS_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Monreau_macOS_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3CD1C3008B5E938E5F68041C /* Pods-Monreau iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Monreau iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Monreau iOS/Pods-Monreau iOS.debug.xcconfig"; sourceTree = "<group>"; };
+		4457B1F7C31BE1D4F34D9E6D /* Pods_Monreau_tvOS_Monreau_tvOS_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Monreau_tvOS_Monreau_tvOS_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CB5FA011484E0D07ABB71E7 /* Pods-Monreau tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Monreau tvOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-Monreau tvOS/Pods-Monreau tvOS.release.xcconfig"; sourceTree = "<group>"; };
 		500E64B4788ABCCAFA1B106D /* Pods-Monreau iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Monreau iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-Monreau iOS/Pods-Monreau iOS.release.xcconfig"; sourceTree = "<group>"; };
-		5B02F18F2C858F6F06FFF963 /* Pods_Monreau_tvOS_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Monreau_tvOS_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6931180D82986491F1A227A1 /* Pods_Monreau_tvOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Monreau_tvOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		74C8A3A570B0F81438049325 /* Pods_Monreau_macOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Monreau_macOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7ECB303C86C3E4BBBC7393FB /* Pods_Monreau_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Monreau_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A40643F8E55AB4EB1194EF7 /* Pods-Monreau watchOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Monreau watchOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-Monreau watchOS/Pods-Monreau watchOS.release.xcconfig"; sourceTree = "<group>"; };
+		8EBE69F6FE56ED56987F6E63 /* Pods-Monreau tvOS-Monreau tvOS-Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Monreau tvOS-Monreau tvOS-Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Monreau tvOS-Monreau tvOS-Tests/Pods-Monreau tvOS-Monreau tvOS-Tests.release.xcconfig"; sourceTree = "<group>"; };
 		93C4BDDFCA0B933CAF04D564 /* Pods-Monreau macOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Monreau macOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Monreau macOS/Pods-Monreau macOS.debug.xcconfig"; sourceTree = "<group>"; };
-		A1C359DAE85E2F4C20C2D59E /* Pods_Monreau_iOS_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Monreau_iOS_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A666053608F68EB8EA61E982 /* Pods-Monreau macOS-Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Monreau macOS-Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Monreau macOS-Tests/Pods-Monreau macOS-Tests.release.xcconfig"; sourceTree = "<group>"; };
-		BDF83D8C8551B5A9AE9DE5DD /* Pods-Monreau macOS-Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Monreau macOS-Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Monreau macOS-Tests/Pods-Monreau macOS-Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		B002BB3489D2568D85735432 /* Pods-Monreau macOS-Monreau macOS-Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Monreau macOS-Monreau macOS-Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Monreau macOS-Monreau macOS-Tests/Pods-Monreau macOS-Monreau macOS-Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		BF5A9B8C02C33A92FD18D368 /* Pods-Monreau tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Monreau tvOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Monreau tvOS/Pods-Monreau tvOS.debug.xcconfig"; sourceTree = "<group>"; };
-		C16313E1397F76F81BCC3D29 /* Pods-Monreau iOS-Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Monreau iOS-Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Monreau iOS-Tests/Pods-Monreau iOS-Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		C2483CBC4DD6267575B4FE6C /* Pods-Monreau tvOS-Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Monreau tvOS-Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Monreau tvOS-Tests/Pods-Monreau tvOS-Tests.release.xcconfig"; sourceTree = "<group>"; };
 		DEE4E577EF9B78B128BDFE07 /* Pods-Monreau watchOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Monreau watchOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Monreau watchOS/Pods-Monreau watchOS.debug.xcconfig"; sourceTree = "<group>"; };
+		E11723F7A9BCBBD878CD68A3 /* Pods-Monreau macOS-Monreau macOS-Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Monreau macOS-Monreau macOS-Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Monreau macOS-Monreau macOS-Tests/Pods-Monreau macOS-Monreau macOS-Tests.release.xcconfig"; sourceTree = "<group>"; };
+		E2A9CB0E345F8B0D2BAA7EE2 /* Pods-Monreau iOS-Monreau iOS-Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Monreau iOS-Monreau iOS-Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Monreau iOS-Monreau iOS-Tests/Pods-Monreau iOS-Monreau iOS-Tests.release.xcconfig"; sourceTree = "<group>"; };
 		E68501A9A576BE17C8C25881 /* Pods_Monreau_watchOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Monreau_watchOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E965A2C4AE1F9354FACA9738 /* Pods-Monreau iOS-Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Monreau iOS-Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Monreau iOS-Tests/Pods-Monreau iOS-Tests.release.xcconfig"; sourceTree = "<group>"; };
 		FC11C22E00D54857224643C0 /* Pods-Monreau macOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Monreau macOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-Monreau macOS/Pods-Monreau macOS.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -180,7 +186,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3331E6B81F0D0D80007BE883 /* Monreau.framework in Frameworks */,
-				6AB2017838F71B36B678A478 /* Pods_Monreau_macOS_Tests.framework in Frameworks */,
+				392E114048AB8ACDFD0AA9A2 /* Pods_Monreau_macOS_Monreau_macOS_Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -189,7 +195,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3331E6C71F0D0D8C007BE883 /* Monreau.framework in Frameworks */,
-				22576AA8F9A4C9C3FB5BAC4E /* Pods_Monreau_tvOS_Tests.framework in Frameworks */,
+				0491A49809CFD945BBA4AEBC /* Pods_Monreau_tvOS_Monreau_tvOS_Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -198,7 +204,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3331E6D61F0D0DA1007BE883 /* Monreau.framework in Frameworks */,
-				840E91F3D52E359E524C4A76 /* Pods_Monreau_iOS_Tests.framework in Frameworks */,
+				21FD3333899B163FD65092C5 /* Pods_Monreau_iOS_Monreau_iOS_Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -304,8 +310,8 @@
 			children = (
 				3331E6DC1F0D0DC2007BE883 /* MonreauTests */,
 				3331E6E71F0D1015007BE883 /* Monreau.xcdatamodeld */,
-				3331E6ED1F0D1165007BE883 /* UserModelObject.swift */,
-				331D042F1FB8AC0B004EF879 /* CategoryModelObject.swift */,
+				3331E6ED1F0D1165007BE883 /* UserCoreDataObject.swift */,
+				331D042F1FB8AC0B004EF879 /* UserRealmObject.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -441,18 +447,18 @@
 			children = (
 				3CD1C3008B5E938E5F68041C /* Pods-Monreau iOS.debug.xcconfig */,
 				500E64B4788ABCCAFA1B106D /* Pods-Monreau iOS.release.xcconfig */,
-				C16313E1397F76F81BCC3D29 /* Pods-Monreau iOS-Tests.debug.xcconfig */,
-				E965A2C4AE1F9354FACA9738 /* Pods-Monreau iOS-Tests.release.xcconfig */,
 				93C4BDDFCA0B933CAF04D564 /* Pods-Monreau macOS.debug.xcconfig */,
 				FC11C22E00D54857224643C0 /* Pods-Monreau macOS.release.xcconfig */,
-				BDF83D8C8551B5A9AE9DE5DD /* Pods-Monreau macOS-Tests.debug.xcconfig */,
-				A666053608F68EB8EA61E982 /* Pods-Monreau macOS-Tests.release.xcconfig */,
 				BF5A9B8C02C33A92FD18D368 /* Pods-Monreau tvOS.debug.xcconfig */,
 				4CB5FA011484E0D07ABB71E7 /* Pods-Monreau tvOS.release.xcconfig */,
-				2D91E97A2B1A15E28BA6877F /* Pods-Monreau tvOS-Tests.debug.xcconfig */,
-				C2483CBC4DD6267575B4FE6C /* Pods-Monreau tvOS-Tests.release.xcconfig */,
 				DEE4E577EF9B78B128BDFE07 /* Pods-Monreau watchOS.debug.xcconfig */,
 				8A40643F8E55AB4EB1194EF7 /* Pods-Monreau watchOS.release.xcconfig */,
+				310F48A724B09B1FC84AD28C /* Pods-Monreau iOS-Monreau iOS-Tests.debug.xcconfig */,
+				E2A9CB0E345F8B0D2BAA7EE2 /* Pods-Monreau iOS-Monreau iOS-Tests.release.xcconfig */,
+				B002BB3489D2568D85735432 /* Pods-Monreau macOS-Monreau macOS-Tests.debug.xcconfig */,
+				E11723F7A9BCBBD878CD68A3 /* Pods-Monreau macOS-Monreau macOS-Tests.release.xcconfig */,
+				05C5813473E7C65A48C04D3A /* Pods-Monreau tvOS-Monreau tvOS-Tests.debug.xcconfig */,
+				8EBE69F6FE56ED56987F6E63 /* Pods-Monreau tvOS-Monreau tvOS-Tests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -461,12 +467,12 @@
 			isa = PBXGroup;
 			children = (
 				7ECB303C86C3E4BBBC7393FB /* Pods_Monreau_iOS.framework */,
-				A1C359DAE85E2F4C20C2D59E /* Pods_Monreau_iOS_Tests.framework */,
 				74C8A3A570B0F81438049325 /* Pods_Monreau_macOS.framework */,
-				3A7651178D0219D6C443CCC5 /* Pods_Monreau_macOS_Tests.framework */,
 				6931180D82986491F1A227A1 /* Pods_Monreau_tvOS.framework */,
-				5B02F18F2C858F6F06FFF963 /* Pods_Monreau_tvOS_Tests.framework */,
 				E68501A9A576BE17C8C25881 /* Pods_Monreau_watchOS.framework */,
+				0FD0AF0D39D516EC0E94084F /* Pods_Monreau_iOS_Monreau_iOS_Tests.framework */,
+				16F872F88A67E3C466D88A5B /* Pods_Monreau_macOS_Monreau_macOS_Tests.framework */,
+				4457B1F7C31BE1D4F34D9E6D /* Pods_Monreau_tvOS_Monreau_tvOS_Tests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -513,11 +519,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3331E6BB1F0D0D80007BE883 /* Build configuration list for PBXNativeTarget "Monreau macOS-Tests" */;
 			buildPhases = (
-				78E49F40C4B794FAF0BB23AD /* [CP] Check Pods Manifest.lock */,
+				16963515DD0EF86803B4A6D2 /* [CP] Check Pods Manifest.lock */,
 				3331E6AF1F0D0D80007BE883 /* Sources */,
 				3331E6B01F0D0D80007BE883 /* Frameworks */,
 				3331E6B11F0D0D80007BE883 /* Resources */,
-				8BA4E873A65C94939D531B12 /* [CP] Embed Pods Frameworks */,
+				1A12B5F69329ECE2F025C46B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -533,11 +539,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3331E6CA1F0D0D8C007BE883 /* Build configuration list for PBXNativeTarget "Monreau tvOS-Tests" */;
 			buildPhases = (
-				424B8E2FFCF55B9E601EE175 /* [CP] Check Pods Manifest.lock */,
+				00378393A7DFFB18ECE3154E /* [CP] Check Pods Manifest.lock */,
 				3331E6BE1F0D0D8C007BE883 /* Sources */,
 				3331E6BF1F0D0D8C007BE883 /* Frameworks */,
 				3331E6C01F0D0D8C007BE883 /* Resources */,
-				F41E28E017329288BD2EEF52 /* [CP] Embed Pods Frameworks */,
+				924B949CC6006C9E669F5E0A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -553,11 +559,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3331E6D91F0D0DA1007BE883 /* Build configuration list for PBXNativeTarget "Monreau iOS-Tests" */;
 			buildPhases = (
-				44EA63889756E71D896E2F5D /* [CP] Check Pods Manifest.lock */,
+				D9876CC6B9A28C5A6638FE7E /* [CP] Check Pods Manifest.lock */,
 				3331E6CD1F0D0DA1007BE883 /* Sources */,
 				3331E6CE1F0D0DA1007BE883 /* Frameworks */,
 				3331E6CF1F0D0DA1007BE883 /* Resources */,
-				E7F8C70FBB870F1F8804CA5C /* [CP] Embed Pods Frameworks */,
+				B1929E2F2FECCECA4B2FB987 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -652,50 +658,53 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 1030;
+				LastUpgradeCheck = 1110;
 				TargetAttributes = {
 					3331E6B21F0D0D80007BE883 = {
 						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = 7Q8EP54N3L;
 						ProvisioningStyle = Automatic;
 					};
 					3331E6C11F0D0D8C007BE883 = {
 						CreatedOnToolsVersion = 8.3.3;
-						ProvisioningStyle = Manual;
+						DevelopmentTeam = 7Q8EP54N3L;
+						ProvisioningStyle = Automatic;
 					};
 					3331E6D01F0D0DA1007BE883 = {
 						CreatedOnToolsVersion = 8.3.3;
-						LastSwiftMigration = 0920;
-						ProvisioningStyle = Manual;
+						DevelopmentTeam = 7Q8EP54N3L;
+						LastSwiftMigration = 1110;
+						ProvisioningStyle = Automatic;
 					};
 					3358A8611F0C037100D4BD9C = {
 						CreatedOnToolsVersion = 8.3.3;
 						LastSwiftMigration = 1030;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 					3358A86E1F0C038400D4BD9C = {
 						CreatedOnToolsVersion = 8.3.3;
 						LastSwiftMigration = 1030;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 					3358A8881F0C039D00D4BD9C = {
 						CreatedOnToolsVersion = 8.3.3;
 						LastSwiftMigration = 1030;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 					3358A8951F0C03A800D4BD9C = {
 						CreatedOnToolsVersion = 8.3.3;
 						LastSwiftMigration = 1030;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
 			buildConfigurationList = 3358A84C1F0C035800D4BD9C /* Build configuration list for PBXProject "Monreau" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				English,
 				en,
+				Base,
 			);
 			mainGroup = 3358A8481F0C035800D4BD9C;
 			productRefGroup = 3358A8551F0C036100D4BD9C /* Products */;
@@ -766,58 +775,68 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		424B8E2FFCF55B9E601EE175 /* [CP] Check Pods Manifest.lock */ = {
+		00378393A7DFFB18ECE3154E /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			inputFileListPaths = (
 			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Monreau tvOS-Tests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-Monreau tvOS-Monreau tvOS-Tests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		44EA63889756E71D896E2F5D /* [CP] Check Pods Manifest.lock */ = {
+		16963515DD0EF86803B4A6D2 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			inputFileListPaths = (
 			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Monreau iOS-Tests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-Monreau macOS-Monreau macOS-Tests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		78E49F40C4B794FAF0BB23AD /* [CP] Check Pods Manifest.lock */ = {
+		1A12B5F69329ECE2F025C46B /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
+				"${PODS_ROOT}/Target Support Files/Pods-Monreau macOS-Monreau macOS-Tests/Pods-Monreau macOS-Monreau macOS-Tests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Realm-macOS/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift-macOS/RealmSwift.framework",
 			);
-			name = "[CP] Check Pods Manifest.lock";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Monreau macOS-Tests-checkManifestLockResult.txt",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Monreau macOS-Monreau macOS-Tests/Pods-Monreau macOS-Monreau macOS-Tests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		7D5993A50FAC2477BDDA1030 /* [CP] Check Pods Manifest.lock */ = {
@@ -838,22 +857,24 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		8BA4E873A65C94939D531B12 /* [CP] Embed Pods Frameworks */ = {
+		924B949CC6006C9E669F5E0A /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Monreau macOS-Tests/Pods-Monreau macOS-Tests-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Nimble-macOS/Nimble.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-Monreau tvOS-Monreau tvOS-Tests/Pods-Monreau tvOS-Monreau tvOS-Tests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Realm-tvOS/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift-tvOS/RealmSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nimble.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Monreau macOS-Tests/Pods-Monreau macOS-Tests-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Monreau tvOS-Monreau tvOS-Tests/Pods-Monreau tvOS-Monreau tvOS-Tests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		9678E6913CF5E2B2EED8C0FB /* [CP] Check Pods Manifest.lock */ = {
@@ -872,6 +893,26 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B1929E2F2FECCECA4B2FB987 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Monreau iOS-Monreau iOS-Tests/Pods-Monreau iOS-Monreau iOS-Tests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Realm-iOS/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift-iOS/RealmSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Monreau iOS-Monreau iOS-Tests/Pods-Monreau iOS-Monreau iOS-Tests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		BCE79F42D8DBC04DB307FBBA /* [CP] Check Pods Manifest.lock */ = {
@@ -910,40 +951,26 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		E7F8C70FBB870F1F8804CA5C /* [CP] Embed Pods Frameworks */ = {
+		D9876CC6B9A28C5A6638FE7E /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Monreau iOS-Tests/Pods-Monreau iOS-Tests-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Nimble-iOS/Nimble.framework",
+			inputFileListPaths = (
 			);
-			name = "[CP] Embed Pods Frameworks";
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nimble.framework",
+				"$(DERIVED_FILE_DIR)/Pods-Monreau iOS-Monreau iOS-Tests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Monreau iOS-Tests/Pods-Monreau iOS-Tests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		F41E28E017329288BD2EEF52 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Monreau tvOS-Tests/Pods-Monreau tvOS-Tests-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Nimble-tvOS/Nimble.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nimble.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Monreau tvOS-Tests/Pods-Monreau tvOS-Tests-frameworks.sh\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -953,6 +980,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3308FF682343AEBF002786A2 /* MonreauCoreTests.swift in Sources */,
+				3342EFDC23475F3900DAB099 /* MonreauRealmTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -960,6 +989,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3308FF672343AEBE002786A2 /* MonreauCoreTests.swift in Sources */,
+				3342EFDB23475F3800DAB099 /* MonreauRealmTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -967,6 +998,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3308FF662343AEBE002786A2 /* MonreauCoreTests.swift in Sources */,
+				3342EFDA23475F3800DAB099 /* MonreauRealmTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -975,13 +1008,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				3358A8C21F0C06BD00D4BD9C /* Predicate.swift in Sources */,
-				331D043E1FB8AEFD004EF879 /* CategoryModelObject.swift in Sources */,
+				331D043E1FB8AEFD004EF879 /* UserRealmObject.swift in Sources */,
 				3358B6A31F1AAC9200CBD8CF /* CoreStorage.swift in Sources */,
 				331D042E1FB86ECD004EF879 /* Cascadable.swift in Sources */,
 				331D04371FB8AE16004EF879 /* Object.swift in Sources */,
 				331D04291FB84FAD004EF879 /* RealmStorage.swift in Sources */,
 				3358B69E1F1A759C00CBD8CF /* CoreDataConfigurator.swift in Sources */,
-				3331E6F91F0D22C1007BE883 /* UserModelObject.swift in Sources */,
+				3331E6F91F0D22C1007BE883 /* UserCoreDataObject.swift in Sources */,
 				3358A8C31F0C06BD00D4BD9C /* NSManagedObject.swift in Sources */,
 				3358A8C11F0C06BD00D4BD9C /* String.swift in Sources */,
 				3378F7D71FB83B6A00CF60DF /* RealmConfiguration.swift in Sources */,
@@ -1001,12 +1034,12 @@
 			files = (
 				331D04331FB8AD6A004EF879 /* Cascadable.swift in Sources */,
 				3331E6AB1F0CFCBB007BE883 /* Predicate.swift in Sources */,
-				331D043D1FB8AEFC004EF879 /* CategoryModelObject.swift in Sources */,
+				331D043D1FB8AEFC004EF879 /* UserRealmObject.swift in Sources */,
 				33318CFA1F1BDEDA00F27BC7 /* CoreStorage.swift in Sources */,
 				331D04381FB8AE16004EF879 /* Object.swift in Sources */,
 				331D042C1FB85016004EF879 /* RealmStorage.swift in Sources */,
 				3358B69F1F1A759C00CBD8CF /* CoreDataConfigurator.swift in Sources */,
-				3331E6F81F0D22C0007BE883 /* UserModelObject.swift in Sources */,
+				3331E6F81F0D22C0007BE883 /* UserCoreDataObject.swift in Sources */,
 				3331E6AC1F0CFCBB007BE883 /* NSManagedObject.swift in Sources */,
 				3331E6AA1F0CFCBB007BE883 /* String.swift in Sources */,
 				3378F7D81FB83C6900CF60DF /* RealmConfiguration.swift in Sources */,
@@ -1026,12 +1059,12 @@
 			files = (
 				331D04341FB8AD6A004EF879 /* Cascadable.swift in Sources */,
 				3331E6A21F0CFCBB007BE883 /* Predicate.swift in Sources */,
-				331D043C1FB8AEFC004EF879 /* CategoryModelObject.swift in Sources */,
+				331D043C1FB8AEFC004EF879 /* UserRealmObject.swift in Sources */,
 				33318CFB1F1BDEDA00F27BC7 /* CoreStorage.swift in Sources */,
 				331D04391FB8AE16004EF879 /* Object.swift in Sources */,
 				331D042B1FB85016004EF879 /* RealmStorage.swift in Sources */,
 				3358B6A01F1A759C00CBD8CF /* CoreDataConfigurator.swift in Sources */,
-				3331E6F71F0D22C0007BE883 /* UserModelObject.swift in Sources */,
+				3331E6F71F0D22C0007BE883 /* UserCoreDataObject.swift in Sources */,
 				3331E6A31F0CFCBB007BE883 /* NSManagedObject.swift in Sources */,
 				3331E6A11F0CFCBB007BE883 /* String.swift in Sources */,
 				3378F7D91FB83C6900CF60DF /* RealmConfiguration.swift in Sources */,
@@ -1051,12 +1084,12 @@
 			files = (
 				331D04351FB8AD6A004EF879 /* Cascadable.swift in Sources */,
 				3331E6991F0CFCBA007BE883 /* Predicate.swift in Sources */,
-				331D043B1FB8AEFB004EF879 /* CategoryModelObject.swift in Sources */,
+				331D043B1FB8AEFB004EF879 /* UserRealmObject.swift in Sources */,
 				33318CFC1F1BDEDB00F27BC7 /* CoreStorage.swift in Sources */,
 				331D043A1FB8AE16004EF879 /* Object.swift in Sources */,
 				331D042A1FB85015004EF879 /* RealmStorage.swift in Sources */,
 				3358B6A11F1A759C00CBD8CF /* CoreDataConfigurator.swift in Sources */,
-				3331E6F61F0D22C0007BE883 /* UserModelObject.swift in Sources */,
+				3331E6F61F0D22C0007BE883 /* UserCoreDataObject.swift in Sources */,
 				3331E69A1F0CFCBA007BE883 /* NSManagedObject.swift in Sources */,
 				3331E6981F0CFCBA007BE883 /* String.swift in Sources */,
 				3378F7DA1FB83C6900CF60DF /* RealmConfiguration.swift in Sources */,
@@ -1093,7 +1126,7 @@
 /* Begin XCBuildConfiguration section */
 		3331E6BC1F0D0D80007BE883 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BDF83D8C8551B5A9AE9DE5DD /* Pods-Monreau macOS-Tests.debug.xcconfig */;
+			baseConfigurationReference = B002BB3489D2568D85735432 /* Pods-Monreau macOS-Monreau macOS-Tests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -1114,10 +1147,12 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 7Q8EP54N3L;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -1141,17 +1176,18 @@
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.incetro.Monreau-macOS-Tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = macosx;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
 		3331E6BD1F0D0D80007BE883 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A666053608F68EB8EA61E982 /* Pods-Monreau macOS-Tests.release.xcconfig */;
+			baseConfigurationReference = E11723F7A9BCBBD878CD68A3 /* Pods-Monreau macOS-Monreau macOS-Tests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -1172,10 +1208,12 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 7Q8EP54N3L;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -1192,16 +1230,17 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.incetro.Monreau-macOS-Tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = macosx;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
 		3331E6CB1F0D0D8C007BE883 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2D91E97A2B1A15E28BA6877F /* Pods-Monreau tvOS-Tests.debug.xcconfig */;
+			baseConfigurationReference = 05C5813473E7C65A48C04D3A /* Pods-Monreau tvOS-Monreau tvOS-Tests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -1222,9 +1261,11 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 7Q8EP54N3L;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -1252,14 +1293,14 @@
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 5.0;
 				TVOS_DEPLOYMENT_TARGET = 10.2;
 			};
 			name = Debug;
 		};
 		3331E6CC1F0D0D8C007BE883 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C2483CBC4DD6267575B4FE6C /* Pods-Monreau tvOS-Tests.release.xcconfig */;
+			baseConfigurationReference = 8EBE69F6FE56ED56987F6E63 /* Pods-Monreau tvOS-Monreau tvOS-Tests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -1280,9 +1321,11 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 7Q8EP54N3L;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -1302,7 +1345,7 @@
 				SDKROOT = appletvos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 5.0;
 				TVOS_DEPLOYMENT_TARGET = 10.2;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -1310,7 +1353,7 @@
 		};
 		3331E6DA1F0D0DA1007BE883 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C16313E1397F76F81BCC3D29 /* Pods-Monreau iOS-Tests.debug.xcconfig */;
+			baseConfigurationReference = 310F48A724B09B1FC84AD28C /* Pods-Monreau iOS-Monreau iOS-Tests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -1331,10 +1374,13 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 7Q8EP54N3L;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -1359,17 +1405,18 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.incetro.Monreau-iOS-Tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
 		3331E6DB1F0D0DA1007BE883 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E965A2C4AE1F9354FACA9738 /* Pods-Monreau iOS-Tests.release.xcconfig */;
+			baseConfigurationReference = E2A9CB0E345F8B0D2BAA7EE2 /* Pods-Monreau iOS-Monreau iOS-Tests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -1390,10 +1437,13 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 7Q8EP54N3L;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -1411,10 +1461,11 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.incetro.Monreau-iOS-Tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -1449,7 +1500,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				ONLY_ACTIVE_ARCH = YES;
 				SWIFT_VERSION = "";
@@ -1485,7 +1536,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				SWIFT_VERSION = "";
 			};
@@ -1516,10 +1567,12 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				CODE_SIGN_STYLE = Manual;
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -1541,12 +1594,14 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = Sources/Monreau/Supporting/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.incetro.Monreau;
 				PRODUCT_NAME = Monreau;
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
@@ -1583,10 +1638,12 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				CODE_SIGN_STYLE = Manual;
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -1602,11 +1659,13 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = Sources/Monreau/Supporting/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.incetro.Monreau;
 				PRODUCT_NAME = Monreau;
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -1643,10 +1702,12 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Manual;
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -1673,6 +1734,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.incetro.Monreau;
 				PRODUCT_NAME = Monreau;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
@@ -1710,10 +1772,12 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Manual;
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -1733,6 +1797,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.incetro.Monreau;
 				PRODUCT_NAME = Monreau;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -1769,10 +1834,12 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Manual;
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -1799,13 +1866,14 @@
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.incetro.Monreau;
 				PRODUCT_NAME = Monreau;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = appletvos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 3;
-				TVOS_DEPLOYMENT_TARGET = 10.0;
+				TVOS_DEPLOYMENT_TARGET = 10.2;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -1835,10 +1903,12 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Manual;
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -1858,12 +1928,13 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.incetro.Monreau;
 				PRODUCT_NAME = Monreau;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = appletvos;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 3;
-				TVOS_DEPLOYMENT_TARGET = 10.0;
+				TVOS_DEPLOYMENT_TARGET = 10.2;
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -1894,11 +1965,13 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -1927,6 +2000,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.incetro.Monreau;
 				PRODUCT_NAME = Monreau;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
@@ -1961,11 +2035,13 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -1987,6 +2063,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.incetro.Monreau;
 				PRODUCT_NAME = Monreau;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
