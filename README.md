@@ -31,7 +31,7 @@ Monreau is a framework written in Swift that makes it easy for you to make CRUD 
 
 ## Supported frameworks
 - [x] CRUD actions for CoreData
-- [ ] CRUD actions for Realm
+- [x] CRUD actions for Realm
 
 ## Usage
 ### Example NSManagedObject class
