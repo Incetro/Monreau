@@ -55,8 +55,12 @@ public class RealmStorage<Model> where Model: Object, Model: Storable {
         if defaultRealmPathIsEqualToPath(path) {
             return
         }
-        assignDefaultRealmPath(path)
-        migrateDefaultRealmToCurrentVersion(configuration: configuration)
+        var config = Realm.Configuration.defaultConfiguration
+        config.fileURL = path
+        config.schemaVersion = configuration.databaseVersion
+        config.migrationBlock = configuration.migrationBlock
+        config.inMemoryIdentifier = configuration.inMemoryIdentifier
+        Realm.Configuration.defaultConfiguration = config
     }
     
     /// Returns path for the given file name
@@ -71,26 +75,6 @@ public class RealmStorage<Model> where Model: Object, Model: Storable {
         return URL(string: realmPath)
     }
     
-    /// Assign defult Realm path with the given path
-    ///
-    /// - Parameter path: some path
-    private func assignDefaultRealmPath(_ path: URL) {
-        var configuration = Realm.Configuration.defaultConfiguration
-        configuration.fileURL = path
-        Realm.Configuration.defaultConfiguration = configuration
-    }
-    
-    /// Function-helper for migrations
-    ///
-    /// - Parameter configuration: configuration. See also `RealmConfiguration`
-    private func migrateDefaultRealmToCurrentVersion(configuration: RealmConfiguration) {
-        var config = Realm.Configuration.defaultConfiguration
-        config.schemaVersion = configuration.databaseVersion
-        config.migrationBlock = configuration.migrationBlock
-        config.inMemoryIdentifier = configuration.inMemoryIdentifier
-        Realm.Configuration.defaultConfiguration = config
-    }
-
     /// Returns Realm instance
     ///
     /// - Returns: Realm instance
