@@ -42,7 +42,7 @@ public class RealmStorage<Model> where Model: Object, Model: Storable {
         guard let path = path else {
             return false
         }
-        return Realm.Configuration.defaultConfiguration.fileURL == path
+        return Realm.Configuration.defaultConfiguration.fileURL?.path == path.path
     }
     
     /// Setup Realm with the given configuration
