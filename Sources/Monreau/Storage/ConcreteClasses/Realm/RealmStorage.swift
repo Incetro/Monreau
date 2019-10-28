@@ -59,7 +59,9 @@ public class RealmStorage<Model> where Model: Object, Model: Storable {
         config.fileURL = path
         config.schemaVersion = configuration.databaseVersion
         config.migrationBlock = configuration.migrationBlock
-        config.inMemoryIdentifier = configuration.inMemoryIdentifier
+        if let inMemoryIdentifier = configuration.inMemoryIdentifier {
+            config.inMemoryIdentifier = inMemoryIdentifier
+        }
         Realm.Configuration.defaultConfiguration = config
     }
     
