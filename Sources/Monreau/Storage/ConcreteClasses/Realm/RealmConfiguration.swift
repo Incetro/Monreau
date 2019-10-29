@@ -53,7 +53,7 @@ public class RealmConfiguration {
     ///   - encryptionKey: Key to encrypt data. See above.
     ///   - shouldCompactOnLaunch: See above.
     public init(
-        databaseFileName: String = "Database.realm",
+        databaseFileName: String = "default.realm",
         databaseVersion: UInt64 = 1,
         databaseURL: URL? = nil,
         migrationBlock: MigrationBlock? = nil,

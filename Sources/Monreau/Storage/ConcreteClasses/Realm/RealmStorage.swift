@@ -18,13 +18,17 @@ public class RealmStorage<Model> where Model: Object, Model: Storable {
     public typealias S = Model
     public typealias K = Model.PrimaryType
 
+    // MARK: - Properties
+
+    private let configuration: Realm.Configuration
+
     // MARK: - Initializers
     
     /// Configuration initializer
     ///
     /// - Parameter configuration: configuration. See also `RealmConfiguration`
     public init(configuration: RealmConfiguration) {
-        setupRealm(configuration: configuration)
+        self.configuration = RealmStorage<Model>.setupRealm(configuration: configuration)
     }
     
     /// Default initializer
@@ -33,27 +37,13 @@ public class RealmStorage<Model> where Model: Object, Model: Storable {
     }
 
     // MARK: - Private
-
-    /// Checks for equality of the given path and default Realm path
-    ///
-    /// - Parameter path: some path
-    /// - Returns: true if the given path is equal to default Realm path
-    private func defaultRealmPathIsEqualToPath(_ path: URL?) -> Bool {
-        guard let path = path else {
-            return false
-        }
-        return Realm.Configuration.defaultConfiguration.fileURL?.path == path.path
-    }
     
     /// Setup Realm with the given configuration
     ///
     /// - Parameter configuration: configuration. See also `RealmConfiguration`
-    private func setupRealm(configuration: RealmConfiguration) {
+    private static func setupRealm(configuration: RealmConfiguration) -> Realm.Configuration {
         guard let path = pathForFileName(configuration.databaseFileName) else {
             fatalError("Cant find path for DB with filename: \(configuration.databaseFileName) v.\(configuration.databaseVersion)")
-        }
-        if defaultRealmPathIsEqualToPath(path) {
-            return
         }
         var config = Realm.Configuration.defaultConfiguration
         config.fileURL = path
@@ -63,14 +53,14 @@ public class RealmStorage<Model> where Model: Object, Model: Storable {
         if let inMemoryIdentifier = configuration.inMemoryIdentifier {
             config.inMemoryIdentifier = inMemoryIdentifier
         }
-        Realm.Configuration.defaultConfiguration = config
+        return config
     }
     
     /// Returns path for the given file name
     ///
     /// - Parameter fileName: some file name
     /// - Returns: URL if path was created successfully
-    private func pathForFileName(_ fileName: String) -> URL? {
+    private static func pathForFileName(_ fileName: String) -> URL? {
         let documentDirectory = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first as NSString?
         guard let realmPath = documentDirectory?.appendingPathComponent(fileName) else {
             return nil
@@ -83,7 +73,7 @@ public class RealmStorage<Model> where Model: Object, Model: Storable {
     /// - Returns: Realm instance
     /// - Throws: Realm's constructor error
     private func realm() throws -> Realm {
-        return try Realm()
+        return try Realm(configuration: configuration)
     }
     
     /// Persist some object to Realm
