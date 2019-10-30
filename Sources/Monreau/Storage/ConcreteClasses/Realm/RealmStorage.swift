@@ -199,7 +199,7 @@ extension RealmStorage: Storage {
             try realm().beginWrite()
             try configuration(models)
             try models.forEach {
-                try realm().create(S.self, value: $0, update: .modified)
+                try realm().add($0, update: .modified)
             }
             try realm().commitWrite()
         }
@@ -210,7 +210,7 @@ extension RealmStorage: Storage {
             try autoreleasepool {
                 try realm().beginWrite()
                 try configuration(model)
-                try realm().create(S.self, value: model, update: .modified)
+                try realm().add(model, update: .modified)
                 try realm().commitWrite()
             }
         }
