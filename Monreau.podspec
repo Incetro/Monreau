@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
     spec.name           = "Monreau"
-    spec.version        = "2.0.5"
+    spec.version        = "2.0.6"
     spec.summary        = "A simple and useful wrapper for database CRUD actions"
 
     spec.homepage       = "https://github.com/incetro/Monreau.git"

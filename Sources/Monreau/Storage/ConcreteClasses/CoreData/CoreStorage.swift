@@ -196,15 +196,7 @@ extension CoreStorage: Storage {
     }
 
     public func read(predicatedBy predicate: Predicate, includeSubentities: Bool, sortDescriptors: [SortDescriptor]) throws -> [S] {
-        var result: [S] = []
-        try perform { context in
-            let request = S.request()
-            request.includesSubentities = includeSubentities
-            request.predicate = NSPredicate(format: predicate.filter)
-            request.sortDescriptors = sortDescriptors.map { NSSortDescriptor(key: $0.key, ascending: $0.ascending) }
-            result = try context.fetch(request)
-        }
-        return result
+        return try read(predicatedBy: predicate.nsPredicate, includeSubentities: includeSubentities, sortDescriptors: sortDescriptors)
     }
     
     public func read(byPrimaryKey primaryKey: S.PrimaryType, includeSubentities: Bool) throws -> Model? {
@@ -237,13 +229,34 @@ extension CoreStorage: Storage {
         }
         return result
     }
-    
+
+    public func read(predicatedBy predicate: NSPredicate, includeSubentities: Bool, sortDescriptors: [SortDescriptor]) throws -> [Model] {
+        var result: [S] = []
+        try perform { context in
+            let request = S.request()
+            request.includesSubentities = includeSubentities
+            request.predicate = predicate
+            request.sortDescriptors = sortDescriptors.map { NSSortDescriptor(key: $0.key, ascending: $0.ascending) }
+            result = try context.fetch(request)
+        }
+        return result
+    }
+
+    public func read(predicatedBy predicate: NSPredicate, orderedBy key: String, ascending: Bool) throws -> [Model] {
+        let sortDescriptors = [SortDescriptor(key: key, ascending: ascending)]
+        return try read(predicatedBy: predicate, includeSubentities: true, sortDescriptors: sortDescriptors)
+    }
+
     // MARK: - Persist
 
     public func persist(predicatedBy predicate: Predicate, _ configuration: ([S]) throws -> ()) throws {
+        try persist(predicatedBy: predicate.nsPredicate, configuration)
+    }
+
+    public func persist(predicatedBy predicate: NSPredicate, _ configuration: ([Model]) throws -> ()) throws {
         try perform { context in
             let request = S.request()
-            request.predicate = predicate.nsPredicate
+            request.predicate = predicate
             let entities = try context.fetch(request)
             try configuration(entities)
             try context.save()
@@ -292,10 +305,14 @@ extension CoreStorage: Storage {
     }
     
     public func erase(predicatedBy predicate: Predicate) throws {
+        try erase(predicatedBy: predicate.nsPredicate)
+    }
+
+    public func erase(predicatedBy predicate: NSPredicate) throws {
         do {
             try perform { context in
                 let request = NSFetchRequest<NSFetchRequestResult>(entityName: S.entityName)
-                request.predicate = predicate.nsPredicate
+                request.predicate = predicate
                 let deleteRequest = NSBatchDeleteRequest(fetchRequest: request)
                 try context.execute(deleteRequest)
                 try context.save()
@@ -305,7 +322,7 @@ extension CoreStorage: Storage {
             throw error
         }
     }
-    
+
     public func erase(byPrimaryKey primaryKey: S.PrimaryType) throws {
         do {
             try perform { context in
@@ -345,6 +362,12 @@ extension CoreStorage: Storage {
         if let predicate = predicate {
             request.predicate = predicate.nsPredicate
         }
+        return try context.count(for: request)
+    }
+
+    public func count(predicatedBy predicate: NSPredicate) throws -> Int {
+        let request = S.request()
+        request.predicate = predicate
         return try context.count(for: request)
     }
 }

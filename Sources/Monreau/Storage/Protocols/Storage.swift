@@ -47,6 +47,15 @@ public protocol Storage: class {
     ///   - sortDescriptors: descriptors for sorting result
     /// - Returns: Found objects
     func read(predicatedBy predicate: Predicate, includeSubentities: Bool, sortDescriptors: [SortDescriptor]) throws -> [Model]
+
+    /// Find objects in storage by filter
+    ///
+    /// - Parameters:
+    ///   - predicate: filter
+    ///   - includeSubentities: true if need to include subentities
+    ///   - sortDescriptors: descriptors for sorting result
+    /// - Returns: Found objects
+    func read(predicatedBy predicate: NSPredicate, includeSubentities: Bool, sortDescriptors: [SortDescriptor]) throws -> [Model]
     
     /// Find objects in storage by filter
     ///
@@ -56,6 +65,15 @@ public protocol Storage: class {
     ///   - ascending: ascending flag
     /// - Returns: found objects
     func read(predicatedBy predicate: Predicate, orderedBy key: String, ascending: Bool) throws -> [Model]
+
+    /// Find objects in storage by filter
+    ///
+    /// - Parameters:
+    ///   - predicate: filter
+    ///   - orderedBy: sorting key
+    ///   - ascending: ascending flag
+    /// - Returns: found objects
+    func read(predicatedBy predicate: NSPredicate, orderedBy key: String, ascending: Bool) throws -> [Model]
     
     /// Find object in storage by primary key
     ///
@@ -73,6 +91,14 @@ public protocol Storage: class {
     ///   - configuration: block which updates found objects
     /// - Returns: Updated objects
     func persist(predicatedBy predicate: Predicate, _ configuration: ([Model]) throws -> ()) throws
+
+    /// Find objects by filter and update with the given configuration
+    ///
+    /// - Parameters:
+    ///   - predicate: filter
+    ///   - configuration: block which updates found objects
+    /// - Returns: Updated objects
+    func persist(predicatedBy predicate: NSPredicate, _ configuration: ([Model]) throws -> ()) throws
     
     /// Find objects by filter and update with the given configuration
     ///
@@ -110,6 +136,9 @@ public protocol Storage: class {
     /// - Parameter predicate: filter for finding object
     func erase(predicatedBy predicate: Predicate) throws
 
+    /// - Parameter predicate: filter for finding object
+    func erase(predicatedBy predicate: NSPredicate) throws
+
     /// Returns true if an entity with the given primary key already exists
     /// - Parameter primaryKey: entity primary key
     func isEntityExist(primaryKey: Key) throws -> Bool
@@ -117,6 +146,10 @@ public protocol Storage: class {
     /// Returns the number of objects which fits the predicate
     /// - Parameter predicate: some predicate
     func count(predicatedBy predicate: Predicate?) throws -> Int
+
+    /// Returns the number of objects which fits the predicate
+    /// - Parameter predicate: some predicate
+    func count(predicatedBy predicate: NSPredicate) throws -> Int
 }
 
 extension Storage {
@@ -136,6 +169,15 @@ extension Storage {
     ///   - predicate: filter
     /// - Returns: found objects
     public func read(predicatedBy predicate: Predicate) throws -> [Model] {
+        return try read(predicatedBy: predicate, includeSubentities: true, sortDescriptors: [])
+    }
+
+    /// Find objects in storage by predicate
+    ///
+    /// - Parameters:
+    ///   - predicate: some predicate
+    /// - Returns: found objects
+    public func read(predicatedBy predicate: NSPredicate) throws -> [Model] {
         return try read(predicatedBy: predicate, includeSubentities: true, sortDescriptors: [])
     }
 
