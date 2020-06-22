@@ -23,6 +23,8 @@ class MonreauCoreTests: XCTestCase {
             fatalError()
         }
     }()
+
+    private let modelsCount = 1000
     
     /// Create an object using configuration
     func testMNRC1() {
@@ -48,7 +50,6 @@ class MonreauCoreTests: XCTestCase {
         
         /// given
 
-        let modelsCount = 1000
         var usersData: [(id: Int64, name: String, age: Int16)] = []
 
         for i in 0..<modelsCount {
@@ -59,8 +60,8 @@ class MonreauCoreTests: XCTestCase {
 
             /// when
 
-            for data in usersData {
-                try storage.create { user in
+            try storage.create(count: usersData.count) { users in
+                for (user, data) in zip(users, usersData) {
                     user.id   = data.id
                     user.age  = data.age
                     user.name = data.name
@@ -90,7 +91,6 @@ class MonreauCoreTests: XCTestCase {
         
         /// given
 
-        let modelsCount = 1000
         var usersData: [(id: Int64, name: String, age: Int16)] = []
 
         for i in 0..<modelsCount {
@@ -101,8 +101,8 @@ class MonreauCoreTests: XCTestCase {
 
             /// when
 
-            for data in usersData {
-                try storage.create { user in
+            try storage.create(count: usersData.count) { users in
+                for (user, data) in zip(users, usersData) {
                     user.id   = data.id
                     user.age  = data.age
                     user.name = data.name
@@ -132,7 +132,6 @@ class MonreauCoreTests: XCTestCase {
         
         /// given
 
-        let modelsCount = 1000
         let predicateId = 5
         let predicate = "id > \(predicateId)"
         var usersData: [(id: Int64, name: String, age: Int16)] = []
@@ -145,8 +144,8 @@ class MonreauCoreTests: XCTestCase {
 
             /// when
 
-            for data in usersData {
-                try storage.create { user in
+            try storage.create(count: usersData.count) { users in
+                for (user, data) in zip(users, usersData) {
                     user.id   = data.id
                     user.age  = data.age
                     user.name = data.name
@@ -176,7 +175,6 @@ class MonreauCoreTests: XCTestCase {
         
         /// given
 
-        let modelsCount = 1000
         let predicateId = 5
         let predicate = "id > \(predicateId)"
         let sortDescriptor = SortDescriptor(key: "id", ascending: true)
@@ -190,8 +188,8 @@ class MonreauCoreTests: XCTestCase {
 
             /// when
 
-            for data in usersData {
-                try storage.create { user in
+            try storage.create(count: usersData.count) { users in
+                for (user, data) in zip(users, usersData) {
                     user.id   = data.id
                     user.age  = data.age
                     user.name = data.name
@@ -221,7 +219,6 @@ class MonreauCoreTests: XCTestCase {
         
         /// given
 
-        let modelsCount = 1000
         let primaryKey: UserCoreDataObject.PrimaryType = 5
         var usersData: [(id: Int64, name: String, age: Int16)] = []
 
@@ -233,8 +230,8 @@ class MonreauCoreTests: XCTestCase {
 
             /// when
 
-            for data in usersData {
-                try storage.create { user in
+            try storage.create(count: usersData.count) { users in
+                for (user, data) in zip(users, usersData) {
                     user.id   = data.id
                     user.age  = data.age
                     user.name = data.name
@@ -256,7 +253,6 @@ class MonreauCoreTests: XCTestCase {
         
         /// given
 
-        let modelsCount = 1000
         var usersData: [(id: Int64, name: String, age: Int16)] = []
 
         for i in 0..<modelsCount {
@@ -267,8 +263,8 @@ class MonreauCoreTests: XCTestCase {
 
             /// when
 
-            for data in usersData {
-                try storage.create { user in
+            try storage.create(count: usersData.count) { users in
+                for (user, data) in zip(users, usersData) {
                     user.id   = data.id
                     user.age  = data.age
                     user.name = data.name
@@ -305,7 +301,6 @@ class MonreauCoreTests: XCTestCase {
         
         /// given
 
-        let modelsCount = 1000
         let predicateId = 5
         let predicate = "id > \(predicateId)"
         let sortDescriptor = SortDescriptor(key: "id", ascending: true)
@@ -319,8 +314,8 @@ class MonreauCoreTests: XCTestCase {
 
             /// when
 
-            for data in usersData {
-                try storage.create { user in
+            try storage.create(count: usersData.count) { users in
+                for (user, data) in zip(users, usersData) {
                     user.id   = data.id
                     user.age  = data.age
                     user.name = data.name
@@ -355,7 +350,6 @@ class MonreauCoreTests: XCTestCase {
         
         /// given
 
-        let modelsCount = 1000
         var usersData: [(id: Int64, name: String, age: Int16)] = []
 
         for i in 0..<modelsCount {
@@ -365,14 +359,12 @@ class MonreauCoreTests: XCTestCase {
         do {
 
             /// when
-            
-            var objects: [UserCoreDataObject] = []
-            for data in usersData {
-                let object = try storage.create()
+
+            var objects: [UserCoreDataObject] = try storage.create(count: usersData.count)
+            for (object, data) in zip(objects, usersData) {
                 object.age = data.age
                 object.id = data.id
                 object.name = data.name
-                objects.append(object)
             }
 
             try storage.persist(objects: objects)
@@ -400,7 +392,6 @@ class MonreauCoreTests: XCTestCase {
         
         /// given
 
-        let modelsCount = 1000
         var usersData: [(id: Int64, name: String, age: Int16)] = []
 
         for i in 0..<modelsCount {
@@ -411,8 +402,8 @@ class MonreauCoreTests: XCTestCase {
 
             /// when
 
-            for data in usersData {
-                try storage.create { user in
+            try storage.create(count: usersData.count) { users in
+                for (user, data) in zip(users, usersData) {
                     user.id   = data.id
                     user.age  = data.age
                     user.name = data.name

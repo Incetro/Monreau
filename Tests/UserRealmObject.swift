@@ -11,12 +11,20 @@ import RealmSwift
 
 public class UserRealmObject: Object, Storable {
 
+    /// Primary key type
     public typealias PrimaryType = Int64
 
+    /// User's identifier value (primary key)
     @objc dynamic public var id: Int64 = 0
-    @objc dynamic public var age: Int16 = 0
+
+    /// User's name value
     @objc dynamic public var name: String = ""
-    
+
+    /// User's age value
+    @objc dynamic public var age: Int16 = 0
+
+    // MARK: - Object
+
     @objc override public class func primaryKey() -> String? {
         return primaryKey
     }

@@ -18,7 +18,9 @@ class MonreauRealmTests: XCTestCase {
     private lazy var storage: UserStorage = {
         return UserStorage(configuration: RealmConfiguration(inMemoryIdentifier: "Monreau"))
     }()
-    
+
+    private let modelsCount = 1000
+
     /// Create an object using configuration
     func testMNRC1() {
         do {
@@ -43,7 +45,6 @@ class MonreauRealmTests: XCTestCase {
         
         /// given
 
-        let modelsCount = 1000
         var usersData: [(id: Int64, name: String, age: Int16)] = []
 
         for i in 0..<modelsCount {
@@ -54,8 +55,8 @@ class MonreauRealmTests: XCTestCase {
 
             /// when
 
-            for data in usersData {
-                try storage.create { user in
+            try storage.create(count: usersData.count) { users in
+                for (user, data) in zip(users, usersData) {
                     user.id   = data.id
                     user.age  = data.age
                     user.name = data.name
@@ -85,7 +86,6 @@ class MonreauRealmTests: XCTestCase {
         
         /// given
 
-        let modelsCount = 1000
         var usersData: [(id: Int64, name: String, age: Int16)] = []
 
         for i in 0..<modelsCount {
@@ -96,8 +96,8 @@ class MonreauRealmTests: XCTestCase {
 
             /// when
 
-            for data in usersData {
-                try storage.create { user in
+            try storage.create(count: usersData.count) { users in
+                for (user, data) in zip(users, usersData) {
                     user.id   = data.id
                     user.age  = data.age
                     user.name = data.name
@@ -127,7 +127,6 @@ class MonreauRealmTests: XCTestCase {
         
         /// given
 
-        let modelsCount = 1000
         let predicateId = 5
         let predicate = "id > \(predicateId)"
         var usersData: [(id: Int64, name: String, age: Int16)] = []
@@ -140,8 +139,8 @@ class MonreauRealmTests: XCTestCase {
 
             /// when
 
-            for data in usersData {
-                try storage.create { user in
+            try storage.create(count: usersData.count) { users in
+                for (user, data) in zip(users, usersData) {
                     user.id   = data.id
                     user.age  = data.age
                     user.name = data.name
@@ -171,7 +170,6 @@ class MonreauRealmTests: XCTestCase {
         
         /// given
 
-        let modelsCount = 1000
         let predicateId = 5
         let predicate = "id > \(predicateId)"
         let sortDescriptor = SortDescriptor(key: "id", ascending: true)
@@ -185,8 +183,8 @@ class MonreauRealmTests: XCTestCase {
 
             /// when
 
-            for data in usersData {
-                try storage.create { user in
+            try storage.create(count: usersData.count) { users in
+                for (user, data) in zip(users, usersData) {
                     user.id   = data.id
                     user.age  = data.age
                     user.name = data.name
@@ -216,7 +214,6 @@ class MonreauRealmTests: XCTestCase {
         
         /// given
 
-        let modelsCount = 1000
         let primaryKey: UserRealmObject.PrimaryType = 5
         var usersData: [(id: Int64, name: String, age: Int16)] = []
 
@@ -228,8 +225,8 @@ class MonreauRealmTests: XCTestCase {
 
             /// when
 
-            for data in usersData {
-                try storage.create { user in
+            try storage.create(count: usersData.count) { users in
+                for (user, data) in zip(users, usersData) {
                     user.id   = data.id
                     user.age  = data.age
                     user.name = data.name
@@ -251,7 +248,6 @@ class MonreauRealmTests: XCTestCase {
         
         /// given
 
-        let modelsCount = 1000
         var usersData: [(id: Int64, name: String, age: Int16)] = []
 
         for i in 0..<modelsCount {
@@ -296,7 +292,6 @@ class MonreauRealmTests: XCTestCase {
         
         /// given
 
-        let modelsCount = 1000
         let predicateId = 5
         let predicate = "id > \(predicateId)"
         let sortDescriptor = SortDescriptor(key: "id", ascending: true)
@@ -310,8 +305,8 @@ class MonreauRealmTests: XCTestCase {
 
             /// when
 
-            for data in usersData {
-                try storage.create { user in
+            try storage.create(count: usersData.count) { users in
+                for (user, data) in zip(users, usersData) {
                     user.id   = data.id
                     user.age  = data.age
                     user.name = data.name
@@ -346,7 +341,6 @@ class MonreauRealmTests: XCTestCase {
         
         /// given
 
-        let modelsCount = 1000
         var usersData: [(id: Int64, name: String, age: Int16)] = []
 
         for i in 0..<modelsCount {
@@ -356,10 +350,9 @@ class MonreauRealmTests: XCTestCase {
         do {
 
             /// when
-            
-            var objects: [UserRealmObject] = []
-            for data in usersData {
-                let object = try storage.create()
+
+            var objects: [UserRealmObject] = try storage.create(count: usersData.count)
+            for (object, data) in zip(objects, usersData) {
                 object.age = data.age
                 object.id = data.id
                 object.name = data.name
@@ -391,7 +384,6 @@ class MonreauRealmTests: XCTestCase {
         
         /// given
 
-        let modelsCount = 1000
         var usersData: [(id: Int64, name: String, age: Int16)] = []
 
         for i in 0..<modelsCount {

@@ -82,7 +82,7 @@ public class RealmStorage<Model> where Model: Object, Model: Storable {
     /// - Throws: writing error
     private func write(_ modelObject: S) throws {
         try realm().write {
-            try self.realm().create(S.self, value: modelObject, update: .modified)
+            try self.realm().create(S.self, value: modelObject, update: .all)
         }
     }
     
@@ -153,11 +153,22 @@ extension RealmStorage: Storage {
         return modelObject
     }
 
+    public func create(count: Int) throws -> [Model] {
+        try (0..<count).map { _ in try create() }
+    }
+
     @discardableResult public func create(_ configuration: (S) throws -> ()) throws -> S {
         let modelObject = S()
         try configuration(modelObject)
         try write(modelObject)
         return modelObject
+    }
+
+    @discardableResult public func create(count: Int, configuration: ([Model]) throws -> ()) throws -> [Model] {
+        let modelObjects = (0..<count).map { _ in S() }
+        try configuration(modelObjects)
+        try modelObjects.forEach(write)
+        return modelObjects
     }
     
     // MARK: - Read

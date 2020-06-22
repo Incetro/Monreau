@@ -34,47 +34,64 @@ Monreau is a framework written in Swift that makes it easy for you to make CRUD 
 - [x] CRUD actions for Realm
 
 ## Usage
-### Example NSManagedObject class
+### CoreData class
 ```swift
 // MARK: - UserModelObject
 
-// Your NSManagedObject must be Storable
-
-class UserModelObject: NSManagedObject, Storable {
+/// Your NSManagedObject must be Storable
+final class UserModelObject: NSManagedObject, Storable {
     
     /// Primary key type
-    typealias PrimaryType = Int64
-    
-    @NSManaged var name: String
-    @NSManaged var age:  Int16
-    @NSManaged var id:   Int64
+    public typealias PrimaryType = Int64
+
+    /// User's identifier value (primary key)
+    @NSManaged public var id: Int64
+
+    /// User's name value
+    @NSManaged public var name: String
+
+    /// User's age value
+    @NSManaged public var age: Int16
 }
 ```
-### Monreau instance
+### Realm class
 ```swift
-// Create Monreau instance
+// MARK: - UserModelObject
 
+final class UserModelObject: Object, Storable {
+
+    /// Primary key type
+    public typealias PrimaryType = Int64
+
+    /// User's identifier value (primary key)
+    @objc dynamic public var id: Int64 = 0
+
+    /// User's name value
+    @objc dynamic public var name: String = ""
+
+    /// User's age value
+    @objc dynamic public var age: Int16 = 0
+
+    // MARK: - Object
+
+    @objc override public class func primaryKey() -> String? {
+        return primaryKey
+    }
+}
+```
+
+### Storage instance
+```swift
+/// Create CoreData storage instance
 let config  = CoreStorageConfig(containerName: "Name of container also is filename for `*.xcdatamodeld` file.")
 let storage = CoreStorage(with: config, model: UserModelObject.self)
-let monreau = Monreau(with: storage)
+
+/// Create Realm storage instance
+let storage = RealmStorage<UserRealmObject>()
 ```
 ### Create
 ```swift
-/// You can use it with closures
-monreau.create(configuration: { user in
-            
-    user.name = "name"
-    user.age  = 20
-    user.id   = 1
-            
-}, failure: { error in
-            
-    print(error.localizedDescription)
-})
-
-/// Or using `try`
-try monreau.create { user in
-                
+try storage.create { user in
     user.name = "name"
     user.age  = 20
     user.id   = 1
@@ -82,87 +99,29 @@ try monreau.create { user in
 ```
 ### Read
 ```swift
-/// You can use it with closures
-monreau.find(byPrimaryKey: id, success: { user in    
-            
-    /// Your actions with user
-                
-}, failure: { error in
-    
-    print(error.localizedDescription)
-})
-
-/// Or using `try`
-try monreau.find(byPrimaryKey: id)
+try monreau.read(byPrimaryKey: id)
 ```
 ### Update
 ```swift
-/// You can use it with closures
-
 /// Primary key updating
-monreau.update(byPrimaryKey: id, configuration: { user in
-
-    /// Change found entity here       
-                
-}, success: { user in
-      
-    /// Use updated and saved entity          
-                
-}, failure: { error in
-                
-    print(error.localizedDescription)
-})
+try monreau.persist(byPrimaryKey: id) { user in
+    /// Change found entity here
+}
 
 /// Predicate updating
-monreau.update(byPredicate: "age > 5", configuration: { users in
-
-    /// Change found entities here       
-                
-}, success: { users in
-      
-    /// Use updated and saved entity          
-                
-}, failure: { error in
-                
-    print(error.localizedDescription)
-})
-
-/// Or using `try`
-try monreau.update(byPrimaryKey: id, configuration: { user in
-    
+try monreau.persist(byPredicate: "age > 5") { user in
     /// Change found entity here
-})
+}
 ```
 ### Delete
 ```swift
-/// You can use it with closures
-monreau.remove(byPrimaryKey: id, success: { 
-
-    /// Everything is OK
-                            
-}, failure: { (error) in
-                            
-    print(error.localizedDescription)
-})
-
-monreau.removeAll(success: { 
-        
-    /// Everything is OK   
-            
-}, failure: { error in
-            
-    print(error.localizedDescription)
-})
-
-/// Or using 'try'
 try monreau.remove(byPrimaryKey: id)
 try monreau.removeAll()
-
 ```
 ## Requirements
 - iOS 9.0+ / macOS 10.11+ / tvOS 9.0+ / watchOS 2.0+
-- Xcode 8.1, 8.2, 8.3, and 9.0
-- Swift 3.0, 3.1, 3.2, and 4.0
+- Xcode 9.0
+- Swift 5
 
 ## Communication
 

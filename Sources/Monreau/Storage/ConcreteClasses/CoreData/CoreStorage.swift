@@ -69,25 +69,20 @@ public class CoreStorage<Model> where Model: NSManagedObject, Model: Storable {
     ///   - configuration: configuration. See also `CoreDataConfiguration`.
     /// - Throws: error if loading or adding persistence store is failed.
     public convenience init(configuration: CoreStorageConfig) throws {
-
         guard let containerUrl = Bundle(for: S.self).url(forResource: configuration.containerName, withExtension: "momd") else {
             throw CoreStorageError.null(property: "containerUrl")
         }
-        
         guard let managedObjectModel = NSManagedObjectModel(contentsOf: containerUrl) else {
             throw CoreStorageError.null(property: "managedObjectModel")
         }
-        
         let persistentStoreCoordinator = NSPersistentStoreCoordinator(managedObjectModel: managedObjectModel)
         let persistentStoreUrl = try (configuration.persistentStoreURL ?? CoreStorage.url(storeName: "\(configuration.containerName).db"))
-        
         try persistentStoreCoordinator.addPersistentStore(
             ofType: configuration.storeType,
             configurationName: nil,
             at: persistentStoreUrl,
             options: configuration.options
         )
-        
         self.init(persistentStoreCoordinator: persistentStoreCoordinator)
     }
 
@@ -148,7 +143,10 @@ extension CoreStorage: Storage {
     public func create() throws -> S {
         var modelObject: S?
         try perform { context in
-            modelObject = NSEntityDescription.insertNewObject(forEntityName: S.entityName, into: context) as? S
+            guard let model = NSEntityDescription.insertNewObject(forEntityName: S.entityName, into: context) as? S else {
+                throw CoreStorageError.cast(from: "NSManagedObject", to: "\(S.self)")
+            }
+            modelObject = model
             try context.save()
         }
         guard let result = modelObject else {
@@ -161,6 +159,20 @@ extension CoreStorage: Storage {
             )
         }
         return result
+    }
+
+    public func create(count: Int) throws -> [S] {
+        var modelObjects: [S] = []
+        try perform { context in
+            for _ in 0..<count {
+                guard let model = NSEntityDescription.insertNewObject(forEntityName: S.entityName, into: context) as? S else {
+                    throw CoreStorageError.cast(from: "NSManagedObject", to: "\(S.self)")
+                }
+                modelObjects.append(model)
+            }
+            try context.save()
+        }
+        return modelObjects
     }
 
     @discardableResult public func create(_ configuration: (S) throws -> ()) throws -> S {
@@ -183,6 +195,21 @@ extension CoreStorage: Storage {
             )
         }
         return result
+    }
+
+    @discardableResult public func create(count: Int, configuration: ([S]) throws -> ()) throws -> [S] {
+        var modelObjects: [S] = []
+        try perform { context in
+            for _ in 0..<count {
+                guard let model = NSEntityDescription.insertNewObject(forEntityName: S.entityName, into: context) as? S else {
+                    throw CoreStorageError.cast(from: "NSManagedObject", to: "\(S.self)")
+                }
+                modelObjects.append(model)
+            }
+            try configuration(modelObjects)
+            try context.save()
+        }
+        return modelObjects
     }
     
     // MARK: - Read

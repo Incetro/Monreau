@@ -20,12 +20,24 @@ public protocol Storage: class {
     /// - Returns: Created object
     func create() throws -> Model
 
+    /// Create objects in storage
+    /// - Parameter count: objects count
+    /// - Returns: Created objects
+    func create(count: Int) throws -> [Model]
+
     /// Create object in storage
     ///
     /// - Parameter configuration: block for object's configuration
     /// - Returns: Created object
     @discardableResult func create(_ configuration: (Model) throws -> ()) throws -> Model
-    
+
+    /// Create object in storage
+    /// - Parameters:
+    ///   - count: objects count
+    ///   - configuration: block for object's configuration
+    /// - Returns: Created object
+    @discardableResult func create(count: Int, configuration: ([Model]) throws -> ()) throws -> [Model]
+
     /// Find all objects in storage
     ///
     /// - Returns: all found objects
