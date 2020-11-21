@@ -76,16 +76,6 @@ public class RealmStorage<Model> where Model: Object, Model: Storable {
         return try Realm(configuration: configuration)
     }
     
-    /// Persist some object to Realm
-    ///
-    /// - Parameter modelObject: some object
-    /// - Throws: writing error
-    private func write(_ modelObject: S) throws {
-        try realm().write {
-            try self.realm().create(S.self, value: modelObject, update: .all)
-        }
-    }
-    
     /// Find models in Realm by predicate (if exists)
     ///
     /// - Parameter predicate: filter
@@ -149,7 +139,9 @@ extension RealmStorage: Storage {
     
     public func create() throws -> S {
         let modelObject = S()
-        try write(modelObject)
+        try realm().write {
+            try self.realm().create(S.self, value: modelObject, update: .all)
+        }
         return modelObject
     }
 
@@ -159,22 +151,28 @@ extension RealmStorage: Storage {
 
     @discardableResult public func create(_ configuration: (S) throws -> ()) throws -> S {
         let modelObject = S()
-        try configuration(modelObject)
-        try write(modelObject)
+        try realm().write {
+            try configuration(modelObject)
+            try self.realm().create(S.self, value: modelObject, update: .all)
+        }
         return modelObject
     }
 
     @discardableResult public func create(count: Int, configuration: ([Model]) throws -> ()) throws -> [Model] {
         let modelObjects = (0..<count).map { _ in S() }
-        try configuration(modelObjects)
-        try modelObjects.forEach(write)
+        try realm().write {
+            try configuration(modelObjects)
+            try modelObjects.forEach {
+                try self.realm().create(S.self, value: $0, update: .all)
+            }
+        }
         return modelObjects
     }
     
     // MARK: - Read
     
     public func read(predicatedBy predicate: Predicate, includeSubentities: Bool, sortDescriptors: [SortDescriptor]) throws -> [S] {
-        return try read(predicatedBy: predicate.nsPredicate, includeSubentities: includeSubentities, sortDescriptors: sortDescriptors)
+        try read(predicatedBy: predicate.nsPredicate, includeSubentities: includeSubentities, sortDescriptors: sortDescriptors)
     }
     
     public func read(byPrimaryKey primaryKey: S.PrimaryType, includeSubentities: Bool) throws -> Model? {
@@ -184,7 +182,7 @@ extension RealmStorage: Storage {
     }
     
     public func read(predicatedBy predicate: Predicate, orderedBy key: String, ascending: Bool) throws -> [Model] {
-        return try read(predicatedBy: predicate.nsPredicate, orderedBy: key, ascending: ascending)
+        try read(predicatedBy: predicate.nsPredicate, orderedBy: key, ascending: ascending)
     }
     
     public func read() throws -> [S] {
@@ -218,11 +216,8 @@ extension RealmStorage: Storage {
     
     public func persist(withPrimaryKey primaryKey: S.PrimaryType, configuration: (Model?) throws -> ()) throws {
         if let model = try read(byPrimaryKey: primaryKey) {
-            try autoreleasepool {
-                try realm().beginWrite()
+            try realm().write {
                 try configuration(model)
-                try realm().add(model, update: .modified)
-                try realm().commitWrite()
             }
         }
     }
@@ -241,13 +236,8 @@ extension RealmStorage: Storage {
 
     public func persist(predicatedBy predicate: NSPredicate, _ configuration: ([Model]) throws -> ()) throws {
         let models = try read(predicatedBy: predicate)
-        try autoreleasepool {
-            try realm().beginWrite()
+        try realm().write {
             try configuration(models)
-            try models.forEach {
-                try realm().add($0, update: .modified)
-            }
-            try realm().commitWrite()
         }
     }
 
@@ -287,7 +277,7 @@ extension RealmStorage: Storage {
     }
     
     public func isEntityExist(primaryKey: Model.PrimaryType) throws -> Bool {
-        return try read(byPrimaryKey: primaryKey) != nil
+        try read(byPrimaryKey: primaryKey) != nil
     }
     
     public func count(predicatedBy predicate: Predicate?) throws -> Int {
@@ -299,6 +289,6 @@ extension RealmStorage: Storage {
     }
 
     public func count(predicatedBy predicate: NSPredicate) throws -> Int {
-        return try realm().objects(S.self).filter(predicate).count
+        try realm().objects(S.self).filter(predicate).count
     }
 }
