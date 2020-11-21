@@ -5,7 +5,7 @@ def standard_pods
 end
 
 target "Monreau iOS" do
-  platform :ios, "10.3"
+  platform :ios, "12.0"
   standard_pods
   target "Monreau iOS-Tests" do
     #inherit! :search_paths
@@ -19,7 +19,7 @@ target "Monreau watchOS" do
 end
 
 target "Monreau tvOS" do
-  platform :tvos, "10.2"
+  platform :tvos, "12.4"
   standard_pods
   target "Monreau tvOS-Tests" do
     #inherit! :search_paths
@@ -34,4 +34,12 @@ target "Monreau macOS" do
     #inherit! :search_paths
     standard_pods
   end
+end
+
+post_install do |installer|
+    installer.pods_project.targets.each do |target|
+        target.build_configurations.each do |config|
+        config.build_settings['ONLY_ACTIVE_ARCH'] = 'YES'
+        end
+    end
 end

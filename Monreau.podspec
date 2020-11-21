@@ -9,10 +9,10 @@ Pod::Spec.new do |spec|
     spec.requires_arc   = true
     spec.swift_version = "5.0"
 
-    spec.ios.deployment_target     = "10.3"
+    spec.ios.deployment_target     = "12.0"
     spec.osx.deployment_target     = "10.12"
     spec.watchos.deployment_target = "3.0"
-    spec.tvos.deployment_target    = "10.2"
+    spec.tvos.deployment_target    = "12.4"
 
     spec.source                 = { git: "https://github.com/incetro/Monreau.git", tag: "#{spec.version}"}
     spec.source_files           = "Sources/Monreau/**/*.{h,swift}"
