@@ -28,7 +28,7 @@ target "Monreau tvOS" do
 end
 
 target "Monreau macOS" do
-  platform :osx, "10.12"
+  platform :osx, "10.15"
   standard_pods
   target "Monreau macOS-Tests" do
     #inherit! :search_paths
