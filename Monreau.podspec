@@ -1,4 +1,5 @@
 Pod::Spec.new do |spec|
+
     spec.name           = "Monreau"
     spec.version        = "2.1.1"
     spec.summary        = "A simple and useful wrapper for database CRUD actions"
@@ -18,4 +19,6 @@ Pod::Spec.new do |spec|
     spec.source_files           = "Sources/Monreau/**/*.{h,swift}"
 
     spec.dependency "RealmSwift"
+    spec.dependency "Realm"
+    
 end
