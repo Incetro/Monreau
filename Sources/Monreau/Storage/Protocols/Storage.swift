@@ -10,7 +10,7 @@ import Foundation
 
 // MARK: - Storage
 
-public protocol Storage: class {
+public protocol Storage: AnyObject {
     
     associatedtype Model: Storable
     typealias Key = Model.PrimaryType

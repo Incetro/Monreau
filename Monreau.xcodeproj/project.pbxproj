@@ -154,6 +154,7 @@
 		336041321F17C7470038BE3C /* CoreStorageConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreStorageConfig.swift; sourceTree = "<group>"; };
 		336041341F17C7FA0038BE3C /* CoreStorageType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreStorageType.swift; sourceTree = "<group>"; };
 		3378F7D61FB83B6A00CF60DF /* RealmConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmConfiguration.swift; sourceTree = "<group>"; };
+		337DD6852642E865005807D6 /* Realm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Realm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		408C94AAFAED162DFE423336 /* Pods-Monreau iOS-Monreau iOS-Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Monreau iOS-Monreau iOS-Tests.release.xcconfig"; path = "Target Support Files/Pods-Monreau iOS-Monreau iOS-Tests/Pods-Monreau iOS-Monreau iOS-Tests.release.xcconfig"; sourceTree = "<group>"; };
 		42C0667EFD48D54AD7663417 /* Pods-Monreau watchOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Monreau watchOS.debug.xcconfig"; path = "Target Support Files/Pods-Monreau watchOS/Pods-Monreau watchOS.debug.xcconfig"; sourceTree = "<group>"; };
 		4B3E3233C14F99BFA525B9E9 /* Pods_Monreau_macOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Monreau_macOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -460,6 +461,7 @@
 		B0CAD0C3EAA21FCB22CABABC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				337DD6852642E865005807D6 /* Realm.framework */,
 				C515B72ED8795A55175456BB /* Pods_Monreau_iOS.framework */,
 				C625DD80C27EAFB6A0DE70FB /* Pods_Monreau_iOS_Monreau_iOS_Tests.framework */,
 				4B3E3233C14F99BFA525B9E9 /* Pods_Monreau_macOS.framework */,

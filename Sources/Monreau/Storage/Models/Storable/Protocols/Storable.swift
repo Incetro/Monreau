@@ -10,7 +10,7 @@ import CoreData
 
 // MARK: - Storable
 
-public protocol Storable: class {
+public protocol Storable: AnyObject {
     
     associatedtype PrimaryType: Hashable
     

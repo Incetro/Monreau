@@ -5,7 +5,6 @@
 //  Created by incetro on 12/11/2017.
 //
 
-import Realm
 import RealmSwift
 
 // MARK: - RealmStorage

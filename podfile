@@ -1,6 +1,7 @@
 use_frameworks!
 
 def standard_pods
+  pod "Realm"
   pod "RealmSwift"
 end
 
