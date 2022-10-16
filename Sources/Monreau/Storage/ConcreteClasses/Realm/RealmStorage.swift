@@ -5,6 +5,7 @@
 //  Created by incetro on 12/11/2017.
 //
 
+import Realm
 import RealmSwift
 
 // MARK: - RealmStorage
@@ -117,14 +118,16 @@ public class RealmStorage<Model> where Model: Object, Model: Storable {
             try deletable.objectsToDelete.forEach { child in
                 try cascadeDelete(child)
             }
-        }
-        if let realmArray = object as? ListBase {
+        } else if let cascadableArray = object as? [Cascadable] {
+            try cascadableArray.forEach { child in
+                try cascadeDelete(child)
+            }
+        } else if let realmArray = object as? List<S> {
             for i in 0..<realmArray.count {
-                let object = realmArray._rlmArray[UInt(i)]
+                let object = realmArray[i]
                 try cascadeDelete(object)
             }
-        }
-        if let realmObject = object as? Object {
+        } else if let realmObject = object as? Object {
             try realm().delete(realmObject)
         }
     }

@@ -2,11 +2,11 @@ use_frameworks!
 
 def standard_pods
   pod "Realm"
-  pod "RealmSwift"
+  pod "RealmSwift", "~> 10.31.0"
 end
 
 target "Monreau iOS" do
-  platform :ios, "12.0"
+  platform :ios, "13.0"
   standard_pods
   target "Monreau iOS-Tests" do
     #inherit! :search_paths
@@ -15,7 +15,7 @@ target "Monreau iOS" do
 end
 
 target "Monreau watchOS" do
-  platform :watchos, "3.0"
+  platform :watchos, "7.0"
   standard_pods
 end
 
