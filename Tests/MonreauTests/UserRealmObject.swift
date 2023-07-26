@@ -6,6 +6,8 @@
 //
 
 import RealmSwift
+import Foundation
+import Monreau
 
 // MARK: - UserRealmObject
 

@@ -7,6 +7,7 @@
 //
 
 import CoreData
+import Monreau
 
 // MARK: - UserCoreDataObject
 
