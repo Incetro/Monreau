@@ -1,5 +1,5 @@
 //
-//  Predicate.swift
+//  MPredicate.swift
 //  Mapper
 //
 //  Created by incetro on 12/06/2017.
@@ -8,15 +8,15 @@
 
 import Foundation
 
-// MARK: - Predicate
+// MARK: - MPredicate
 
-public protocol Predicate {
+public protocol MPredicate {
 
     /// Filter string
     var filter: String { get }
 }
 
-extension Predicate {
+extension MPredicate {
     
     var nsPredicate: NSPredicate {
         return NSPredicate(format: filter)

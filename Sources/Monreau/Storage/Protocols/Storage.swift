@@ -58,7 +58,7 @@ public protocol Storage: AnyObject {
     ///   - includeSubentities: true if need to include subentities
     ///   - sortDescriptors: descriptors for sorting result
     /// - Returns: Found objects
-    func read(predicatedBy predicate: Predicate, includeSubentities: Bool, sortDescriptors: [SortDescriptor]) throws -> [Model]
+    func read(predicatedBy predicate: MPredicate, includeSubentities: Bool, sortDescriptors: [SortDescriptor]) throws -> [Model]
 
     /// Find objects in storage by filter
     ///
@@ -76,7 +76,7 @@ public protocol Storage: AnyObject {
     ///   - orderedBy: sorting key
     ///   - ascending: ascending flag
     /// - Returns: found objects
-    func read(predicatedBy predicate: Predicate, orderedBy key: String, ascending: Bool) throws -> [Model]
+    func read(predicatedBy predicate: MPredicate, orderedBy key: String, ascending: Bool) throws -> [Model]
 
     /// Find objects in storage by filter
     ///
@@ -102,7 +102,7 @@ public protocol Storage: AnyObject {
     ///   - predicate: filter
     ///   - configuration: block which updates found objects
     /// - Returns: Updated objects
-    func persist(predicatedBy predicate: Predicate, _ configuration: ([Model]) throws -> ()) throws
+    func persist(predicatedBy predicate: MPredicate, _ configuration: ([Model]) throws -> ()) throws
 
     /// Find objects by filter and update with the given configuration
     ///
@@ -146,7 +146,7 @@ public protocol Storage: AnyObject {
     /// Remove objects by filter
     ///
     /// - Parameter predicate: filter for finding object
-    func erase(predicatedBy predicate: Predicate) throws
+    func erase(predicatedBy predicate: MPredicate) throws
 
     /// - Parameter predicate: filter for finding object
     func erase(predicatedBy predicate: NSPredicate) throws
@@ -157,7 +157,7 @@ public protocol Storage: AnyObject {
     
     /// Returns the number of objects which fits the predicate
     /// - Parameter predicate: some predicate
-    func count(predicatedBy predicate: Predicate?) throws -> Int
+    func count(predicatedBy predicate: MPredicate?) throws -> Int
 
     /// Returns the number of objects which fits the predicate
     /// - Parameter predicate: some predicate
@@ -180,7 +180,7 @@ extension Storage {
     /// - Parameters:
     ///   - predicate: filter
     /// - Returns: found objects
-    public func read(predicatedBy predicate: Predicate) throws -> [Model] {
+    public func read(predicatedBy predicate: MPredicate) throws -> [Model] {
         return try read(predicatedBy: predicate, includeSubentities: true, sortDescriptors: [])
     }
 

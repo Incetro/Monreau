@@ -173,7 +173,7 @@ extension RealmStorage: Storage {
     
     // MARK: - Read
     
-    public func read(predicatedBy predicate: Predicate, includeSubentities: Bool, sortDescriptors: [SortDescriptor]) throws -> [S] {
+    public func read(predicatedBy predicate: MPredicate, includeSubentities: Bool, sortDescriptors: [SortDescriptor]) throws -> [S] {
         try read(predicatedBy: predicate.nsPredicate, includeSubentities: includeSubentities, sortDescriptors: sortDescriptors)
     }
     
@@ -183,7 +183,7 @@ extension RealmStorage: Storage {
         return entities.first
     }
     
-    public func read(predicatedBy predicate: Predicate, orderedBy key: String, ascending: Bool) throws -> [Model] {
+    public func read(predicatedBy predicate: MPredicate, orderedBy key: String, ascending: Bool) throws -> [Model] {
         try read(predicatedBy: predicate.nsPredicate, orderedBy: key, ascending: ascending)
     }
     
@@ -212,7 +212,7 @@ extension RealmStorage: Storage {
 
     // MARK: - Persist
     
-    public func persist(predicatedBy predicate: Predicate, _ configuration: ([S]) throws -> ()) throws {
+    public func persist(predicatedBy predicate: MPredicate, _ configuration: ([S]) throws -> ()) throws {
         try persist(predicatedBy: predicate.nsPredicate, configuration)
     }
     
@@ -249,7 +249,7 @@ extension RealmStorage: Storage {
         try delete(object)
     }
     
-    public func erase(predicatedBy predicate: Predicate) throws {
+    public func erase(predicatedBy predicate: MPredicate) throws {
         try erase(predicatedBy: predicate.nsPredicate)
     }
     
@@ -282,7 +282,7 @@ extension RealmStorage: Storage {
         try read(byPrimaryKey: primaryKey) != nil
     }
     
-    public func count(predicatedBy predicate: Predicate?) throws -> Int {
+    public func count(predicatedBy predicate: MPredicate?) throws -> Int {
         let objects = try realm().objects(S.self)
         if let predicate = predicate {
             return objects.filter(predicate.nsPredicate).count
