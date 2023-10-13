@@ -222,7 +222,7 @@ extension CoreStorage: Storage {
         return result
     }
 
-    public func read(predicatedBy predicate: Predicate, includeSubentities: Bool, sortDescriptors: [SortDescriptor]) throws -> [S] {
+    public func read(predicatedBy predicate: Filter, includeSubentities: Bool, sortDescriptors: [SortDescriptor]) throws -> [S] {
         return try read(predicatedBy: predicate.nsPredicate, includeSubentities: includeSubentities, sortDescriptors: sortDescriptors)
     }
     
@@ -237,7 +237,7 @@ extension CoreStorage: Storage {
         return result.first
     }
     
-    public func read(predicatedBy predicate: Predicate, orderedBy key: String, ascending: Bool) throws -> [Model] {
+    public func read(predicatedBy predicate: Filter, orderedBy key: String, ascending: Bool) throws -> [Model] {
         let sortDescriptors = [SortDescriptor(key: key, ascending: ascending)]
         return try read(predicatedBy: predicate, includeSubentities: true, sortDescriptors: sortDescriptors)
     }
@@ -276,7 +276,7 @@ extension CoreStorage: Storage {
 
     // MARK: - Persist
 
-    public func persist(predicatedBy predicate: Predicate, _ configuration: ([S]) throws -> ()) throws {
+    public func persist(predicatedBy predicate: Filter, _ configuration: ([S]) throws -> ()) throws {
         try persist(predicatedBy: predicate.nsPredicate, configuration)
     }
 
@@ -331,7 +331,7 @@ extension CoreStorage: Storage {
         }
     }
     
-    public func erase(predicatedBy predicate: Predicate) throws {
+    public func erase(predicatedBy predicate: Filter) throws {
         try erase(predicatedBy: predicate.nsPredicate)
     }
 
@@ -384,7 +384,7 @@ extension CoreStorage: Storage {
         return try read(byPrimaryKey: primaryKey) != nil
     }
     
-    public func count(predicatedBy predicate: Predicate?) throws -> Int {
+    public func count(predicatedBy predicate: Filter?) throws -> Int {
         let request = S.request()
         if let predicate = predicate {
             request.predicate = predicate.nsPredicate

@@ -10,7 +10,7 @@ import Foundation
 
 // MARK: - Predicate
 
-extension String: Predicate {
+extension String: Filter {
     public var filter: String {
         return self
     }
