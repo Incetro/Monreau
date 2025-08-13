@@ -2,7 +2,7 @@ use_frameworks!
 
 def standard_pods
   pod "Realm"
-  pod "RealmSwift", "~> 10.31.0"
+  pod "RealmSwift", "~> 10.53.0"
 end
 
 target "Monreau iOS" do
